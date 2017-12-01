@@ -1,4 +1,11 @@
-node_modules
-rev
+
+rev/
 index.html
 gulpfile.js
+.idea/
+.DS_Store
+node_modules/
+npm-debug.log
+webpack.config.js
+.idea/
+map/
