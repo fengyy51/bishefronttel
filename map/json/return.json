@@ -1,0 +1,174 @@
+﻿{ 
+    "data": {
+        "sousuo": ["女装", "妈妈装", "连衣裙", "衬衫", "弹弓", "风衣"],
+        "sousuomap": {
+            "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+            "floorid": "Floor1",
+
+            "movex": 176.485,
+            "movey": 228.098,
+
+            "movex": 156.485,
+            "movey": 188.098,
+
+            "xpos": 146.485,
+            "ypos": 158.098
+        },
+        "fenlei": [{ "floor": "1F", "item": ["玩具", "花类(仿真花)", "花类配件"] },
+            { "floor": "2F", "item": ["头饰", "珠宝首饰", "品牌直销中心"] },
+            { "floor": "3F", "item": ["喜庆工艺", "装饰工艺", "旅游工艺", "瓷器水晶", "相框", "饰品配件"] },
+            { "floor": "4F", "item": ["台商馆(花类,工艺品)", "生产企业直销中心(珠宝首饰,工艺品)"] }
+        ],
+        "resultmap": {
+            "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+            "floorid": "Floor1",
+
+            "movex": 176.485,
+            "movey": 228.098,
+
+            "movex": 156.485,
+            "movey": 188.098,
+
+            "xpos": 146.485,
+            "ypos": 158.098
+        },
+        "resultshangpu": [{
+            "tupian": "../resource/img/shangpuone.jpg",
+            "decoration": "新泰玩具",
+            "weizhi": {
+                "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+                "floorid": "Floor1",
+
+                "movex": 176.485,
+                "movey": 228.098,
+
+                "movex": 156.485,
+                "movey": 188.098,
+
+                "xpos": 146.485,
+                "ypos": 158.098
+            }
+        }, {
+            "tupian": "../resource/img/shangputwo.jpg",
+            "decoration": "新意玩具",
+            "weizhi": {
+                "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+                "floorid": "Floor1",
+
+                "movex": 176.485,
+                "movey": 228.098,
+
+                "movex": 156.485,
+                "movey": 188.098,
+
+                "xpos": 146.485,
+                "ypos": 158.098
+            }
+        }, {
+            "tupian": "../resource/img/shangpuone.jpg",
+            "decoration": "宏展玩具",
+            "weizhi": {
+                "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+                "floorid": "Floor1",
+
+                "movex": 176.485,
+                "movey": 228.098,
+
+                "movex": 156.485,
+                "movey": 188.098,
+
+                "xpos": 146.485,
+                "ypos": 158.098
+            }
+        }, {
+            "tupian": "../resource/img/shangputwo.jpg",
+            "decoration": "义乌魔佩工艺品厂",
+            "weizhi": {
+                "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+                "floorid": "Floor1",
+
+                "movex": 176.485,
+                "movey": 228.098,
+
+                "movex": 156.485,
+                "movey": 188.098,
+
+                "xpos": 146.485,
+                "ypos": 158.098
+            }
+        }, {
+            "tupian": "../resource/img/shangpuone.jpg",
+            "decoration": "新泰玩具",
+            "weizhi": {
+                "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+                "floorid": "Floor1",
+
+                "movex": 176.485,
+                "movey": 228.098,
+
+                "movex": 156.485,
+                "movey": 188.098,
+
+                "xpos": 146.485,
+                "ypos": 158.098
+            }
+        }, {
+            "tupian": "../resource/img/shangputwo.jpg",
+            "decoration": "宏展玩具",
+            "weizhi": {
+                "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+                "floorid": "Floor1",
+
+                "movex": 176.485,
+                "movey": 228.098,
+
+                "movex": 156.485,
+                "movey": 188.098,
+
+                "xpos": 146.485,
+                "ypos": 158.098
+            }
+        }, {
+            "tupian": "../resource/img/shangpuone.jpg",
+            "decoration": "义乌魔佩工艺品厂",
+            "weizhi": {
+                "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+                "floorid": "Floor1",
+
+                "movex": 176.485,
+                "movey": 228.098,
+
+                "movex": 156.485,
+                "movey": 188.098,
+
+                "xpos": 146.485,
+                "ypos": 158.098
+            }
+        }],
+        "shangpu": {
+            "mingcheng": "新泰玩具",
+            "yewu": "毛绒玩具，玩偶公仔，家居用品，母婴用品",
+            "name": "虞正泰",
+            "telephone": "18857917296",
+            "weixin": "53478359",
+            "weizhi": {
+                "mallid": "88ad2daa-6c04-4b96-96d4-84b80835180e",
+                "floorid": "Floor1",
+
+                "movex": 176.485,
+                "movey": 228.098,
+                "movex": 156.485,
+                "movey": 188.098,
+
+                "xpos": 146.485,
+                "ypos": 158.098
+            }
+        },
+        "dianzan": [{ "tupian": "./resource/fonts/pingjia/dianzan.png", "num": "" },
+            { "tupian": "./resource/fonts/pingjia/dianzanhong.png", "num": "+1" }
+        ],
+        "chaping": [{ "tupian": "./resource/fonts/pingjia/chaping.png", "num": "" },
+            { "tupian": "./resource/fonts/pingjia/chapinghong.png", "num": "-1" }
+        ]
+    }
+}

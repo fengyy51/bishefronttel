@@ -1,0 +1,8 @@
+fun2({
+  "code": 200,
+    "prizeId": 3,
+    "name": "三等奖",
+    "ratio": 1,
+    "info": "3号店铺8折",
+    "type":"4"
+})

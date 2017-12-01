@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>宾王158文创园</title>
+	<link rel="stylesheet" type="text/css" href="../util/css/weui.min.css?v=4035192f39">
+	<link rel="stylesheet" type="text/css" href="../util/css/quanju.css?v=49d67bd3a0">
+	<link rel="stylesheet" type="text/css" href="../util/css/alert.css?v=f173e8cecd">
+
+	<style type="text/css">
+		.wel{
+			font-size: 5rem;
+			text-align: center;
+			margin-top: 15%;
+			line-height: 10rem;
+			color: #04be02;
+		}
+		.weui_dialog_bd{
+		    text-align: center;
+		}
+        .weui_btn_dialog.primary {
+            color: #0BB20C;
+            font-size: 3.5rem;
+            margin: 2rem;
+        }
+		.weui-dialog__bd:first-child {
+		    padding: 4rem 1rem;
+		    color: #353535;
+		    font-size: 3.5rem;
+		    line-height: 4.5rem;
+		    height: 80%;
+		    width: 90%;
+		    margin: 0 5%;
+		    text-align: center;
+		}
+		.weui-dialog {
+		    position: fixed;
+		    z-index: 2;
+		    width: 80%;
+		    max-width: 60%;
+		    top: 40%;
+		    left: 50%;
+		    -webkit-transform: translate(-50%,-50%);
+		    transform: translate(-50%,-50%);
+		    background-color: #fff;
+		    text-align: center;
+		    border-radius: 3px;
+		    overflow: hidden;
+		}
+	</style>
+	
+</head>
+<body>
+	<div class="wel">欢迎您的光临！<br>
+		让我们一起逛~~~吃~~~逛~~~吃~~，嗨起来！！
+	</div>
+	<div class="weui_dialog_alert" style="display: none;" id="alert">
+        <div class="weui_mask"></div>
+        <div class="weui_dialog">
+            <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
+            <div class="weui_dialog_bd">
+                
+            </div>  
+            <div class="weui_dialog_ft">
+                <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+            </div>
+        </div>
+    </div>
+    <div id="dialogs">
+        <!--BEGIN dialog1-->
+        <div class="js_dialog" id="Dialog" style="display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">
+                    让我们去happy哟！
+                </div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" id="click_quxiao" class="weui-dialog__btn weui-dialog__btn_default" style="padding:1rem;font-size: 3rem;">再看看</a>
+                    <a href="javascript:;" id="click_queding" class="weui-dialog__btn weui-dialog__btn_primary" style="background-color: #04be02;color: white;padding:1rem;font-size: 3rem;">了解更多</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog1-->
+    </div>
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?77c20642466352e6ba841a43a92ddeb0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>   
+    <script type="text/javascript" src="../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>
+	<script type="text/javascript" src="../util/js/publicAttr.js?v=b6306f1ad1"></script>
+	<script type="text/javascript" src="../util/js/weChatId.js?v=f62293ead6"></script>
+	<script type="text/javascript" src="../util/js/alert.js?v=ee7f9c3146"></script>
+	<script type="text/javascript">
+		var openId='yy';
+	    var options={
+	        url:urlYuming+"/guanzhu",
+	        urlServerauth:urlServer+"/user/do-auth",
+	        APPID:APPIDall      
+	    };
+	     getWeChatId(options,callbackA);    
+	    function callbackA(id) {                
+        openId=id; 
+        console.log(id);
+        $.ajax({
+            url:urlServer+'/common/is-subscribe',
+            type:'POST',
+            data:{
+                "openId":openId
+            },
+            success:function(data){
+                var code=data.code;
+                if(code==200){
+                    var result=data.data.result;
+                    // alert(result);
+                    if(result==false){
+                        $('#Dialog').fadeIn(200);
+                    }
+                }
+            },
+            error:function(error){
+                console.log(error);
+                alertNew("获取是否关注失败");
+                alertShow();
+            }
+        });
+        $('#btn').on("click",function(){
+        $.ajax({
+            url:urlServer+'/common/is-subscribe',
+            type:'POST',
+            data:{
+                "openId":openId
+            },
+            success:function(data){
+                var code=data.code;
+                if(code==200){
+                    var result=data.data.result;
+                    // alert(result);
+                    if(result==true){
+                        isAble(openId);    
+                    }
+                    else if(result==false){
+                        $('#Dialog').fadeIn(200);
+                    }
+                }
+            },
+            error:function(error){
+                console.log(error);
+                alertNew("获取权限信息失败");
+                alertShow();
+            }
+        });
+    })  
+    
+    $('#click_queding').on("click",function(){
+        var imghtml='<div><img src="logo.jpg" style="width:82%"></div><div style="font-size: 2.5rem;    margin-bottom: 1rem;">长按二维码，了解更多相关信息</div>';
+        $('#alert .weui_dialog_ft a').html('关闭');
+        alertNew(imghtml);
+        alertShow();
+        $(this).parents('.js_dialog').fadeOut(200);
+    });
+
+    $('#click_quxiao').on("click",function(){
+        $(this).parents('.js_dialog').fadeOut(200);
+    });
+//   isAble(openId);     
+   
+    }
+	</script>
+</body>
+</html>

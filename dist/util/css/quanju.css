@@ -1,0 +1,64 @@
+html,body{
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft Yahei","Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 1rem;
+	line-height: 1.6rem;
+	overflow-x: hidden;
+}
+*{
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-overflow-scrolling: touch;
+}
+.blue{
+	color: #586C94;
+}
+.orange{
+	color: #EA9D39;
+}
+.border{
+	border-bottom: 0.6rem #f1f1f1 solid;
+
+}
+.border_thin{
+	border-bottom: 1.5px solid  #f1f1f1;
+}
+/* 排版外边距 */
+.composing{
+	padding: 0 3% 3% 5%;
+}
+a {outline-style:none;color:#535353;text-decoration:none}
+a:hover { color: #E86A6A; text-decoration: none}
+.right{
+	float: right;
+	width: 20px;
+}
+/* 文本居中 */
+.center{
+	text-align: center;
+}
+.weui-btn {
+	position: relative;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 14px;
+	padding-right: 14px;
+	box-sizing: border-box;
+	font-size: 18px;
+	text-align: center;
+	text-decoration: none;
+	color: #FFFFFF;
+	line-height: 2.55555556;
+	border-radius: 5px;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	overflow: hidden;
+}
+.weui-btn_primary:not(.weui-btn_disabled):visited {
+	color: #FFFFFF;
+}
+.weui-btn-primary{
+	background-color: #1AAD19;
+}

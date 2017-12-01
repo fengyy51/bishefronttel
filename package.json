@@ -1,0 +1,33 @@
+{
+  "name": "binwang",
+  "version": "1.0.0",
+  "description": "宾王活动",
+  "main": "gulpfile.js",
+  "keywords": [
+    "gulp",
+    "webpack"
+  ],
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-asset-rev": "^0.0.15",
+    "gulp-rev": "^8.0.0",
+    "gulp-rev-collector": "^1.2.2",
+    "lodash": "^4.17.4",
+    "run-sequence": "^2.1.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.28.5",
+    "gulp": "^3.9.1",
+    "gulp-convert-encoding": "^1.0.0",
+    "gulp-rimraf": "^0.2.1",
+    "gulp-uglify": "^3.0.0",
+    "jsx-loader": "^0.13.2",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.5.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fyy",
+  "license": "ISC"
+}

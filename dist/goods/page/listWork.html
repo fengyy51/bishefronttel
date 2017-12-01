@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>寻找造物主，投票赢大奖</title>
+		<!-- <link rel="stylesheet" type="text/css" href="../../util/css/pure.css?v=3051256d60"> -->
+		<link rel="stylesheet" type="text/css" href="../../util/css/weui.css?v=a8867e3980">
+		<link rel="stylesheet" type="text/css" href="../../util/css/quanju.css?v=49d67bd3a0">
+		<link rel="stylesheet" type="text/css" href="../../util/css/alert.css?v=f173e8cecd">
+		<link rel="stylesheet" type="text/css" href="../css/listWork.css?v=d3ca1141ed">
+		
+	</head>
+
+	<body style="width: 100%;overflow-x: hidden;">
+		<div id="listWork">
+			<div class="head composing" >
+				<span class="left">作品列表</span>
+			</div>
+			<div class="pure-control-group" style="padding: 1% 5% 0 5%; width:100%;">
+				<div class="page__bd" id="text" <!--style="width:54%;float: left;padding-left: 3%;padding-right: 1%;"-->
+					
+					<!--<a href="javascript:;" class="weui-btn weui-btn_primary">点击展现searchBar</a>-->
+					<div class="weui-search-bar" id="searchBar">
+						<div class="weui-search-bar__form">
+							<div class="weui-search-bar__box">
+								<i class="weui-icon-search"></i>
+								<input type="search" class="weui-search-bar__input" id="searchInput" placeholder="  请输入编号" required/>
+								<a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+							</div>
+							<label class="weui-search-bar__label" id="searchText">
+                    		<i class="weui-icon-search"></i>
+                    		<span>搜索</span>
+                			</label>
+
+						</div>
+
+						<!--<a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>-->
+
+					</div>
+
+				</div>
+				<div id="fixedlogo">评选流程</div>
+				<div class="weui_dialog_alert" style="display: none;" id="dialog">
+				    <div class="weui_mask"></div>
+				    <div class="weui_dialog">
+				        <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
+				        <div class="weui_dialog_bd">
+				        	
+						</div>	
+				        <div class="weui_dialog_ft">
+				            <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+				        </div>
+				    </div>
+				</div>
+				<div class="weui_dialog_alert" style="display: none;" id="alert">
+				    <div class="weui_mask"></div>
+				    <div class="weui_dialog">
+				        <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
+				        <div class="weui_dialog_bd">
+				        	
+						</div>	
+				        <div class="weui_dialog_ft">
+				            <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+				        </div>
+				    </div>
+				</div>
+				<span class="button-sp-area" id="button1" >
+					<a href="javascript:;"  class="weui-btn weui-btn_mini weui-btn_primary">搜索</a>
+
+				</span>
+				<span class="button-sp-area"  id="button2">
+					<a href="javascript:;"   class="weui-btn weui-btn_mini weui-btn_primary">投票</a>
+
+				</span>
+				
+				<!-- <input id="text" type="text" placeholder="请输入作品编号">&nbsp; -->
+				<!-- <input id="button1" class="pure-button pure-button-primary" type="button" value="搜索"> -->
+				<!--<input id="button2" class="pure-button pure-button-primary" type="button" value="投票">-->
+			</div>
+			<div class="body composing">
+
+			</div>
+		</div>
+		<script type="text/javascript" src="../../util/js/zepto.js?v=7645315506"></script>
+		<script type="text/javascript" src="../../util/js/publicAttr.js?v=b6306f1ad1"></script>
+		<script type="text/javascript" src="../../util/js/global.js?v=d8be1b550b"></script>
+		<script src="../js/jweixin-1.0.0.js?v=ae4fe26a2c"></script>
+		<script src="../js/share.js?v=2257c8daf0"></script>
+		<script type="text/javascript" src="../../util/js/alert.js?v=ee7f9c3146"></script>
+		<!-- <script type="text/javascript" src="../../dist/js/common.js"></script> -->
+		<script type="text/javascript" src="../js/listWork.js?v=9d7b07b039"></script>
+	</body>
+
+</html>

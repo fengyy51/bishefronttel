@@ -1,0 +1,74 @@
+/*必须添加html body 否则alert出错*/
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	font-family: "Microsoft Yahei","Helvetica Neue", Helvetica, Arial, sans-serif; 
+	font-size: 1rem;
+	line-height: 1.6rem;
+	
+}
+*{
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-overflow-scrolling: touch;
+}
+title{
+	background-color: #68B032;
+}
+
+.weui_dialog_bd{
+	text-align: center;
+}
+.topPicture{
+	width: 100%;
+	height: 35%;
+	background-color: #68B032;
+	
+	/* padding: 10% 25%; */
+}
+.topPicture a{
+	width:100%;
+	color: #ffffff;    
+	padding: 25% 25%;
+	-webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+.topPicture a img{
+	/* vertical-align: middle; */
+	width: 4rem;
+	height: 4rem;
+	display: block;
+	margin:6%  auto 3%;
+	/* text-align: center; */
+
+}
+.topPicture a img#headimg{
+	/* vertical-align: middle; */
+	border-radius: 4rem;
+	
+
+}
+.topPicture a div{
+	width: 100%;
+	vertical-align: middle;	
+	text-align: center;
+	font-size: 1.2rem;	
+	letter-spacing:0.1rem;
+}
+.signedActivity img{
+	vertical-align: middle;
+}
+.right{
+	float: right;
+	width: 24px;
+}
+.signedActivity span{
+	margin-left: 3%;
+	font-size: 1.1rem;
+	vertical-align: bottom;
+}
+.composing_personal{
+	padding: 3% 3% 3% 5%;
+}
+

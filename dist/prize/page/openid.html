@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>寻找造物主，投票赢大奖</title>
+    <meta name="viewport" content="
+        height = device-height,     
+        width = device-width,  
+<!--         initial-scale = 0.4,   
+        minimum-scale = 0.4,   
+        maximum-scale = 2.0, -->
+        user-scalable = no" />
+    <link rel="stylesheet" type="text/css" href="../../util/css/quanju.css?v=49d67bd3a0">
+</head>
+
+<body>
+    <div class="orange center" id="openId" style="font-size: 1.5rem;font-weight: bold;margin-top: 40%;margin-left: 10%;/* margin-right: 10%; */width: 80%;width: 80%;word-break: break-all;/* text-overflow: ellipsis; */display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/-webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/-webkit-line-clamp: 4; /** 显示的行数 **//* overflow: hidden; */  /** 隐藏超出的内容 **/">oGNQOwgZuZ8zdPhBV8TwGq72fJSI</div>
+    <div style="font-size: 1.2rem;/* font-weight: bold; */margin-top: 25%;margin-left: 5%;margin-right: 5%;color: red;/* height: 100%; */">
+        注：<br>1.兑奖前请先关注公众号：义乌宾王158文创园.<br>2. 请15分钟后到个人中心查看奖券。
+    </div>
+
+    <script src="https://hm.baidu.com/hm.js?77c20642466352e6ba841a43a92ddeb0"></script><script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?77c20642466352e6ba841a43a92ddeb0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script type="text/javascript" src="../../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>
+    <script type="text/javascript" src="../../util/js/publicAttr.js?v=b6306f1ad1"></script>
+    <script type="text/javascript" src="../../util/js/weChatId.js?v=f62293ead6"></script>
+    <script type="text/javascript">
+         // 授权
+        var openId='yy';
+        var options={
+            url:urlYuming+"/prize/page/openid",
+            urlServerauth:urlServer+"/user/do-auth",
+            APPID:APPIDall      
+        };
+        function callbackA(id) {                
+            openId=id; 
+            $('#openId').html(openId);
+            // console.log(id);
+        }
+        getWeChatId(options,callbackA);    
+    </script>
+
+
+</body>
+
+</html>

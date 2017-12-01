@@ -1,0 +1,271 @@
+﻿
+/*科e互联特效基本框架CSS*/
+/* body, ul, li, p, div, input {margin:0;padding:0;-webkit-text-size-adjust: none}
+
+ul, ol, li {list-style-type:none;vertical-align:0}
+.button {display: inline-block;zoom: 1; *display: inline;vertical-align: baseline;margin: 0 2px;outline: none;cursor: pointer;text-align: center;text-decoration: none;font: 14px/100% Arial, Helvetica, sans-serif;padding:0.25em 0.6em 0.3em;text-shadow: 0 1px 1px rgba(0,0,0,.3);-webkit-border-radius: .5em; -moz-border-radius: .5em;border-radius: .5em;-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);box-shadow: 0 1px 2px rgba(0,0,0,.2);
+} */
+/* .red {color: #faddde;border: solid 1px #980c10;background: #d81b21;background: -webkit-gradient(linear, left top, left bottom, from(#ed1c24), to(#A51715));background: -moz-linear-gradient(top,  #ed1c24,  #A51715);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#aa1317');
+}
+.red:hover { background: #b61318; background: -webkit-gradient(linear, left top, left bottom, from(#c9151b), to(#a11115)); background: -moz-linear-gradient(top,  #c9151b,  #a11115); filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#c9151b', endColorstr='#a11115'); color:#fff;}
+.red:active {color: #de898c;background: -webkit-gradient(linear, left top, left bottom, from(#aa1317), to(#ed1c24));background: -moz-linear-gradient(top,  #aa1317,  #ed1c24);filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#aa1317', endColorstr='#ed1c24');}
+.cor_bs,.cor_bs:hover{color:#ffffff;} */
+
+
+/*科e互联特效基本框架CSS结束，应用特效时，以上样式可删除*/
+/* 效果CSS开始 */
+/*  .slider{display:none}/*用于获取更加体验 */
+/* .focus span{width:10px;height:10px;margin-right:10px;border-radius:50%;background:#666;font-size:0}
+.focus span.current{background:#fff} */ 
+/* 效果CSS结束 */
+
+.swiper-container {
+	width: 650px;
+	height: 4rem;
+
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+	left: -3rem;
+	width: 100%;
+}
+.notice{
+	padding:1% 3% 3% 5%;
+}
+.head{
+	width: 100%;
+	height: 1.4rem;
+	border: 1px solid #f1f1f1 ;
+	padding-top: 2%;
+	font-size: 0.95rem;
+	vertical-align: bottom;
+	padding: 1% 3% 2% 5%;
+	background-color: azure;
+}
+
+.left{  	
+ 	float: left; 	
+}
+.right{
+	/* position: absolute;
+	right: 20px; */
+ 	float: right;
+ 	width: 3rem;
+ 	margin-right: 6%;
+}
+
+ .time{
+	background:url("../resource/fonts/time1.png" ) no-repeat 0px 0px;
+	padding-left: 11%;
+	line-height: 1.1rem;
+	font-size: 0.7rem;
+	vertical-align: top;	
+	margin-left: 2%;
+	color: #999999;
+}
+/* 截止报名日期 */
+ .endSign{
+	display: block;
+	margin-left: 2%;	
+	font-size: 0.7rem;
+}
+
+div.item .tupian img{
+	height: 7.5rem;
+	width: 30%;
+	float: left;
+	display: block;
+}
+div.item .content{
+	width: 68%;
+	height: 7.5rem;
+	float: right;
+	margin: 0 1%;
+}
+div.item .content .decoration{
+	font-size: 0.83rem;
+	margin-left: 4%;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+} 
+/* //成一列排列的格式 */ 
+div.item{
+	width: 100%;
+	height: 7.5rem;
+	padding: 1.5% ;
+	border-bottom: 0.2rem solid #FAF1F1;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+div.item .tupian img{
+	height: 7.5rem;
+	width: 30%;
+	float: left;
+	display: block;
+}
+div.item .content{
+	width: 68%;
+	height: 7.5rem;
+	float: right;
+	margin: 0 1%;
+}
+div.item .content .decoration{
+	font-size: 0.83rem;
+	margin-left: 2%;
+}
+.address,.price{	
+	padding-left: 11%;
+	margin-left: 2%;
+	vertical-align: bottom;
+	font-size: 0.68rem;
+}
+
+.address{
+	color: #999999;
+	background:url("../resource/fonts/address1.png" ) no-repeat 0px 0px;
+}
+.idContent{
+	display: none;
+}
+.price{	
+	background:url("../resource/fonts/price1.png" ) no-repeat 0px 0px;	
+	font-size: 0.83rem;
+	color:#04BE02;
+}
+
+/* div.item .content .price{	
+	float: right;
+	color:#04BE02;
+	margin-right: 3%;
+	font-size: 0.83rem;
+} */
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2) {
+
+	div.item .tupian img {
+		height: 6.5rem;
+		margin: 2.5% 0 1% 0;
+	}
+	div.item {
+		height: 7.5rem;
+	}
+}
+
+/* .time,.address{
+	font-size: 0.5rem;
+}
+.price{
+	font-size: 0.55rem
+} */
+
+
+
+
+/* 成两列排列的格式开始*/
+/* div.twocolom div.colom{
+	
+	width: 100%;
+	border-bottom: 0.2rem solid #FAF1F1;
+	
+}
+div.twocolom div.item {
+	border: 1px solid black;
+	margin: 2px 2px 2px 2px;
+	width: 46%;
+	height: 15.2rem;
+	border: 1px solid #04BE02;
+	float: left;
+	border-radius: 0.25rem;
+} */
+/* div.colom :nth-child(1){ */
+/* 	position: relative; */
+	/* float: left;	 */
+	/* width:300px; */
+	/* border: 1px solid black; */
+/* } */
+/* /div.colom :nth-child(2){ */
+	/* float: right; */
+	/* background:#0000ff; */
+/* 	width:191px; */
+/* 	border: 1px solid red; */
+/* } */
+/* dib.colom .tupian{
+	width: 50%;
+	height: 6.5rem;
+	
+} */
+/* div.colom .tupian img{
+	height: 6.5rem;
+	width: 100%;	
+	display: block;
+} */
+/* .address{
+	background:url("../resource/fonts/address1.png" ) no-repeat 0px 0px;
+}
+.id{	
+	background:url("../resource/fonts/id.png" ) no-repeat 0px 0px;	
+}
+.time{
+	background:url("../resource/fonts/time1.png" ) no-repeat 0px 0px;
+	padding-left: 11%;
+	vertical-align: top;	
+	font-size: 0.7rem;
+	margin-left: 2%;
+	color: #999999;
+}
+.startActivity{
+	font-size: 0.7rem;
+} */
+/* 截止报名日期 */
+/*  .endSign{
+	display: block;
+	margin-left: 2%;	
+	 margin-left: 4%;	 
+	font-size: 0.7rem;
+}
+.price{	
+	float: right;
+	color:#04BE02;
+	margin-right: 3%;
+	font-size: 0.83rem;
+}
+.content{	
+	margin: 0 1%;
+	line-height: 1.1rem;
+} */
+/* div.content .decoration{
+	font-size: 0.83rem;	
+	margin-left: 2%;
+}
+.address,.id{
+	font-size: 0.5rem;
+}
+.address,.id{
+	color: #999999;
+	padding-left: 11%;
+	margin-left: 2%;
+	vertical-align: top;
+	font-size: 0.68rem;
+}
+
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+
+div.twocolom div.item {
+	height: 16.5rem;
+} 
+}
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+
+div.twocolom div.item {
+	height: 14.2rem;
+} 
+}
+@media (device-height:732px) and (-webkit-min-device-pixel-ratio:2){
+
+div.twocolom div.item {
+	height: 14.2rem;
+} 
+} */
+/* 成两列排列结束 */

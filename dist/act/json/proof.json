@@ -1,0 +1,12 @@
+{
+	"code":200,
+    "data":{
+    	"name":"活动1",
+    	"startActivityTime":"10/7",
+    	"endActivityTime":"25/7",
+    	"address":"宾王158文创园1区",
+    	"mobile":18201356255,
+    	"credCode":1258748575,
+    	"sign":0
+    }
+}

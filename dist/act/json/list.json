@@ -1,0 +1,36 @@
+{
+	"data":{
+		"list":[
+			{"img":"../resource/img/listone.jpg","name":"夜市开始了，快来抽奖免费送好礼了！","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1},
+			{"img":"../resource/img/listtwo.jpg","name":"夜市开始了，快来抽奖免费送好礼了！","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1},
+			{"img":"../resource/img/listthree.jpg","name":"夜市开始了，快来抽奖免费送好礼了！","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1},
+			{"img":"../resource/img/listone.jpg","name":"夜市开始了，快来抽奖免费送好礼了！","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1},
+			{"img":"../resource/img/listtwo.jpg","name":"夜市开始了，快来抽奖免费送好礼了！","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1},
+			{"img":"../resource/img/listthree.jpg","name":"夜市开始了，快来抽奖免费送好礼了！","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1},
+			{"img":"../resource/img/listone.jpg","name":"夜市开始了，快来抽奖免费送好礼了！","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1},
+			{"img":"../resource/img/listtwo.jpg","name":"夜市开始了，快来抽奖免费送好礼了！","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1},
+			{"img":"../resource/img/listthree.jpg","name":"夜市开始了，快来抽奖免费送好礼了","startActivityTime":"07/28",
+    	"endActivityTime":"07/31",
+    	"endSignTime":"07/25 ","address":"宾王158文创园1区","priceType":"0","actId": 1}
+
+		]
+			
+		
+	}
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>活动报名</title>
+    <link  rel="stylesheet" type="text/css" href="../../util/css/quanju.css?v=49d67bd3a0">
+    <link  rel="stylesheet" type="text/css" href="../../util/css/weui.min.css?v=4035192f39.css?v=b89e75b4b4">
+    <link rel="stylesheet" type="text/css" href="../../util/css/buweui.css?v=ba6613c431">
+    <link rel="stylesheet" type="text/css" href="../css/sign.css?v=e8c528aef7">
+    <style>
+        html, body{
+            height: 100%;
+            background-color: #f8f8f8;
+        }
+        body{
+            font-family: -apple-system-font, Helvetica Neue, Helvetica, sans-serif;
+        }
+        .item{
+            padding: 10px 0;
+        }
+        .item__title{
+            margin-bottom: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+            color: #999;
+            font-weight: normal;
+            font-size: 14px;
+        }
+        .item__ctn{
+            padding: 0 15px;
+        }
+        .page_feedback{
+            padding: 15px;
+            overflow: auto;
+            background-color: #FFFFFF;
+        }
+
+        /*fix fastclick很难点中的bug*/
+        label > * { pointer-events: none; }
+
+        /* weui需要fix的 */
+        .weui-picker__item{
+            padding: 0;
+            height: 34px;
+            line-height: 34px;
+        }
+    </style>
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?77c20642466352e6ba841a43a92ddeb0";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body >
+
+    <div class="weui-cells weui-cells_form" id="title"></div>
+    <div class="weui-cells weui-cells_form" id="form">
+
+        <!--<div class="weui-cells__title"><div class="title">得到</div><div class="info">活动将于<span class="time">2017年11月10日 17:14</span>截止报名 </div></div>-->
+
+
+
+
+
+
+
+
+
+
+
+            <!--<div class="weui-cell weui-cell weui-cell_vcode">-->
+                <!--<div class="weui-cell__hd"><label class="weui-label">验证码</label></div>-->
+                <!--<div class="weui-cell__bd">-->
+                    <!--<input class="weui-input" maxlength="4" type="text" required pattern="REG_VCODE" placeholder="点击验证码更换" tips="请输入验证码">-->
+                <!--</div>-->
+                <!--<div class="weui-cell__ft">-->
+                    <!--<i class="weui-icon-warn"></i>-->
+                    <!--<img class="weui-vcode-img" src="http://tencent.github.io/weui/images/vcode.jpg">-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+
+    <!--<div class="weui-cell" id="uploader">-->
+        <!--<div class="weui-cell__bd">-->
+            <!--<div class="weui-uploader">-->
+                <!--<div class="weui-uploader__hd">-->
+                    <!--<p class="weui-uploader__title">图片上传</p>-->
+                    <!--<div class="weui-uploader__info"><span id="uploadCount">0</span>/5</div>-->
+                <!--</div>-->
+                <!--<div class="weui-uploader__bd">-->
+                    <!--<ul class="weui-uploader__files" id="uploaderFiles"></ul>-->
+                    <!--<div class="weui-uploader__input-box">-->
+                        <!--<input id="uploaderInput" class="weui-uploader__input" type="file" accept="image/*" capture="camera" multiple="" />-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <div class="weui-cell" id="description">
+    </div>
+    <div class="weui-btn-area">
+        <button id="formSubmitBtn" class="weui-btn weui-btn_primary">提交</button>
+    </div>
+
+        <!--<p class="weui-cells__title">图片手动上传</p>-->
+        <!--<div class="weui-cells weui-cells_form" id="uploaderCustom">-->
+            <!--<div class="weui-cell">-->
+                <!--<div class="weui-cell__bd">-->
+                    <!--<div class="weui-uploader">-->
+                        <!--<div class="weui-uploader__hd">-->
+                            <!--<p class="weui-uploader__title">图片上传</p>-->
+                        <!--</div>-->
+                        <!--<div class="weui-uploader__bd">-->
+                            <!--<ul class="weui-uploader__files" id="uploaderCustomFiles"></ul>-->
+                            <!--<div class="weui-uploader__input-box">-->
+                                <!--<input id="uploaderCustomInput" class="weui-uploader__input" type="file" accept="image/*" multiple="">-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div class="weui-btn-area">-->
+            <!--<a id="uploaderCustomBtn" href="javascript:" class="weui-btn weui-btn_primary">上传</a>-->
+        <!--</div>-->
+    <!--</div>-->
+</div>
+    <script type="text/javascript" src="../../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>
+    <script type="text/javascript" src="../../util/js/publicAttr.js?v=b6306f1ad1"></script>
+    <script type="text/javascript" src="../../util/js/weChatId.js?v=f62293ead6"></script>
+    <script type="text/javascript" src="../../util/js/global.js?v=d8be1b550b"></script>
+    <script type="text/javascript" src="../../util/js/weui.js?v=022aec7711"></script>
+    <script type="text/javascript" src="../js/upload.js?v=65595a920e.js?v=6c57620986"></script>
+    <script type="text/javascript" src="../js/sign.js?v=6c57620986"></script>
+
+</body>
+</html>
+
+
+
+

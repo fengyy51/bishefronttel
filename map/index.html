@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <title>地图导览</title>
+    <link rel="stylesheet" type="text/css" href="../util/css/pure.css?v=3051256d60">
+    <link rel="stylesheet" type="text/css" href="../util/css/quanju.css?v=b89e75b4b4">
+    <link rel="stylesheet" type="text/css" href="css/index.css?v=88fad390bb">
+	<style>
+        *{padding: 0;margin: 0;}
+		body{position: absolute;width: 100%;height: 100%;}
+		#btnGroup{position:fixed;z-index:19;top:45px;}
+		#btnGroup button{display:block; font-size: 1rem;margin-bottom:5px;}
+		/* 地图显示 */
+		#out-frame{
+			position: absolute;
+			width: 100%;
+			height: 80%;
+			overflow: hidden;
+			z-index: 18;
+			padding-left: 0px;
+			margin: 0px 2% 0;
+		}
+		#solveMapFont{
+            position: absolute;
+            top:0;
+            z-index: -99;
+            font-family: 'VMapPublic',serif;
+        }
+		/* #out-frame{position: relative;width: 100%;height: 100%;overflow: hidden;} */
+        @font-face {font-family : 'VMapPublic';src : url(VMapPublic.ttf);}
+		#map{ font-family: 'VMapPublic',serif; } /*必须加上这句！否则在初始化地图时，公共设施字体无法加载出来*/
+	</style>
+</head>
+    <body>
+	<div id="solveMapFont">1</div>
+    <div class="sousuolan border-line" id="sousuo">
+		<div class="pure-form" id="form">
+    		<input type="text" id="sousuoinput" class="pure-input-rounded" placeholder="  商铺,商品,基础设施搜索">
+			<button class=" pure-button button-sousuo">搜索</button>	  
+		</div>
+	</div>
+    <div id="btnGroup">
+		<button id="changefloor1">1楼</button>	
+		<button id="changefloor2">2楼</button>	
+	</div>  
+	<div id="out-frame">
+		<div id="map"></div>
+	</div>
+	
+	
+<script src="../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>
+<script src="js/lib/blockUI.js"></script>
+<script src="js/lib/hammer.js"></script>
+<script src="js/lib/slave.js"></script>
+<script src="js/lib/VMap.js"></script>
+<script>
+	$(function() {
+		document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+		var mapDiv = document.querySelector("#map");
+		var map = new Vmap(mapDiv,"88ad2daa-6c04-4b96-96d4-84b80835180e","Floor1", {movex:78.25,movey:58.33,fontColor:"#534D57",publicColor:"green"});		
+
+		$('.button-sousuo').click(function(){
+			var sousuoinput=$(".pure-input-rounded");
+			var value=sousuoinput.val();
+			var name=value;
+			map.clearOverlays();
+    		var postUrl="http://123.57.46.160:8080/beacon/spot!search?client=824&vkey=FFE58998-B203-B44E-A95B-8CA2D6CBCD65&place=88ad2daa-6c04-4b96-96d4-84b80835180e&spot="+name+"&jsoncallback=?"
+	      $.getJSON(postUrl,
+	          function(data) {
+	              var obj = {};
+	              console.log(data);
+	              if (!data.success) {
+	                  obj.result=false;
+	              } else {
+	                obj.result=true;
+	                obj.x=data.rows[0].x;
+	                obj.y=data.rows[0].y;
+	                obj.floor_id=data.rows[0].floor_id;
+	                if(obj.floor_id=="Floor1"){
+	                	map.changeFloor("Floor1");
+	                	map.clearOverlays();
+	                	var markerPoint = new VPoint(obj.x,obj.y,"Floor1");
+	                	var marker = new VMarker(markerPoint,"./img/LocatingPoint.gif");
+						map.addOverlay(marker);
+						map.moveMapTo(obj.x,obj.y);
+	                }else if(obj.floor_id=="Floor2"){
+	                	map.changeFloor("Floor2");
+	                	map.clearOverlays();
+	                	var markerPoint = new VPoint(obj.x,obj.y,"Floor2");
+	                	var marker = new VMarker(markerPoint,"./img/LocatingPoint.gif");
+						map.addOverlay(marker);
+						map.moveMapTo(obj.x,obj.y);
+	                }               
+					
+	              }
+	              
+	            
+	          }
+	      );
+	})
+	document.querySelector("#changefloor1").onclick = function() {
+		map.clearOverlays();
+        map.changeFloor("Floor1");
+    };
+	
+    document.querySelector("#changefloor2").onclick = function() {
+    	map.clearOverlays();
+        map.changeFloor("Floor2");
+    };
+})	
+</script>
+</body>
+</html>

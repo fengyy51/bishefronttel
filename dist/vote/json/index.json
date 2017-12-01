@@ -1,0 +1,114 @@
+{
+"code":200,"data":
+[
+		 {
+            "id": 24,
+            "name": "owen",
+            "brandName": "品牌1",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/2cd1fb065b52447392058b55edd58d6e---image.jpeg@@@http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/6d7423fd6e614a748a10d95f0157a967---image.png@@@",
+            "intro": "hhh"
+        },
+       {
+            "id": 25,
+            "name": "杨宁",
+            "brandName": "阿玛尼",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/91a3e633b07243b1930b14b84f4a1207---S70713083116.jpg@@@",
+            "intro": "nn"
+        },
+     {
+            "id": 27,
+            "name": "冯",
+            "brandName": "分",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/6a5fe512724d4c1bae45eec6840e9b0a---IMG_2488.PNG@@@",
+            "intro": "66666666666666666666666666666666"
+        },
+        {
+            "id": 28,
+            "name": "额",
+            "brandName": "的",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/0e5d1b65a1034c769960ce2850d1cc3e---IMG_1884.JPG@@@",
+            "intro": "11111111111111111111111111111"
+        },
+         {
+            "id": 29,
+            "name": "owen",
+            "brandName": "品牌1",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/2cd1fb065b52447392058b55edd58d6e---image.jpeg@@@http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/6d7423fd6e614a748a10d95f0157a967---image.png@@@",
+            "intro": "hhh"
+        },
+       {
+            "id": 30,
+            "name": "杨宁",
+            "brandName": "阿玛尼",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/91a3e633b07243b1930b14b84f4a1207---S70713083116.jpg@@@",
+            "intro": "nn"
+        },
+     {
+            "id": 31,
+            "name": "冯",
+            "brandName": "分",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/6a5fe512724d4c1bae45eec6840e9b0a---IMG_2488.PNG@@@",
+            "intro": "66666666666666666666666666666666"
+        },
+        {
+            "id": 32,
+            "name": "额",
+            "brandName": "的",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/0e5d1b65a1034c769960ce2850d1cc3e---IMG_1884.JPG@@@",
+            "intro": "11111111111111111111111111111"
+        },
+         {
+            "id": 33,
+            "name": "owen",
+            "brandName": "品牌1",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/2cd1fb065b52447392058b55edd58d6e---image.jpeg@@@http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/6d7423fd6e614a748a10d95f0157a967---image.png@@@",
+            "intro": "hhh"
+        },
+       {
+            "id": 34,
+            "name": "杨宁",
+            "brandName": "阿玛尼",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/91a3e633b07243b1930b14b84f4a1207---S70713083116.jpg@@@",
+            "intro": "nn"
+        },
+     {
+            "id": 35,
+            "name": "冯",
+            "brandName": "分",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/6a5fe512724d4c1bae45eec6840e9b0a---IMG_2488.PNG@@@",
+            "intro": "66666666666666666666666666666666"
+        },
+        {
+            "id": 36,
+            "name": "额",
+            "brandName": "的",
+            "brandImgUrl": "../project/images/微信图片_20170719091102.png",
+            "productImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/11476e85696e4c9fb710593ea06d0080---image.jpeg",
+            "productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/0e5d1b65a1034c769960ce2850d1cc3e---IMG_1884.JPG@@@",
+            "intro": "11111111111111111111111111111"
+        }
+		
+	]
+}

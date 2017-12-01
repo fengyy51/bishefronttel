@@ -1,0 +1,195 @@
+/* 文本居中 */
+.center{
+	text-align: center;
+}
+.head{
+	width: 100%;
+	height: 1.4rem;
+	border: 1px solid #f1f1f1 ;
+	padding-top: 2%;
+	font-size: 0.95rem;
+	vertical-align: bottom;
+	padding: 1% 3% 2% 5%;
+}
+
+.left{  	
+ 	float: left; 	
+}
+.right{
+	/* position: absolute;
+	right: 20px; */
+ 	float: right;
+ 	width: 3rem;
+ 	margin-right: 6%;
+}
+.time{
+	background:url("../resource/fonts/time1.png" ) no-repeat 0px 0px;
+	padding-left: 11%;
+	line-height: 1.1rem;
+	vertical-align: top;	
+	font-size: 0.7rem;
+	margin-left: 2%;
+	color: #999999;
+}
+/* 截止报名日期 */
+.endSign{
+	display: block;
+	margin-left: 2%;	
+	/* margin-left: 4%;	 */
+	font-size: 0.7rem;
+}
+/* //成一列排列的格式 */
+div.item{
+	width: 100%;
+	height: 7.5rem;
+	padding: 1.5% ;
+	border-bottom: 0.2rem solid #FAF1F1;
+	cursor: pointer;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+div.item .tupian img{
+	height: 7.5rem;
+	width: 30%;
+	float: left;
+	display: block;
+}
+div.item .content{
+	width: 68%;
+	height: 7.5rem;
+	float: right;
+	margin: 0 1%;
+}
+div.item .content .decoration{
+	font-size: 0.83rem;
+	margin-left: 4%;
+	width: 100%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.address,.price{
+	padding-left: 11%;
+	margin-left: 2%;
+	vertical-align: bottom;
+	font-size: 0.68rem;
+}
+
+.address{
+	color: #999999;
+	background:url("../resource/fonts/address1.png" ) no-repeat 0px 0px;
+}
+.idContent{
+	display: none;
+}
+.price{	
+	color:#04BE02;
+	font-size: 0.83rem;
+	background:url("../resource/fonts/price1.png" ) no-repeat 0px 0px;	
+}
+.footest{
+	text-align: center;
+	width: 100%;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	padding: 0% 0% 4% 0%;
+}
+.footest .line{
+	display: inline-block;
+	width:30%;
+	border-top: 1px solid #ccc;
+}
+.footest .txt{
+	font-size: 0.9rem;
+	color: #999999;
+	vertical-align: middle;
+}
+/* div.item .content .price{	
+	float: right;
+	
+	margin-right: 3%;
+	
+} */
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+
+div.item .tupian img{
+	height: 6.5rem;	
+	margin: 2.5% 0 1% 0;
+}
+
+/* .time,.address{
+	font-size: 0.5rem;
+}
+.price{	
+	
+	font-size: 0.55rem;
+} */
+}
+
+
+/* .head{
+	width: 100%;
+	height: 1.4rem;
+	border: 1px solid #f1f1f1 ;
+	padding-top: 2%;
+	font-size: 0.95rem;
+}
+
+.left{  	
+ 	float: left;
+ 	margin:  5px 0 5px 0; 
+}
+.right{
+	/* position: absolute;
+	right: 20px; */
+ 	/* float: right;
+ 	width: 3rem;
+ 	margin-right: 6%;
+} */
+/* //成一列排列的格式 */
+/* div.item{
+	width: 100%;
+	height: 5.7rem;
+	padding: 1% ;
+	border-bottom: 0.2rem solid #FAF1F1;
+	
+}
+ */
+/* div.item .tupian img{
+	height: 5.7rem;
+	width: 30%;
+	float: left;
+	display: block;
+}
+div.item .content{
+	width: 68%;
+	height: 5.7rem;
+	float: right;
+	margin: 0 1%;
+}
+div.item .content .decoration{
+	font-size: 0.83rem;
+}
+div.item .content .time{
+	width: 30%;
+	vertical-align: top;
+	color: #C6C0BD;
+	font-size: 0.7rem;
+}
+div.item .content .address{
+	width: 30%;	
+	vertical-align: top;
+	color: #C6C0BD;
+	font-size: 0.68rem;
+	margin-left: 2%;
+} */
+/* div.item .content p.price{ */
+	/* margin-top: 10px; */
+	/* position: absolute; */
+	/* right: 20px; */
+	/* font-size: 15px; */
+	/* float: right;
+	color:#04BE02;
+	margin-right: 3%;
+	font-size: 0.7rem;
+} */ 

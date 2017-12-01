@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>寻找造物主，投票赢大奖</title>
+    <meta name="viewport" content="
+        height = device-height,     
+        width = device-width,  
+<!--         initial-scale = 0.4,   
+        minimum-scale = 0.4,   
+        maximum-scale = 2.0, -->
+        user-scalable = no" />
+    <link rel="stylesheet" type="text/css" href="../../util/css/quanju.css?v=49d67bd3a0">
+    <link rel="stylesheet" type="text/css" href="../../util/css/weui.min.css?v=4035192f39">
+    <link rel="stylesheet" type="text/css" href="../../util/css/alert.css?v=f173e8cecd">
+    <link rel="stylesheet" type="text/css" href="../css/test.css?v=234e5c5d16" />
+    
+</head>
+
+<body>
+    <div id="img" style="align-items: center"><img id="tulip" src="../resource/jpg/demo2.png" alt="图片下载失败" style="height:100%;width:100%;" /></div>
+    <div id="turntable">
+        <canvas id="canvas" height="800px" width="700px">抱歉！浏览器不支持。</canvas>
+        <button id="btn">开始</button>
+        <p id="times" style="color:yellow"><span id="span1"></span><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span id="span2"></span></p>
+    </div>
+    <div id="prizelist">
+        <img src="../resource/jpg/prizelist.png" style="width:100%; ">
+    </div>
+    <p id="title" align="center">注意事项</p>
+    <div id="description">
+        1.活动最终解释权归宾王158文创园所有。
+        <br> 2.转盘指针指向奖项有争议时，以奖品凭证页结果为准。
+        <br> 3.抽奖后请前往个人中心查看奖品。
+        <br>
+    </div>
+    <div class="weui_dialog_alert" style="display: none;" id="alert">
+        <div class="weui_mask"></div>
+        <div class="weui_dialog">
+            <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
+            <div class="weui_dialog_bd">
+                
+            </div>  
+            <div class="weui_dialog_ft">
+                <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
+            </div>
+        </div>
+    </div>
+    <div id="dialogs">
+        <!--BEGIN dialog1-->
+        <div class="js_dialog" id="Dialog" style="display: none;">
+            <div class="weui-mask"></div>
+            <div class="weui-dialog">
+                <div class="weui-dialog__bd">
+                    您还不能参与活动哟！
+                </div>
+                <div class="weui-dialog__ft">
+                    <a href="javascript:;" id="click_quxiao" class="weui-dialog__btn weui-dialog__btn_default">再看看</a>
+                    <a href="javascript:;" id="click_queding" class="weui-dialog__btn weui-dialog__btn_primary" style="background-color: #04be02;color: white;">了解更多</a>
+                </div>
+            </div>
+        </div>
+        <!--END dialog1-->
+    </div>
+    <style></style>
+
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?77c20642466352e6ba841a43a92ddeb0";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
+    <script type="text/javascript" src="../../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>
+    <script type="text/javascript" src="../../util/js/publicAttr.js?v=b6306f1ad1"></script>
+    <script type="text/javascript" src="../../util/js/global.js?v=d8be1b550b"></script>
+    <script type="text/javascript" src="../../util/js/weChatId.js?v=f62293ead6"></script>
+     <script type="text/javascript" src="../../util/js/alert.js?v=ee7f9c3146"></script>
+     <script type="text/javascript" src="../../util/js/weui.min.js?v=6599ab400e"></script>
+    <script type="text/javascript" src="../js/test.js?v=0e12065be4"></script>
+</body>
+
+</html>

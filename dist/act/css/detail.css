@@ -1,0 +1,111 @@
+html,body{
+	overflow-x: hidden;
+}
+/* 顶部图片 */
+.topPicture img{   
+	width: 100%;
+	height: 400px;
+	/* 高度自动按照图片的比例 */
+	/* height: ; */
+	display: block;
+
+}
+/* 标题 */
+#title{
+	margin-bottom: 0.5rem;
+	font-size: 1.25rem;
+}
+/* 已报名 */
+#signed{
+	font-size: 0.9rem;
+}
+/* 时间，地址  */
+#time,#address,#price,#face_obj{
+	margin-top: 0.5rem;
+	padding-left: 1.8rem;
+}
+#time{
+	background:url("../resource/fonts/time.png" ) no-repeat 0px 5px;
+
+}
+#address{
+	background:url("../resource/fonts/address.png" ) no-repeat 0px 3px;
+}
+/* 价格 */
+#price{
+	background:url("../resource/fonts/price.png" ) no-repeat 0px 2px;
+}
+#face_obj{
+	background: url("../resource/fonts/obj.png") no-repeat 0px 3px;
+}
+/* 截止报名日期 */
+#endSign{
+	display: block;
+	margin-left: 2%;
+	color: #999999;
+}
+.border{
+	border-bottom: 0.6rem #f1f1f1 solid;
+}
+.content p img{
+	width: 100%!important;
+}
+/* 排版外边距 */
+.composing{
+	padding: 0 3% 3% 5%;
+}
+/* 内容最底部 底线*/
+.footest{
+	text-align: center;
+	width: 100%;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	background-color: #f1f1f1;
+	padding: 0% 0% 4% 0%;
+}
+.footest .line{
+	display: inline-block;
+	width:30%;
+	border-top: 1px solid #ccc;
+}
+.footest .txt{
+	font-size: 0.9rem;
+	color: #999999;
+	vertical-align: middle;
+}
+/* 占位 */
+.zhanwei{
+	height: 2.2rem;
+	width: 100%;
+}
+/* 页面底部 */
+.footBtn{
+	position: fixed;
+	bottom: 0;
+	/*background-color: rgba(241, 241, 241, 0.3);*/
+	/*padding: 3% 13% 3% 0%;*/
+	width: 90%;
+	/*height:2.2rem ;*/
+}
+.footBtn a.pure-button-primary{
+	background-color: #04BE02;
+	width:92%;
+	margin: 0 4%;
+	border-radius: 0.25rem;
+	font-size: 1.1rem;
+}
+@media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
+	.footest .line{
+	width:27%;
+	}
+}
+@media (device-height:732px) and (-webkit-min-device-pixel-ratio:2){
+	
+}
+@media (device-height:736px) and (-webkit-min-device-pixel-ratio:2){
+	.footest .line{
+	display: inline-block;
+	width:31%;
+	border-top: 1px solid #ccc;
+	}
+}

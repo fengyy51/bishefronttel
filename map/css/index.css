@@ -1,0 +1,29 @@
+html,body{
+	overflow-y: hidden;
+}
+.sousuolan .pure-form {
+	margin-bottom: 1.5%;
+	z-index: 100;
+}
+.sousuolan .pure-form input{
+	background: url('../resource/fonts/sousuo/select.png')no-repeat 8px center;
+	width: 65%;
+	float: left;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 8%;
+	padding-left: 45px;
+/* 	border-radius: 20px; */
+}
+
+.button-sousuo {
+	background-color: #04be02;
+	color: white;
+	/* height: 30px; */
+	border-radius: 7px;
+	margin-top: 5px;
+	/* margin-bottom: 5px; */
+	border-color: #FFFFFF;
+	margin-left: 2px;
+
+}

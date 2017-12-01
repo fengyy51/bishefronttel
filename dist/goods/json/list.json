@@ -1,0 +1,31 @@
+{
+		"data":[
+			{
+				"id": 1,
+				"name": "石",
+				"brandName": "dd",
+				"brandImgUrl": "../resource/img/11.png@@@../resource/img/11.png",
+				"productImgUrl": null,
+				"productImgUrls": "../resource/img/11.png@@@../resource/img/11.png",
+				"intro": "kkkkkk"
+			},
+			{
+				"id": 4,
+				"name": "石",
+				"brandName": "dd",
+				"brandImgUrl": "../resource/img/11.png",
+				"productImgUrl": null,
+				"productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/1eb9a839b07d4c509565af1d86ad3a7b---1.png@@@",
+				"intro": "kkkkkk"
+			},
+			{
+				"id": 100,
+				"name": "石",
+				"brandName": "dd",
+				"brandImgUrl": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/085adbb192d44bba818889d660a57e22---IMG_20170714_092821.jpg",
+				"productImgUrl": null,
+				"productImgUrls": "http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/1eb9a839b07d4c509565af1d86ad3a7b---1.png@@@",
+				"intro": "kkkkkk"
+			}
+		]
+}

@@ -1,0 +1,361 @@
+* {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	font-size: 14px;
+	font-family: "微软雅黑";
+}
+
+ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+.weui_dialog_bd{
+	text-align: center;
+}
+.title {
+	height: 45%;
+	line-height: 45px;
+	text-align: center;
+	background: #04BE02;
+	color: #fff;
+	font-size: 1.2rem;
+	overflow: hidden;
+}
+
+.content {
+	margin: 0 3% 20% 3%;
+}
+
+.c-title {
+	text-align: center;
+	font-size: 23px;
+	line-height: 40px;
+	color: #333;
+}
+
+.c-time {
+	color: #656565;
+	border-bottom: 1px solid #ddd;
+	font-size: 12px;
+}
+
+.c-pic {
+	width: 100%;
+	display: block;
+	margin: 15px 0;
+}
+
+.c-join {
+	margin-bottom: 1%;
+	margin-top: 1%;
+	font-size: 1rem;
+	color: #333;
+	margin-left: 3%;
+}
+
+.c-table {
+	border: 0px solid #04BE02;
+	border-bottom: 0;
+	border-radius: 0px;
+}
+
+.c-table p {
+	border-radius: 0px;
+	border-bottom: 3px solid #f1f1f1;
+	height: 55px;
+	line-height: 47px;
+	padding-left: 0px;
+	color: #666;
+}
+
+input[type=checkbox] {
+	visibility: hidden;
+}
+
+.equal {
+	display: table;
+	border-collapse: separate;
+	margin: 0px auto;
+}
+
+.row {
+	/*display: table-row;*/
+	font-size: 0.8rem;
+}
+
+.row div {
+	display: table-cell;
+	border: 3px solid #f1f1f1;
+	border-radius: 5px;
+}
+
+.row .product {
+	width: 50%;
+	/*height: 70%;*/
+}
+
+.text {
+	margin-top: 1%;
+	margin-left: 1%;
+	color: #666;
+	width: 100%;
+	word-break: break-all;
+    overflow:hidden;   
+    text-overflow:ellipsis;
+	/*display: -webkit-box; /** 对象作为伸缩盒子模型显示 **/*/
+/*    -webkit-box-orient: vertical; /** 设置或检索伸缩盒对象的子元素的排列方式 **/*/
+    -webkit-line-clamp: 1; /** 显示的行数 **/
+ }
+
+.num {
+	color: #666;
+	margin-top: 1%;
+	margin-left: 1%;
+	width: 22%;
+}
+
+.smalltext{
+	margin-top: 2%;
+	margin-top: 1%;
+	margin-left: 5%;
+	margin-bottom: 3%;
+	color: #04BE02;
+}
+
+.check {
+	margin-top: 0%;
+	float: right;
+	margin-right: 10%;
+	position: relative;
+}
+
+.check label {
+	cursor: pointer;
+	position: absolute;
+	width: 1.5rem;
+	height: 1.5rem;
+	top:1%;
+	bottom: 1%;
+	right:1%;
+	border: 1px solid #04BE02;
+}
+
+.check label:after {
+	opacity: 0.2;
+	content: '';
+	position: absolute;
+	width: .7rem;
+	height: .5rem;
+	background: transparent;
+	top: 25%;
+	left: 25%;
+	border: 3px solid #04BE02;
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.check input[type=checkbox]:checked+label:after {
+	opacity: 1;
+}
+
+.author {
+	height: 20%;
+	width: 60%;
+	margin-top: 1%;
+	margin-bottom: 1%;
+	margin-left: 1%;
+	color: #666;
+
+}
+
+.c-tablepic {
+	width: 100%;
+	/*height: 5.625rem;
+	float: left;*/
+	margin-top: 2%;
+	margin-right: 2%;
+	margin-left: 2%;
+	margin-bottom: 0%;
+}
+
+.c-tablepic-list {
+	margin-right: 1%;
+	width: 20%;
+	height: 80%;
+	float: left;
+	margin-top: 3%;
+	margin-left: 0%;
+}
+
+.c-select {
+	float: left;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+
+.c-introduce p {
+	text-indent: 24px;
+	color: #666;
+	font-size: 13px;
+	line-height: 20px;
+}
+
+.c-inline {
+	width: 20%;
+	height: 10px;
+	background: #cfcfcf;
+	float: left;
+	font-style: normal;
+	margin-top: 20px;
+}
+
+.c-table span {
+	float: left;
+	display: block;
+	font-size: 1rem;
+/*	padding-top: 15px;*/
+}
+
+.c-many {
+	margin-left: 10px;
+}
+
+.pick {}
+
+.c-button {
+	margin: 0 auto;
+	margin-bottom: 0%;
+	position: fixed;
+	bottom: 3%;
+	right: 5%;
+	border-radius: 7px;
+	height: 45px;
+	width: 90%;
+	color: #fff;
+	background: #04BE02;
+	text-align: center;
+	display: block;
+	margin-top: 15px;
+	line-height: 45px;
+	/*垂直居中*/
+	font-size: 18px;
+}
+
+.c-button1 {
+	margin: 0 auto;
+	margin-bottom: 0%;
+	position: fixed;
+	bottom: 3%;
+	right: 5%;
+	border-radius: 7px;
+	height: 45px;
+	width: 90%;
+	color: #fff;
+	background: #04BE02;
+	text-align: center;
+	display: block;
+	margin-top: 15px;
+	line-height: 45px;
+	/*垂直居中*/
+	font-size: 18px;
+}
+  /*.skillbar {
+	position:relative;
+	display:block;
+	margin-bottom:15px;
+	width:57%;
+	background:#eee;
+	height:35px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-webkit-transition:0.4s linear;
+	-moz-transition:0.4s linear;
+	-ms-transition:0.4s linear;
+	-o-transition:0.4s linear;
+	transition:0.4s linear;
+	-webkit-transition-property:width, background-color;
+	-moz-transition-property:width, background-color;
+	-ms-transition-property:width, background-color;
+	-o-transition-property:width, background-color;
+	transition-property:width, background-color;
+}
+
+.skillbar-title {
+	position:absolute;
+	top:0;
+	left:0;
+width:110px;
+	font-weight:bold;
+	font-size:13px;
+	color:#ffffff;
+	background:#6adcfa;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-title span {
+	display:block;
+	background:rgba(0, 0, 0, 0.1);
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+	height:35px;
+	width:0px;
+	background:#6adcfa;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+.skill-bar-percent {
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:11px;
+	height:35px;
+	line-height:35px;
+	color:#ffffff;
+	color:rgba(0, 0, 0, 0.4);
+}*/
+.skillbar-bar {
+    height: 13px;
+}
+
+.skillbar {
+    position: relative;
+    float: left;
+    width: 45%;
+    background: #eee;
+    height: 13px;
+    margin-top: 8%;
+}

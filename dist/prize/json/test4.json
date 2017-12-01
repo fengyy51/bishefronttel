@@ -1,0 +1,6 @@
+fun4({
+  "code": 200,
+  "data": {
+    "code": "aaabbb" //兑奖码
+  }
+})

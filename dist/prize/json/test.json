@@ -1,0 +1,6 @@
+fun({  
+  "code":200, 
+  "data":{
+  	"result":true
+  }
+})
