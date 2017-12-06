@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7ca2437-d0cb-4495-8f55-a6f06fd6a19f" name="Default" comment="修改图片上传逻辑，多个图片之间用&amp;连接">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/.idea/dist.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+    <list default="true" id="e7ca2437-d0cb-4495-8f55-a6f06fd6a19f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/goods/css/listWork.css" afterPath="$PROJECT_DIR$/dist/goods/css/listWork.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/goods/js/listWork.js" afterPath="$PROJECT_DIR$/dist/goods/js/listWork.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/goods/page/listWork.html" afterPath="$PROJECT_DIR$/dist/goods/page/listWork.html" />
     </list>
     <ignored path="fe-frontOfBinwang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -91,22 +84,24 @@
       <file leaf-file-name="listWork.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/goods/js/listWork.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="95" column="21" lean-forward="true" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+            <state relative-caret-position="151">
+              <caret line="108" column="99" lean-forward="false" selection-start-line="108" selection-start-column="99" selection-end-line="108" selection-end-column="99" />
               <folding>
                 <element signature="e#1171#1272#0" expanded="false" />
                 <element signature="e#1321#1413#0" expanded="false" />
                 <element signature="e#1458#1543#0" expanded="false" />
                 <element signature="e#1604#2071#0" expanded="false" />
-                <element signature="e#2169#3106#0" expanded="false" />
-                <element signature="e#4243#4343#0" expanded="false" />
-                <element signature="e#8646#8725#0" expanded="false" />
-                <element signature="e#8758#8897#0" expanded="false" />
-                <element signature="e#8941#9047#0" expanded="false" />
-                <element signature="e#9106#9176#0" expanded="false" />
-                <element signature="e#9214#9396#0" expanded="false" />
-                <element signature="e#9443#9520#0" expanded="false" />
-                <element signature="e#9568#9640#0" expanded="false" />
+                <element signature="e#2185#3122#0" expanded="false" />
+                <element signature="e#7298#7398#0" expanded="false" />
+                <element signature="e#7460#7903#0" expanded="false" />
+                <element signature="e#9457#9732#0" expanded="false" />
+                <element signature="e#9771#9850#0" expanded="false" />
+                <element signature="e#9883#10022#0" expanded="false" />
+                <element signature="e#10066#10172#0" expanded="false" />
+                <element signature="e#10231#10301#0" expanded="false" />
+                <element signature="e#10339#10521#0" expanded="false" />
+                <element signature="e#10568#10645#0" expanded="false" />
+                <element signature="e#10693#10765#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -156,7 +151,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>options</find>
       <find>urlDetailReg</find>
       <find>性别</find>
       <find>weui-check</find>
@@ -186,6 +180,7 @@
       <find>alert</find>
       <find>ajaxContact</find>
       <find>appID</find>
+      <find>init</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Biye\fe-frontOfBinwang\dist\collect</dir>
@@ -259,10 +254,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="107" />
-    <option name="y" value="87" />
+    <option name="x" value="157" />
+    <option name="y" value="179" />
     <option name="width" value="1455" />
-    <option name="height" value="888" />
+    <option name="height" value="837" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -365,7 +360,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.listWork.html">
+  <component name="RunManager" selected="JavaScript Debug.listWork.html (1)">
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -406,22 +401,22 @@
     <configuration name="listActivity.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fe-frontOfBinwang/dist/act/page/listActivity.html" />
     <configuration name="listActivity.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/fe-frontOfBinwang/dist/act/page/listActivity.html" />
     <configuration name="listSign.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fe-frontOfBinwang/dist/collect/page/listSign.html" />
+    <configuration name="listWork.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63344/fe-frontOfBinwang/dist/goods/page/listWork.html" />
     <configuration name="listWork.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/fe-frontOfBinwang/dist/goods/page/listWork.html" />
-    <configuration name="sign.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/fe-frontOfBinwang/dist/act/page/sign.html" />
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.sign.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.listSign.html (1)" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html (1)" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.listSign.html (1)" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html (1)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.listSign.html (1)" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.sign.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html (1)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html (1)" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.listSign.html (1)" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html" />
       </list>
     </recent_temporary>
   </component>
@@ -442,7 +437,7 @@
       <workItem from="1510047117985" duration="133603000" />
       <workItem from="1511963639231" duration="6995000" />
       <workItem from="1512023235071" duration="28197000" />
-      <workItem from="1512522647472" duration="292000" />
+      <workItem from="1512522647472" duration="4410000" />
     </task>
     <task id="LOCAL-00001" summary="修改多选表单提交逻辑">
       <created>1512007311150</created>
@@ -479,11 +474,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512130052574</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="增加获取投票设置">
+      <created>1512522962696</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1512522962696</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187331000" />
+    <option name="totallyTimeSpent" value="191449000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,14 +497,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="107" y="87" width="1455" height="888" extended-state="0" />
+    <frame x="157" y="179" width="1455" height="837" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15808046" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15808046" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1017341" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23796424" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10059172" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -566,7 +569,8 @@
     <MESSAGE value="修改多选表单提交逻辑" />
     <MESSAGE value="增加多选、下拉、单选逻辑，增加报名时活动规则，修改报名页面样式" />
     <MESSAGE value="修改图片上传逻辑，多个图片之间用&amp;连接" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改图片上传逻辑，多个图片之间用&amp;连接" />
+    <MESSAGE value="增加获取投票设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加获取投票设置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -763,6 +767,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4860">
           <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -770,6 +775,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="3" column="32" lean-forward="false" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -777,6 +783,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="4" column="14458" lean-forward="false" selection-start-line="4" selection-start-column="14441" selection-end-line="4" selection-end-column="14458" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -784,6 +791,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15780">
           <caret line="526" column="58" lean-forward="false" selection-start-line="526" selection-start-column="41" selection-end-line="526" selection-end-column="58" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -805,6 +813,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6357">
           <caret line="340" column="0" lean-forward="false" selection-start-line="340" selection-start-column="0" selection-end-line="340" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -840,6 +849,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="44" column="24" lean-forward="false" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -940,22 +950,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/goods/js/listWork.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="95" column="21" lean-forward="true" selection-start-line="95" selection-start-column="21" selection-end-line="95" selection-end-column="21" />
+        <state relative-caret-position="151">
+          <caret line="108" column="99" lean-forward="false" selection-start-line="108" selection-start-column="99" selection-end-line="108" selection-end-column="99" />
           <folding>
             <element signature="e#1171#1272#0" expanded="false" />
             <element signature="e#1321#1413#0" expanded="false" />
             <element signature="e#1458#1543#0" expanded="false" />
             <element signature="e#1604#2071#0" expanded="false" />
-            <element signature="e#2169#3106#0" expanded="false" />
-            <element signature="e#4243#4343#0" expanded="false" />
-            <element signature="e#8646#8725#0" expanded="false" />
-            <element signature="e#8758#8897#0" expanded="false" />
-            <element signature="e#8941#9047#0" expanded="false" />
-            <element signature="e#9106#9176#0" expanded="false" />
-            <element signature="e#9214#9396#0" expanded="false" />
-            <element signature="e#9443#9520#0" expanded="false" />
-            <element signature="e#9568#9640#0" expanded="false" />
+            <element signature="e#2185#3122#0" expanded="false" />
+            <element signature="e#7298#7398#0" expanded="false" />
+            <element signature="e#7460#7903#0" expanded="false" />
+            <element signature="e#9457#9732#0" expanded="false" />
+            <element signature="e#9771#9850#0" expanded="false" />
+            <element signature="e#9883#10022#0" expanded="false" />
+            <element signature="e#10066#10172#0" expanded="false" />
+            <element signature="e#10231#10301#0" expanded="false" />
+            <element signature="e#10339#10521#0" expanded="false" />
+            <element signature="e#10568#10645#0" expanded="false" />
+            <element signature="e#10693#10765#0" expanded="false" />
           </folding>
         </state>
       </provider>
