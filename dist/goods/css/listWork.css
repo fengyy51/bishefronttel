@@ -20,7 +20,7 @@ html,body{
 	background: #04BE02;
 	color:white;
 	width: 90%;
-	height: 1.4rem;
+	/*height: 1.4rem;*/
 	border: 1px solid #f1f1f1 ;
 	padding-top: 2%;
 	font-size: 25px;
@@ -49,8 +49,10 @@ html,body{
 	-webkit-appearance: none;
 	font-size: 0.8rem;
 }
-
-#button1{
+.weui-btn{
+	display: inline-block!important;
+}
+#button1,#button2{
 	border-radius: 0.25rem;
 	/*width:16%;*/
 	outline: none;
@@ -137,7 +139,7 @@ div.item .content .intro{
 }
 
 .intro1{
-	position:relative;left:0px;top:0px
+	position:relative;left:0px;top:0px;
 	display: block;
 	
 	overflow: hidden;

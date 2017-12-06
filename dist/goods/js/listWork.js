@@ -1,16 +1,22 @@
 // require.ensure([],function(require){
     // var alert=require('../../util/js/alert.js');
     $(document).ready(function() {
-        // var alert=require('../../util/js/alert.js');
-        // document.write(alert.alertNew("投票已截止"));
+        var urlVoteParam="/vote/get-vote-param";
+        var urlProductInfo="/vote/get-vote-product-info";
         $('html').width(window.screen.width);
         $('html').css("overflow-x","hidden");
-        //var urlListActivity = "/act/list";
         var countff=getCookie("countff");//投票次数
         var countprize=getCookie("countprize");//抽奖次数
         var shareflagvote=getCookie("shareflagvote");//投票分享次数
         var shareflagprize=getCookie("shareflagprize");//抽奖分享次数
-    //  setCookie_timedetail("ss",false,'24:00:00');
+        var actName,begin,end,proNum,voteNum,shareNum,voteDecoration,proApproved;//抽奖配置
+        var $searchBar = $('#searchBar'),
+            $searchResult = $('#searchResult'),
+            $searchText = $('#searchText'),
+            $searchInput = $('#searchInput'),
+            $searchClear = $('#searchClear'),
+            $searchCancel = $('#searchCancel');
+        var actId=getQueryString("id");
         if(shareflagprize=="null"||shareflagprize==null){
             var shareflagprize=1;
             setCookie_29("shareflagprize",shareflagprize);
@@ -27,8 +33,7 @@
             var countff = 1;
             setCookie_29("countff",countff);
         }
-       
-
+        //投票规则
         $('#fixedlogo').on("click",function(){
             $('#dialog .weui_dialog_bd').html('1.输入序号，点击“搜索”查找作品，点击作品图片可查看作品详细介绍；<br>'+' 2.点击“投票”可进入投票页面；<br>'+
             '3.下拉选择5件心仪作品，确认后点击“投票并查看结果”；<br>'+'4.投票完毕，可参与“宾王158幸运大转盘”活动，丰厚奖品等着您。<br>');
@@ -40,69 +45,82 @@
                 $dialog.hide();
             });
         })
-        ajaxContact();
-        var $searchBar = $('#searchBar'),
-            $searchResult = $('#searchResult'),
-            $searchText = $('#searchText'),
-            $searchInput = $('#searchInput'),
-            $searchClear = $('#searchClear'),
-            $searchCancel = $('#searchCancel');
 
-        function hideSearchResult() {
-            $searchResult.hide();
-            $searchInput.val('');
-        }
+        voteParamContact();
+        productInfoContact();
 
-        function cancelSearch() {
-            hideSearchResult();
-            $searchBar.removeClass('weui-search-bar_focusing');
-            $searchText.show();
-        }
-
-        $searchText.on('click', function() {
-            $searchBar.addClass('weui-search-bar_focusing');
-            $searchInput.focus();
-        });
-        $searchInput
-            .on('blur', function() {
-                if(!this.value.length) cancelSearch();
+        function voteParamContact() {
+            $.ajax({
+                url:urlServer+urlVoteParam,
+                data:{
+                    "actId":actId
+                },
+                success:function (data) {
+                    var code=data.code;
+                    if(code==200){
+                        actName=data.data.actName;
+                        begin=data.data.begin;
+                        end=data.data.end;
+                        proNum=data.data.proNum;
+                        voteNum=data.data.voteNum;
+                        shareNum=data.data.shareNum;
+                        voteDecoration=data.data.voteDecoration,
+                        proApproved=data.data.proApproved;
+                        $('#title').html(actName);
+                    }
+                },
+                error:function (error) {
+                    console.log(error);
+                    weui.alert("获取投票设置失败");
+                }
             })
-            .on('input', function() {
-                if(this.value.length) {
-                    $searchResult.show();
-                } else {
-                    $searchResult.hide();
+        }
+        function productInfoContact() {
+            $.ajax({
+                url: urlServer+urlProductInfo,
+                data:{
+                    "actId":actId
+                },
+                success: function(data) {
+                    var list = data.data;
+                    // console.log(data);
+                    for(var i=0;i<data.length;i++){
+                        var regItemlist=data[i].productInfo.split(";");
+                        for(var j=0;j<regItemlist.length;j++){
+                            var title=regItemlist[j].split("?")[0];
+                            var val=regItemlist[j].split("?")[1];
+                            console.log(title);
+                            console.log(val);
+                        }
+                        // console.log(regItem);
+                    }
+                    // makeList(list);
+                },
+                error: function(error) {
+                    alertNew('获取作品列表出错');
+                    alertShow();
+                    console.log(error);
                 }
             });
-        $searchClear.on('click', function() {
-            hideSearchResult();
-            $searchInput.focus();
-        });
-        $searchCancel.on('click', function() {
-            cancelSearch();
-            $searchInput.blur();
-        });
+        }
+
         $(".body").delegate(".item","click",function() {
             window.location.href = "../page/dow.html?id=" + $(this).find('.no1').text();
         });
+        //点击投票
         $("#button2").on("click",function() {
-            // alertNew("投票已截止");
-            // alertShow();
             window.location.href = "../../vote/list.html";
             var countff;
             countff=getCookie("countff");
             if (countff==0){
-                alertNew("您已投票");
-                alertShow();
+                weui.alert("您已投票");
                 setTimeout(function(){
                     window.location.href = "../../vote/list.html";
                 },1000);
-                
             }
             else{
                 window.location.href = "../../vote/index.html";
             }
-           
         });
        
         $("#button1").on("click",function() {
@@ -156,23 +174,7 @@
             }
         }
 
-        function ajaxContact() {
-            $.ajax({
-                url: urlServer+"/vote/get-vote-product-info",
-                type: "GET",
-                // dataType: "json",
-                success: function(data) {
-                    var list = data.data;
-    //              console.log(data);
-                    makeList(list);
-                },
-                error: function(error) {
-                    alertNew('获取作品列表出错');
-                    alertShow();
-                    console.log(error);
-                }
-            });
-        }
+
         //一行
         function makeList(list) {
             var strHtml="";
@@ -204,8 +206,42 @@
             $('.tupian img').height(wwidth*0.4*0.75);
             $('div.item .content').height(wwidth*0.4*0.75);
         }
+        //搜索功能实现开始
+        function hideSearchResult() {
+            $searchResult.hide();
+            $searchInput.val('');
+        }
+        function cancelSearch() {
+            hideSearchResult();
+            $searchBar.removeClass('weui-search-bar_focusing');
+            $searchText.show();
+        }
+        $searchText.on('click', function() {
+            $searchBar.addClass('weui-search-bar_focusing');
+            $searchInput.focus();
+        });
+        $searchInput
+            .on('blur', function() {
+                if(!this.value.length) cancelSearch();
+            })
+            .on('input', function() {
+                if(this.value.length) {
+                    $searchResult.show();
+                } else {
+                    $searchResult.hide();
+                }
+            });
+        $searchClear.on('click', function() {
+            hideSearchResult();
+            $searchInput.focus();
+        });
+        $searchCancel.on('click', function() {
+            cancelSearch();
+            $searchInput.blur();
+        });
+        //搜索功能实现结束
     })
-// },'alert');
+
 
 
 
