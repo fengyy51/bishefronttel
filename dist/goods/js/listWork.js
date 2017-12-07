@@ -17,19 +17,19 @@
         var actId=getQueryString("id");
         //初始化投票抽奖次数
         if(shareflagprize=="null"||shareflagprize==null){
-            var shareflagprize=1;
+            var shareflagprize=0;
             setCookie_29("shareflagprize",shareflagprize);
         }
         if(shareflagvote=="null"||shareflagvote==null){
-            var shareflagvote=1;
+            var shareflagvote=0;
             setCookie_29("shareflagvote",shareflagvote);
         }
         if(countprize=="null"||countprize==null){
-            var countprize=1;
+            var countprize=0;
             setCookie_29("countprize",countprize);
         }
         if (countff=="null"||countff==null) {
-            var countff = 1;
+            var countff = 0;
             setCookie_29("countff",countff);
         }
         //投票规则
@@ -193,14 +193,14 @@
             }else if(now>Date.parse(begin)&&now>Date.parse(end)){
                 weui.alert("投票已结束");
             }else if(now>Date.parse(begin)&&now<Date.parse(end)){
-                if (countff==voteNum){
+                if (countff>=voteNum){
                     weui.alert("投票次数已达上限");
                     setTimeout(function(){
-                        // window.location.href = "../../vote/list.html";
+                        window.location.href = "../../vote/list.html";
                     },1000);
                 }
                 else{
-                    // window.location.href = "../../vote/index.html";
+                    window.location.href = "../../vote/index.html?actId="+actId;
                 }
             }
 

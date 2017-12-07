@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <title>寻找造物主，投票赢大奖</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
-    <link href="../util/css/alert.css?v=f173e8cecd" type="text/css" rel="stylesheet" />
+    <link  rel="stylesheet" type="text/css" href="../../util/css/weui.min.css?v=4035192f39.css?v=b89e75b4b4">
+    <!--<link href="../util/css/alert.css?v=f173e8cecd" type="text/css" rel="stylesheet" />-->
     <link href="css/style.css?v=0d76b8a2a9" type="text/css" rel="stylesheet" />
    
 </head>
@@ -18,18 +19,18 @@
             <div id="products" class="equal"></div>
         </form>
     </div>
-    <div class="weui_dialog_alert" style="display: none;" id="alert">
-        <div class="weui_mask"></div>
-        <div class="weui_dialog">
-            <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
-            <div class="weui_dialog_bd">
-                
-            </div>  
-            <div class="weui_dialog_ft">
-                <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
-            </div>
-        </div>
-    </div>
+    <!--<div class="weui_dialog_alert" style="display: none;" id="alert">-->
+        <!--<div class="weui_mask"></div>-->
+        <!--<div class="weui_dialog">-->
+            <!--<div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>-->
+            <!--<div class="weui_dialog_bd">-->
+                <!---->
+            <!--</div>  -->
+            <!--<div class="weui_dialog_ft">-->
+                <!--<a href="javascript:;" class="weui_btn_dialog primary">确定</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <button id="submit" class="c-button">投票并查看结果</button>
      <script>
     var _hmt = _hmt || [];
@@ -44,12 +45,15 @@
     <!-- <script type="text/javascript" src="../util/js/zepto.js?v=7645315506"></script> -->
     <script type="text/javascript" src="../util/js/publicAttr.js?v=b6306f1ad1"></script>
     <script type="text/javascript" src="../util/js/global.js?v=d8be1b550b"></script>
-    <script type="text/javascript" src="../util/js/alert.js?v=ee7f9c3146"></script>
+    <script type="text/javascript" src="../../util/js/weui.js?v=022aec7711"></script>
+    <!--<script type="text/javascript" src="../util/js/alert.js?v=ee7f9c3146"></script>-->
     <script type="text/javascript" src="../util/js/weChatId.js?v=f62293ead6"></script>
     <script type="text/javascript">
     $(function() {
         // 授权
         var openId='yy';
+        var urlProductInfo="/vote/get-vote-product-info";
+        var actId=getQueryString("actId");
         var options={
             url:urlYuming+"/vote/index",
             urlServerauth:urlServer+"/user/do-auth",
@@ -59,30 +63,29 @@
             openId=id; 
             // console.log(id);
         }
-        getWeChatId(options,callbackA);    
+//        getWeChatId(options,callbackA);
         var countff = getCookie("countff");
         if (countff == null || countff == "null") {
-            countff = 1;
+            countff = 0;
             setCookie_timedetail("countff", countff, '24:00:00');
         }
-        if (countff == 0) {
-            $('#submit').attr("disabled", true);
-            $('#submit').html("已投票");
-        }
-        alertNew("您可投票" + countff + "次");
-        alertShow();
+//        if (countff == 0) {
+//            $('#submit').attr("disabled", true);
+//            $('#submit').html("已投票");
+//        }
+        var votecount=voteNum-countff;
+        weui.alert("您可投票" + votecount + "次");
         $.ajax({
             //url:"json/index.json",
-            url: urlServer + "/vote/get-vote-product-info",
-            type: "GET",
+            url: urlServer + urlProductInfo,
             data: {
-                "collectId": 1
+                "actId":actId,
             },
             crossDomain: true,
             success: function(data) {
                 var str = "";
                 //len = data.length;
-                var num = Math.random() * 50; //随机数 改为50
+                var num = Math.random() * proApproved; //随机数 改为50
                 num = parseInt(num);
                 if (num % 2 == 0) num++;
                 //随机产生
@@ -94,7 +97,7 @@
                     console.log("暂无数据");
                 } else {
                     while (true) {
-                        i = (i + 1) % 50; //随机数 
+                        i = (i + 1) % proApproved; //随机数
                         str += '<div class="row"><div class="product"><p><img class="c-tablepic" src="' +
                             data.data[i].productFirst +
                             '"></p><p class="smalltext">编号:<span class="num">' +
@@ -156,7 +159,7 @@
             var num = 0;
             var str = "";
             var curTime=(new Date()).valueOf();
-            for (var i = 0; i <= 50; i++) {
+            for (var i = 0; i <= proApproved; i++) {
                 if ($("#product" + i).attr("checked") != null) {
                     num++;
                     str += $("#product" + i).val() + ",";
@@ -183,9 +186,9 @@
                         if(code==200){
                             var result = data.data.result;
                         if (result == true) {
-                            if (countff > 0) {
-                                --countff;
-                            }
+//                            if (countff <) {
+                                countff++;
+//                            }
                             setCookie_timedetail("countff", countff, '24:00:00');
                             $('#submit').attr("disabled", true);
                             $('#submit').html("已投票");
