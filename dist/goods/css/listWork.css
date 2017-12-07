@@ -81,6 +81,8 @@ a:hover { color: #E86A6A; text-decoration: none}
 	width: 100%;
 }
 div.item{
+	/*width: 7.5rem;*/
+    /*float: left;*/
 	width: 100%;
 	/*//height: 5.625rem;*/
 	padding: 2% ;
@@ -88,23 +90,32 @@ div.item{
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 div.item .tupian{
-	/*//width:7.5rem;*/
+	width:7.5rem;
 	float: left;
 	display: block;
 	/*//height: 5.625rem;*/
-	margin: 0 2% 0 0;
+	/*margin: 0 2% 0 0;*/
 }
 div.item .tupian img{
-	/*//width:7.5rem;*/
+	//width:7.5rem;
 	/*//height: 5.625rem;*/
 	float: left;
-	display: block;
+	/*display: block;*/
 }
-div.item .content{
+div.content{
 	width:58%;
 	float:right;
+	/*font-size: 0.6rem;*/
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 	
 	/*//height: 5.625rem;*/
+}
+div.item div.content div{
+	margin-bottom:1%;
+	padding: 0;
+	display: block;
 }
 div.item .content .no{
 	font-size: 0.8rem;

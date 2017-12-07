@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7ca2437-d0cb-4495-8f55-a6f06fd6a19f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/goods/css/listWork.css" afterPath="$PROJECT_DIR$/dist/goods/css/listWork.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/goods/js/listWork.js" afterPath="$PROJECT_DIR$/dist/goods/js/listWork.js" />
     </list>
     <ignored path="fe-frontOfBinwang.iws" />
@@ -74,7 +75,7 @@
       <file leaf-file-name="listActivity.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/act/page/listActivity.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1170">
+            <state relative-caret-position="258">
               <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
               <folding />
             </state>
@@ -84,24 +85,24 @@
       <file leaf-file-name="listWork.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/goods/js/listWork.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="151">
-              <caret line="108" column="99" lean-forward="false" selection-start-line="108" selection-start-column="99" selection-end-line="108" selection-end-column="99" />
+            <state relative-caret-position="390">
+              <caret line="114" column="197" lean-forward="false" selection-start-line="114" selection-start-column="197" selection-end-line="114" selection-end-column="197" />
               <folding>
-                <element signature="e#1171#1272#0" expanded="false" />
-                <element signature="e#1321#1413#0" expanded="false" />
-                <element signature="e#1458#1543#0" expanded="false" />
-                <element signature="e#1604#2071#0" expanded="false" />
-                <element signature="e#2185#3122#0" expanded="false" />
-                <element signature="e#7298#7398#0" expanded="false" />
-                <element signature="e#7460#7903#0" expanded="false" />
-                <element signature="e#9457#9732#0" expanded="false" />
-                <element signature="e#9771#9850#0" expanded="false" />
-                <element signature="e#9883#10022#0" expanded="false" />
-                <element signature="e#10066#10172#0" expanded="false" />
-                <element signature="e#10231#10301#0" expanded="false" />
-                <element signature="e#10339#10521#0" expanded="false" />
-                <element signature="e#10568#10645#0" expanded="false" />
-                <element signature="e#10693#10765#0" expanded="false" />
+                <element signature="e#1079#1180#0" expanded="false" />
+                <element signature="e#1229#1321#0" expanded="false" />
+                <element signature="e#1366#1451#0" expanded="false" />
+                <element signature="e#1512#1979#0" expanded="false" />
+                <element signature="e#2096#3033#0" expanded="false" />
+                <element signature="e#7672#7772#0" expanded="false" />
+                <element signature="e#7834#8277#0" expanded="false" />
+                <element signature="e#10169#10444#0" expanded="false" />
+                <element signature="e#10483#10562#0" expanded="false" />
+                <element signature="e#10595#10734#0" expanded="false" />
+                <element signature="e#10778#10884#0" expanded="false" />
+                <element signature="e#10943#11013#0" expanded="false" />
+                <element signature="e#11051#11233#0" expanded="false" />
+                <element signature="e#11280#11357#0" expanded="false" />
+                <element signature="e#11405#11477#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -110,8 +111,8 @@
       <file leaf-file-name="listWork.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/goods/css/listWork.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4230">
-              <caret line="141" column="39" lean-forward="false" selection-start-line="141" selection-start-column="39" selection-end-line="141" selection-end-column="39" />
+            <state relative-caret-position="408">
+              <caret line="122" column="1" lean-forward="true" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -254,8 +255,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="157" />
-    <option name="y" value="179" />
+    <option name="x" value="80" />
+    <option name="y" value="295" />
     <option name="width" value="1455" />
     <option name="height" value="837" />
   </component>
@@ -437,7 +438,7 @@
       <workItem from="1510047117985" duration="133603000" />
       <workItem from="1511963639231" duration="6995000" />
       <workItem from="1512023235071" duration="28197000" />
-      <workItem from="1512522647472" duration="4410000" />
+      <workItem from="1512522647472" duration="10781000" />
     </task>
     <task id="LOCAL-00001" summary="修改多选表单提交逻辑">
       <created>1512007311150</created>
@@ -481,11 +482,18 @@
       <option name="project" value="LOCAL" />
       <updated>1512522962696</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="展示投票产品，需要下一步修改样式，图片未展示出来">
+      <created>1512552871011</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1512552871011</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="191449000" />
+    <option name="totallyTimeSpent" value="197820000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -497,11 +505,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="157" y="179" width="1455" height="837" extended-state="0" />
-    <editor active="true" />
+    <frame x="80" y="295" width="1455" height="837" extended-state="0" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15808046" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15808046" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1017341" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -570,7 +577,8 @@
     <MESSAGE value="增加多选、下拉、单选逻辑，增加报名时活动规则，修改报名页面样式" />
     <MESSAGE value="修改图片上传逻辑，多个图片之间用&amp;连接" />
     <MESSAGE value="增加获取投票设置" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加获取投票设置" />
+    <MESSAGE value="展示投票产品，需要下一步修改样式，图片未展示出来" />
+    <option name="LAST_COMMIT_MESSAGE" value="展示投票产品，需要下一步修改样式，图片未展示出来" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -760,6 +768,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
           <caret line="55" column="17" lean-forward="false" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -835,6 +844,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="86" column="13" lean-forward="false" selection-start-line="86" selection-start-column="13" selection-end-line="86" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -890,14 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/act/page/listActivity.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1170">
-          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/act/page/detail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1290">
@@ -940,34 +942,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/dist/act/page/listActivity.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="39" column="4" lean-forward="false" selection-start-line="39" selection-start-column="4" selection-end-line="39" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dist/goods/css/listWork.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4230">
-          <caret line="141" column="39" lean-forward="false" selection-start-line="141" selection-start-column="39" selection-end-line="141" selection-end-column="39" />
+        <state relative-caret-position="408">
+          <caret line="122" column="1" lean-forward="true" selection-start-line="122" selection-start-column="1" selection-end-line="122" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/goods/js/listWork.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="151">
-          <caret line="108" column="99" lean-forward="false" selection-start-line="108" selection-start-column="99" selection-end-line="108" selection-end-column="99" />
+        <state relative-caret-position="390">
+          <caret line="114" column="197" lean-forward="false" selection-start-line="114" selection-start-column="197" selection-end-line="114" selection-end-column="197" />
           <folding>
-            <element signature="e#1171#1272#0" expanded="false" />
-            <element signature="e#1321#1413#0" expanded="false" />
-            <element signature="e#1458#1543#0" expanded="false" />
-            <element signature="e#1604#2071#0" expanded="false" />
-            <element signature="e#2185#3122#0" expanded="false" />
-            <element signature="e#7298#7398#0" expanded="false" />
-            <element signature="e#7460#7903#0" expanded="false" />
-            <element signature="e#9457#9732#0" expanded="false" />
-            <element signature="e#9771#9850#0" expanded="false" />
-            <element signature="e#9883#10022#0" expanded="false" />
-            <element signature="e#10066#10172#0" expanded="false" />
-            <element signature="e#10231#10301#0" expanded="false" />
-            <element signature="e#10339#10521#0" expanded="false" />
-            <element signature="e#10568#10645#0" expanded="false" />
-            <element signature="e#10693#10765#0" expanded="false" />
+            <element signature="e#1079#1180#0" expanded="false" />
+            <element signature="e#1229#1321#0" expanded="false" />
+            <element signature="e#1366#1451#0" expanded="false" />
+            <element signature="e#1512#1979#0" expanded="false" />
+            <element signature="e#2096#3033#0" expanded="false" />
+            <element signature="e#7672#7772#0" expanded="false" />
+            <element signature="e#7834#8277#0" expanded="false" />
+            <element signature="e#10169#10444#0" expanded="false" />
+            <element signature="e#10483#10562#0" expanded="false" />
+            <element signature="e#10595#10734#0" expanded="false" />
+            <element signature="e#10778#10884#0" expanded="false" />
+            <element signature="e#10943#11013#0" expanded="false" />
+            <element signature="e#11051#11233#0" expanded="false" />
+            <element signature="e#11280#11357#0" expanded="false" />
+            <element signature="e#11405#11477#0" expanded="false" />
           </folding>
         </state>
       </provider>
