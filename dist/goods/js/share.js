@@ -48,7 +48,7 @@ $(function(){
                     imgUrl: 'http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/1.jpg', // 分享图标
                     success: function () {
                         // 用户确认分享后执行的回调函数
-                        alert('分享成功');
+                        weui.alert('分享成功');
                         var prizeflag=getCookie("prizeflag");
                         var shareflagvote=getCookie("shareflagvote");
                         var shareflagprize=getCookie("shareflagprize");
@@ -58,7 +58,7 @@ $(function(){
                             countprize++;
                             shareflagprize++;
                         }
-                        if(shareflagvote<3&&countff<3){
+                        if(shareflagvote<3&&countff<voteNum){
                             countff++;
                             shareflagvote++;
                         } 

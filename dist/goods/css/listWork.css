@@ -113,6 +113,7 @@ div.content{
 	/*//height: 5.625rem;*/
 }
 div.item div.content div{
+	margin-top: 1%;
 	margin-bottom:1%;
 	padding: 0;
 	display: block;

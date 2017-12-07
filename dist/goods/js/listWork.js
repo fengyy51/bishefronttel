@@ -7,7 +7,7 @@
         var countprize=getCookie("countprize");//抽奖次数
         var shareflagvote=getCookie("shareflagvote");//投票分享次数
         var shareflagprize=getCookie("shareflagprize");//抽奖分享次数
-        var actName,begin,end,proNum,voteNum,shareNum,voteDecoration,proApproved;//抽奖配置
+
         var $searchBar = $('#searchBar'),
             $searchResult = $('#searchResult'),
             $searchText = $('#searchText'),
@@ -15,6 +15,7 @@
             $searchClear = $('#searchClear'),
             $searchCancel = $('#searchCancel');
         var actId=getQueryString("id");
+        //初始化投票抽奖次数
         if(shareflagprize=="null"||shareflagprize==null){
             var shareflagprize=1;
             setCookie_29("shareflagprize",shareflagprize);
@@ -32,17 +33,24 @@
             setCookie_29("countff",countff);
         }
         //投票规则
-        $('#fixedlogo').on("click",function(){
-            $('#dialog .weui_dialog_bd').html('1.输入序号，点击“搜索”查找作品，点击作品图片可查看作品详细介绍；<br>'+' 2.点击“投票”可进入投票页面；<br>'+
-            '3.下拉选择5件心仪作品，确认后点击“投票并查看结果”；<br>'+'4.投票完毕，可参与“宾王158幸运大转盘”活动，丰厚奖品等着您。<br>');
-
-            // +'注：转发此页面至朋友圈可增加1次抽奖机会，每人每天限抽3次。','“寻找造物主”优秀作品评选流程');
-            var $dialog=$('#dialog');
-            $dialog.show();
-            $dialog.find('.weui_btn_dialog').on('click', function () {
-                $dialog.hide();
+        document.querySelector('#fixedlogo').addEventListener('click', function () {
+            weui.alert(voteDecoration, function () {
+                console.log('ok')
+            }, {
+                title: actName
             });
-        })
+        });
+        // $('#fixedlogo').on("click",function(){
+        //     $('#dialog .weui_dialog_bd').html('1.输入序号，点击“搜索”查找作品，点击作品图片可查看作品详细介绍；<br>'+' 2.点击“投票”可进入投票页面；<br>'+
+        //     '3.下拉选择5件心仪作品，确认后点击“投票并查看结果”；<br>'+'4.投票完毕，可参与“宾王158幸运大转盘”活动，丰厚奖品等着您。<br>');
+        //
+        //     // +'注：转发此页面至朋友圈可增加1次抽奖机会，每人每天限抽3次。','“寻找造物主”优秀作品评选流程');
+        //     var $dialog=$('#dialog');
+        //     $dialog.show();
+        //     $dialog.find('.weui_btn_dialog').on('click', function () {
+        //         $dialog.hide();
+        //     });
+        // })
 
         voteParamContact();
         productInfoContact();
@@ -63,9 +71,11 @@
                         proNum=data.data.proNum;
                         voteNum=data.data.voteNum;
                         shareNum=data.data.shareNum;
+                        voteMaxNum=data.data.voteMaxNum;
                         voteDecoration=data.data.voteDecoration,
                         proApproved=data.data.proApproved;
                         $('#title').html(actName);
+
                     }
                 },
                 error:function (error) {
@@ -103,7 +113,7 @@
                     if(i<6){
                         if(val.indexOf('http:')>=0){
                             var imgFirst=val.split("&")[0];
-                            strHtm3+='<div class="tupian"> <img src="'+imgFirst+'"></div><div class="content"><div id="id"><b>编号</b>:<span class="content-span">'+list[i].id+'</div>';
+                            strHtm3+='<div class="tupian"> <img src="'+imgFirst+'"></div><div class="content"><div id='+list[i].id+'><b>编号</b>:<span class="content-span id">'+list[i].id+'</div>';
                         }
                          if(val.indexOf('http:')<0){
                             strHtm3+='<div id="'+title+'"><b>'+title+'</b>:'+'<span class="content-span">'+val+'</span></div>';
@@ -112,7 +122,7 @@
                     else{
                         if(val.indexOf('http:')>=0){
                             var imgFirst=val.split("&")[0];
-                            strHtm3+='<div class="tupian"> <img src="" data-original='+imgFirst+'></div><div class="content"><div id="id"><b>编号</b>:<span class="content-span">'+list[i].id+'</div>';
+                            strHtm3+='<div class="tupian"> <img src="" data-original='+imgFirst+'></div><div class="content"><div id='+list[i].id+'><b>编号</b>:<span class="content-span id">'+list[i].id+'</div>';
                         }
                         if(val.indexOf('http:')<0){
                             strHtm3+='<div id="'+title+'"><b>'+title+'</b>:'+'<span class="content-span">'+val+'</span></div>';
@@ -132,13 +142,14 @@
                 $('div.item .tupian').height(wwidth*0.4*0.75);
                 $('.tupian img').width(wwidth*0.4);
                 $('.tupian img').height(wwidth*0.4*0.75);
+                //动态修改content文字大小，行高
                 $('div.item .content').height(wwidth*0.4*0.75);
-                console.log(j);
-                console.log($('div.item .content').height());
-                var size=parseInt($('div.item .content').height()/(j+1))+'px';
-                console.log(size);
-                $('div.item .content div').css('line-height',size);
-                $('div.item .content div').css('font-size',size-5);
+                // console.log(j);
+                // console.log($('div.item .content').height());
+                var size=parseInt($('div.item .content').height()/(j+1));
+                // console.log(size);
+                $('div.item .content div').css('line-height',size+'px');
+                $('div.item .content div').css('font-size',(size-5)+'px');
                 // console.log(regItem);
             }
             //
@@ -160,22 +171,39 @@
 
         }
         $(".body").delegate(".item","click",function() {
-            window.location.href = "../page/dow.html?id=" + $(this).find('.no1').text();
+            var now=Date.now();
+            console.log(now);
+            console.log(Date.parse(begin));
+            console.log(end);
+            window.location.href = "../page/dow.html?id=" + $(this).find('.id').text()+"&actId="+actId;
         });
-        //点击投票
+        var now=Date.now();
+
+        //点击投票 进行时间、次数判断
         $("#button2").on("click",function() {
-            window.location.href = "../../vote/list.html";
+            // window.location.href = "../../vote/list.html";
             var countff;
             countff=getCookie("countff");
-            if (countff==0){
-                weui.alert("您已投票");
-                setTimeout(function(){
-                    window.location.href = "../../vote/list.html";
-                },1000);
+            var now=Date.now();
+            // console.log(now);
+            // console.log(Date.parse(begin));
+            // console.log(Date.parse(end));
+            if(now<Date.parse(begin)){
+                weui.alert("投票尚未开始");
+            }else if(now>Date.parse(begin)&&now>Date.parse(end)){
+                weui.alert("投票已结束");
+            }else if(now>Date.parse(begin)&&now<Date.parse(end)){
+                if (countff==voteNum){
+                    weui.alert("投票次数已达上限");
+                    setTimeout(function(){
+                        // window.location.href = "../../vote/list.html";
+                    },1000);
+                }
+                else{
+                    // window.location.href = "../../vote/index.html";
+                }
             }
-            else{
-                window.location.href = "../../vote/index.html";
-            }
+
         });
         function  imginit() {
             var images = document.images;

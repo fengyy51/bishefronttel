@@ -46,56 +46,68 @@ div .swiper-slide img{
     height: 20rem;
 }
 div.content{
+
     width: 96%;
     margin: 2% 2%;
     border-top: 0.2rem solid #FAF1F1;
 
 }
-div.content .id{
+div.content div b{
     font-size: 1.1rem;
     color:#04BE02;
     padding:1% 0;
     border-bottom: 0.2rem solid #FAF1F1;
 }
-div.content .brandName{
-    font-size: 1.1rem;
-    color:#04BE02;
-    padding:1% 0;
-    border-bottom: 0.2rem solid #FAF1F1;
-}
-div.content .name{
-    font-size: 1.1rem;
-    color:#04BE02;
-    padding:1% 0;
-    border-bottom: 0.2rem solid #FAF1F1;
-}
-div.content .intro{
-    font-size: 1.1rem;
-    color:#04BE02;
-    padding:1% 0;
-    border-bottom: 0.2rem solid #FAF1F1;
-}
-.no1{
-    font-size: 1rem;
-    margin-left: 5%;
-    color: #777;
-    display:inline-block;
-}
-.name1{
+div.content div span{
     font-size: 1rem;
     margin-left: 5%;
     color: #777;
 }
-.pname1{
-    font-size: 1rem;
-    margin-left: 5%;
-    color: #777;
-}
-.intro1{
-    font-size: 1rem;
-    margin-left: 5%;
-    color: #777;
-}
+/*div.content .id{*/
+    /*font-size: 1.1rem;*/
+    /*color:#04BE02;*/
+    /*padding:1% 0;*/
+    /*border-bottom: 0.2rem solid #FAF1F1;*/
+/*}*/
+/*div.content .brandName{*/
+    /*font-size: 1.1rem;*/
+    /*color:#04BE02;*/
+    /*padding:1% 0;*/
+    /*border-bottom: 0.2rem solid #FAF1F1;*/
+/*}*/
+/*div.content .name{*/
+    /*font-size: 1.1rem;*/
+    /*color:#04BE02;*/
+    /*padding:1% 0;*/
+    /*border-bottom: 0.2rem solid #FAF1F1;*/
+/*}*/
+/*div.content .intro{*/
+    /*font-size: 1.1rem;*/
+    /*color:#04BE02;*/
+    /*padding:1% 0;*/
+    /*border-bottom: 0.2rem solid #FAF1F1;*/
+/*}*/
+/*.no1{*/
+    /*font-size: 1rem;*/
+    /*margin-left: 5%;*/
+    /*color: #777;*/
+    /*display:inline-block;*/
+/*}*/
+/*.name1{*/
+    /*font-size: 1rem;*/
+    /*margin-left: 5%;*/
+    /*color: #777;*/
+/*}*/
+/*.pname1{*/
+    /*font-size: 1rem;*/
+    /*margin-left: 5%;*/
+    /*color: #777;*/
+/*}*/
+/*.intro1{*/
+    /*font-size: 1rem;*/
+    /*margin-left: 5%;*/
+    /*color: #777;*/
+/*}*/
 @media (device-height:568px) and (-webkit-min-device-pixel-ratio:2){
     div.swiper-slide img{
         

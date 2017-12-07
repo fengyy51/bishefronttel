@@ -8,9 +8,10 @@ urlServer="http://localhost:8085";  //线下
 var APPIDall="wx859f2afeb6d618c3";//亿邮科技
 var urlYuming="http://fbinwang.liuhongnan.com"; //线上测试
 
-collectId=1;
-var productImgUrl=[];
-var brandImgUrl="";
-var shangchuanflag=false;//图片是否上传成功，还是在上传中
+var actName,begin,end,proNum,voteNum,shareNum,voteMaxNum,voteDecoration,proApproved;//抽奖配置
+// collectId=1;
+// var productImgUrl=[];
+// var brandImgUrl="";
+// var shangchuanflag=false;//图片是否上传成功，还是在上传中
 // var brandshangchuanflag=false;
 
