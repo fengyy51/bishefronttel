@@ -5,119 +5,45 @@
     <meta charset="utf-8">
     <title>寻找造物主，投票赢大奖</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
-    <link href="../util/css/alert.css?v=f173e8cecd" type="text/css" rel="stylesheet" />
+    <link  rel="stylesheet" type="text/css" href="../util/css/weui.min.css?v=4035192f39.css?v=b89e75b4b4">
+    <!--<link href="../util/css/alert.css?v=f173e8cecd" type="text/css" rel="stylesheet" />-->
     <link href="css/style.css?v=0d76b8a2a9" type="text/css" rel="stylesheet" />
     
 </head>
 
 <body>
-    <div class="title">选出你心中的最优作品</div>
+    <div class="title"></div>
     <div class="content">
         <p class="c-title">感谢您的参与！</p>
         <div id="products" class="c-table"></div>
     </div>
     <div id="go"><a class="c-button1" style="display:none;" href="../prize/page/test.html">您已投票，去抽奖 GO!</a></div>
-    <div class="weui_dialog_alert" style="display: none;" id="alert">
-        <div class="weui_mask"></div>
-        <div class="weui_dialog">
-            <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
-            <div class="weui_dialog_bd">
-                
-            </div>  
-            <div class="weui_dialog_ft">
-                <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
-            </div>
-        </div>
-    </div>
+    <!--<div class="weui_dialog_alert" style="display: none;" id="alert">-->
+        <!--<div class="weui_mask"></div>-->
+        <!--<div class="weui_dialog">-->
+            <!--<div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>-->
+            <!--<div class="weui_dialog_bd">-->
+                <!---->
+            <!--</div>  -->
+            <!--<div class="weui_dialog_ft">-->
+                <!--<a href="javascript:;" class="weui_btn_dialog primary">确定</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
     <script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?77c20642466352e6ba841a43a92ddeb0";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a2a709bce16b8410969c45d541a85365";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
-    <script type="text/javascript" src="../util/js/global.js?v=d8be1b550b"></script>
     <script type="text/javascript" src="../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>
-    <script type="text/javascript" src="../util/js/publicAttr.js?v=b6306f1ad1"></script>   
-    <script type="text/javascript" src="../util/js/alert.js?v=ee7f9c3146"></script>   
-    <script type="text/javascript">
-    $(document).ready(function() {
-        var countff = getCookie("countff", countff);
-        // alertNew(countff);
-        // if(countff==0)
-        // {
-        //  $('#go').css("display",'none');
-        // }   
-
-        $.ajax({
-            url: urlServer + "/vote/get-vote-number-info",
-            type: "GET",
-            success: function(data) {
-                var str = "";
-                var len = data.data.length;
-                var max=0;
-                for(var i=0;i<len;i++){
-                    if(data.data[i].voteNum>max){
-                        max=data.data[i].voteNum;
-                    }
-                }
-                var base=0;
-                if(max<1000){
-                    base=1000;
-                }else if(max<10000){
-                    max=Math.round(max/1000)+1;
-                    base=max*1000;
-                }else if(max<100000){
-                    max=Math.round(max/10000)+1;
-                    base=max*10000;
-                }else if(max<1000000){
-                    max=Math.round(max/100000)+1;
-                    base=max*100000;
-                }
-                console.log(max);
-                console.log(base);
-                for (var i = 0; i < len; i++) {
-                    str += '<div class="c-table"><p><img class="c-tablepic-list" src="' +
-                        data.data[i].productFirst +
-                        '"><span style=" padding-top:2%;font-size: 1rem;padding-right:3%;width:8%;">' +
-                        data.data[i].itemId +
-                        '</span>'+
-                        // '<span class="skillbar clearfix " data-percent="'+0.2+'><span class="skillbar-bar" style="background: #04be02;"></span><span class="skill-bar-percent">'+0.2+'</span></span>'
-                        '<span class="skillbar clearfix " data-percent="' +
-                        // data.data[i].voteNum+
-                        data.data[i].voteNum/base*100+
-                       '%""><span class="skillbar-bar" style="background: #04BE02;"></span></span><span class="skill-bar-percent" id="bar" style="float: right; padding-top:2%;margin-right: 1%;">' +
-                        data.data[i].voteNum +
-                        '票</span></p>';
-                }
-                $("#products").html(str);
-                // var numlen=1;
-                // var barwidth=$('#bar').width();
-                // console.log(barwidth);
-                // for(var i=0;i<len;i++){
-                //     var num=data.data[i].voteNum;
-                //     var numlennew=num.toString().length;
-                //     if(numlen<numlennew){
-                //         numlen=numlennew;
-                //     }
-                // }
-                // $('#bar').css("font-size",barwidth/(numlen+2)+'px');
-                setCookie_timedetail("votestatus",true,'24:00:00'); 
-                $('.skillbar').each(function() {
-                    $(this).find('.skillbar-bar').animate({
-                        width: $(this).attr('data-percent')
-                    }, 1000);
-                });
-            },
-            error: function(error) {
-                alertNew("加载失败，请再试一次吧！");
-                alertShow();
-            }
-        });
-    });
-    </script>
+    <script type="text/javascript" src="../util/js/global.js?v=5ca3d38347"></script>
+    <script type="text/javascript" src="../util/js/publicAttr.js?v=dd3c0de657"></script>
+    <script type="text/javascript" src="../util/js/weui.js?v=022aec7711"></script>
+    <script type="text/javascript" src="js/list.js"></script>
 </body>
 
 </html>

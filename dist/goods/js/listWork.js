@@ -7,6 +7,16 @@
         var countprize=getCookie("countprize");//抽奖次数
         var shareflagvote=getCookie("shareflagvote");//投票分享次数
         var shareflagprize=getCookie("shareflagprize");//抽奖分享次数
+        //抽奖设置
+        var actName;
+        var begin;
+        var end;
+        var proNum;
+        var voteNum;
+        var shareNum;
+        var voteMaxNum;
+        var voteDecoration;
+        var proApproved;//抽奖配置 proNum一次投多少个
 
         var $searchBar = $('#searchBar'),
             $searchResult = $('#searchResult'),
@@ -15,6 +25,7 @@
             $searchClear = $('#searchClear'),
             $searchCancel = $('#searchCancel');
         var actId=getQueryString("id");
+
         //初始化投票抽奖次数
         if(shareflagprize=="null"||shareflagprize==null){
             var shareflagprize=0;
@@ -54,11 +65,13 @@
 
         voteParamContact();
         productInfoContact();
+        console.log(proApproved);
         // init();
 
         function voteParamContact() {
             $.ajax({
                 url:urlServer+urlVoteParam,
+                async:false,
                 data:{
                     "actId":actId
                 },
@@ -72,7 +85,7 @@
                         voteNum=data.data.voteNum;
                         shareNum=data.data.shareNum;
                         voteMaxNum=data.data.voteMaxNum;
-                        voteDecoration=data.data.voteDecoration,
+                        voteDecoration=data.data.voteDecoration;
                         proApproved=data.data.proApproved;
                         $('#title').html(actName);
 
@@ -172,9 +185,9 @@
         }
         $(".body").delegate(".item","click",function() {
             var now=Date.now();
-            console.log(now);
-            console.log(Date.parse(begin));
-            console.log(end);
+            // console.log(now);
+            // console.log(Date.parse(begin));
+            // console.log(end);
             window.location.href = "../page/dow.html?id=" + $(this).find('.id').text()+"&actId="+actId;
         });
         var now=Date.now();

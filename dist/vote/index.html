@@ -5,16 +5,16 @@
     <meta charset="utf-8">
     <title>寻找造物主，投票赢大奖</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1">
-    <link  rel="stylesheet" type="text/css" href="../../util/css/weui.min.css?v=4035192f39.css?v=b89e75b4b4">
+    <link  rel="stylesheet" type="text/css" href="../util/css/weui.min.css?v=4035192f39.css?v=b89e75b4b4">
     <!--<link href="../util/css/alert.css?v=f173e8cecd" type="text/css" rel="stylesheet" />-->
     <link href="css/style.css?v=0d76b8a2a9" type="text/css" rel="stylesheet" />
    
 </head>
 
 <body>
-    <div class="title">选出你心中的最优作品</div>
+    <div class="title"></div>
     <div class="content">
-        <p class="c-join">请投票（选择五个）</p>
+        <p class="c-join"></p>
         <form id="voteProducts" action="#" method="post">
             <div id="products" class="equal"></div>
         </form>
@@ -32,193 +32,23 @@
         <!--</div>-->
     <!--</div>-->
     <button id="submit" class="c-button">投票并查看结果</button>
-     <script>
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?77c20642466352e6ba841a43a92ddeb0";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?a2a709bce16b8410969c45d541a85365";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
     </script>
-    <script type="text/javascript" src="../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>
-    <!-- <script type="text/javascript" src="../util/js/zepto.js?v=7645315506"></script> -->
-    <script type="text/javascript" src="../util/js/publicAttr.js?v=b6306f1ad1"></script>
-    <script type="text/javascript" src="../util/js/global.js?v=d8be1b550b"></script>
-    <script type="text/javascript" src="../../util/js/weui.js?v=022aec7711"></script>
+    <!--<script type="text/javascript" src="../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>-->
+     <script type="text/javascript" src="../util/js/zepto.js?v=7645315506"></script>
+    <script type="text/javascript" src="../util/js/publicAttr.js?v=dd3c0de657"></script>
+    <script type="text/javascript" src="../util/js/global.js?v=5ca3d38347"></script>
+    <script type="text/javascript" src="../util/js/weui.js?v=022aec7711"></script>
     <!--<script type="text/javascript" src="../util/js/alert.js?v=ee7f9c3146"></script>-->
     <script type="text/javascript" src="../util/js/weChatId.js?v=f62293ead6"></script>
-    <script type="text/javascript">
-    $(function() {
-        // 授权
-        var openId='yy';
-        var urlProductInfo="/vote/get-vote-product-info";
-        var actId=getQueryString("actId");
-        var options={
-            url:urlYuming+"/vote/index",
-            urlServerauth:urlServer+"/user/do-auth",
-            APPID:APPIDall      
-        };
-        function callbackA(id) {                
-            openId=id; 
-            // console.log(id);
-        }
-//        getWeChatId(options,callbackA);
-        var countff = getCookie("countff");
-        if (countff == null || countff == "null") {
-            countff = 0;
-            setCookie_timedetail("countff", countff, '24:00:00');
-        }
-//        if (countff == 0) {
-//            $('#submit').attr("disabled", true);
-//            $('#submit').html("已投票");
-//        }
-        var votecount=voteNum-countff;
-        weui.alert("您可投票" + votecount + "次");
-        $.ajax({
-            //url:"json/index.json",
-            url: urlServer + urlProductInfo,
-            data: {
-                "actId":actId,
-            },
-            crossDomain: true,
-            success: function(data) {
-                var str = "";
-                //len = data.length;
-                var num = Math.random() * proApproved; //随机数 改为50
-                num = parseInt(num);
-                if (num % 2 == 0) num++;
-                //随机产生
-                var i = num;
-                var j1 = 0;
-                var j2 = 1;
-                // console.log( data.data[0].productFirst);
-                if (data == []) {
-                    console.log("暂无数据");
-                } else {
-                    while (true) {
-                        i = (i + 1) % proApproved; //随机数
-                        str += '<div class="row"><div class="product"><p><img class="c-tablepic" src="' +
-                            data.data[i].productFirst +
-                            '"></p><p class="smalltext">编号:<span class="num">' +
-                            data.data[i].id +
-                            '</span></p><p class="smalltext">作品名:<span class="text">' +
-                            data.data[i].brandName +
-                            '</span></p><p class="smalltext">作者名:<span class="author">' +
-                            data.data[i].name +
-                            '</span><span class="check"><input type="checkbox" value="' +
-                            data.data[i].id +
-                            '" id="product' +
-                            j1 +
-                            '" name="' +
-                            data.data[i].id +
-                            '" style="zoom:180% " /><label ></label></span></p></div><div class="product"><p><img class="c-tablepic" src="' +
-                            data.data[++i].productFirst +
-                            '"></p><p class="smalltext">编号:<span class="num">' +
-                            data.data[i].id +
-                            '</span></p><p class="smalltext">作品名:<span class="text">' +
-                            data.data[i].brandName +
-                            '</span></p><p class="smalltext">作者名:<span class="author">' +
-                            data.data[i].name +
-                            '</span><span class="check"><input type="checkbox" value="' +
-                            data.data[i].id +
-                            '" id="product' +
-                            j2 +
-                            '" name="' +
-                            data.data[i].id +
-                            '" style="zoom:180% " /><label ></label></span></p></div></div>';
-                        j1 = j1 + 2;
-                        j2 = j2 + 2;
-                        if (i == num) break;
-                    }
-                    $("#products").html(str);
-                    var picwidth = $('.c-tablepic ').width();
-                    $('.c-tablepic ').height(picwidth * 0.75);
-                    // var picheight=$('.c-tablepic ').height();  
-                    // $('.row').height(picheight+5.*$('.smalltext').height());
-                    var rowheight=$('div.row').height();
-                    $('.row .product').height(rowheight);
-                }
-
-                $(".product").bind("click", function() {
-                    var product = $(this).find("input");
-                    if (product.attr("checked") == null) {
-                        product.attr("checked", "checked");
-                    } else {
-                        product.removeAttr("checked");
-                    }
-                });
-            },
-            error: function(error) {
-                alertNew("加载失败，请再试一次吧！");
-                alertShow();
-
-            }
-        });
-        $("#submit").click(function() {
-            var num = 0;
-            var str = "";
-            var curTime=(new Date()).valueOf();
-            for (var i = 0; i <= proApproved; i++) {
-                if ($("#product" + i).attr("checked") != null) {
-                    num++;
-                    str += $("#product" + i).val() + ",";
-                }
-            }
-            console.log(str);
-            str=str+'@@@'+curTime;
-            str=str+'@@@'+openId;
-            console.log(str);
-            if (num == 5) {
-                // str = str.substring(0, str.length - 1);
-                console.log(str);
-                var voteflag=false;
-                if(voteflag==false){
-                    voteflag=true;
-                    $.ajax({
-                    url: urlServer + "/vote/post-vote-number-info",
-                    type: "POST",
-                    data: {
-                        "str": str
-                    },
-                    success: function(data) {
-                        var code=data.code;
-                        if(code==200){
-                            var result = data.data.result;
-                        if (result == true) {
-//                            if (countff <) {
-                                countff++;
-//                            }
-                            setCookie_timedetail("countff", countff, '24:00:00');
-                            $('#submit').attr("disabled", true);
-                            $('#submit').html("已投票");
-                            voteflag=false;
-                            location.href = "list.html";
-                        } else if (result == false) {
-                            voteflag=false;
-                            var msg=data.data.msg;
-                            alertNew(msg);
-                            alertShow();
-                        }
-                        }
-                        
-                    },
-                    error: function(error) {
-                        voteflag=false;
-                        alertNew("投票未成功，再来一次哟！");
-                        alertShow();
-                    }
-                });
-                }
-                
-            } else {
-                alertNew("您已选择"+num+"个，"+"请选择5个作品哟！");
-                alertShow();
-            }
-        });
-
-    });
-    </script>
+    <script type="text/javascript" src="js/index.js?v=2e7fb5464c"></script>
 </body>
 
 </html>
