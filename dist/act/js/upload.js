@@ -81,9 +81,9 @@ weui.uploader('#uploader', {
 });
 
 // 缩略图预览
-document.querySelector('#uploaderFiles').addEventListener('click', function(e){
+$('body').delegate('#uploaderFiles','click',function (e) {
+// document.querySelector('#uploaderFiles').addEventListener('click', function(e){
     var target = e.target;
-
     while(!target.classList.contains('weui-uploader__file') && target){
         target = target.parentNode;
     }
@@ -112,6 +112,7 @@ document.querySelector('#uploaderFiles').addEventListener('click', function(e){
                                     "path": file.url
                                 },
                                 success: function (data) {
+                                    weui.alert("ss");
                                     var code = data.code;
                                     if (code == 200) {
                                         var result = data.data.result;
@@ -127,7 +128,6 @@ document.querySelector('#uploaderFiles').addEventListener('click', function(e){
                             });
                         }
                         file.stop();
-
                         break;
                     }
                 }

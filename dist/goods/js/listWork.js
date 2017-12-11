@@ -206,7 +206,7 @@
                     },1000);
                 }
                 else{
-                    window.location.href = "../../vote/index.html?actId="+actId;
+                    window.location.href="../../vote/index.html?actId="+actId;
                 }
             }
 

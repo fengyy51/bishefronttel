@@ -28,8 +28,15 @@ $(function() {
         // console.log(id);
     }
 //        getWeChatId(options,callbackA);
+    init();
     voteParamContact();
     productInfoContact();
+    function init() {
+        if(getCookie("countff")!='null'&&getCookie("countff")!=null&&getCookie("countff")==0){
+            $('#submit').html('已达投票上限');
+            $('#submit').attr("disabled",true);
+        }
+    }
     function voteParamContact() {
         $.ajax({
             url:urlServer+urlVoteParam,
@@ -77,32 +84,31 @@ $(function() {
                 var code=data.code;
                 if(code==200){
                     var str = "";
-                    var num = Math.random() * proApproved; //随机数 改为50
-                    num = parseInt(num);
-                    // console.log(num);
-                    if (num % 2 == 0) num++;
-                    //随机产生
-                    var i = num;
-                    var j1 = 0;
-                    var j2 = 1;
-                    // console.log( data.data[0].productFirst);
+                    // var j1 = 0;
+                    // var j2 = 1;
                     if (data == []) {
                         console.log("暂无数据");
                     } else {
-                        while (true) {
-                            var str1= '<div class="row"><div class="product">';
-                            var str2='';
+                        var len=data.data.length;
+                        var index=parseInt(Math.random()*len);
+                        for(var i=0;i<len;i++){
+                            data.data.push(data.data[index]);
+                            data.data.splice(index,1);
+                            len=data.data.length;
+                            index=parseInt(Math.random()*len);
+                        }
+                        for(var i=0;i<data.data.length;i++){
+                            var str1= '<div class="row">';
+                            var str2='<div class="product">';
                             var str3='';
-                            var str4='';
-                            var str5='';
+                            var str4='</div>';
                             var regItemlist = data.data[i].productInfo.split(";");
-                            i = (i + 1) % proApproved; //随机数
+                            // i = (i + 1) % proApproved; //随机数
                             for (var j = 0; j < regItemlist.length; j++) {
                                 var title = regItemlist[j].split("?")[0];
                                 var val = regItemlist[j].split("?")[1];
                                 if (val.indexOf('http:') >= 0) {
                                     var imgFirst = val.split("&")[0];
-                                    // console.log(data.data[i].id);
                                     str2 += '<p><img class="c-tablepic" src="' +
                                         imgFirst +
                                         '"></p><p class="smalltext">编号:<span class="num">' + data.data[i].id + '</span></p>';
@@ -110,42 +116,92 @@ $(function() {
                                 else {
                                     str2 += '<p class="smalltext">' + title + ':<span class="text">' + val + '</span></p>';
                                 }
-                                str3 = '<p><span class="check"><input type="checkbox" value="' +
-                                    data.data[i].id +
-                                    '" id="product' +
-                                    j1 +
-                                    '" name="' +
-                                    data.data[i].id +
-                                    '" style="zoom:180% " /><label ></label></span></p></div><div class="product">';
-                            }
-                                var regItemlist1 = data.data[++i].productInfo.split(";");
-                                for (var j = 0; j < regItemlist.length; j++) {
-                                    var title1 = regItemlist1[j].split("?")[0];
-                                    var val1 = regItemlist1[j].split("?")[1];
-                                    if (val1.indexOf('http:') >= 0) {
-                                        // console.log(i);
-                                        var imgFirst1 = val1.split("&")[0];
-                                        str4 += '<p><img class="c-tablepic" src="' +
-                                            imgFirst1 +
-                                            '"></p><p class="smalltext">编号:<span class="num">' + data.data[i].id + '</span></p>';
-                                    }
-                                    else {
-                                        str4 += '<p class="smalltext">' + title1 + ':<span class="text">' + val1 + '</span></p>';
-                                    }
-                                    str5 = '<p><span class="check"><input type="checkbox" value="' +
+                                if((i%2!=0)||(i%2==0&&i==data.data.length-1)){
+                                    str3 = '<p><span class="check"><input type="checkbox" value="' +
                                         data.data[i].id +
                                         '" id="product' +
-                                        j2 +
+                                        i +
                                         '" name="' +
                                         data.data[i].id +
                                         '" style="zoom:180% " /><label ></label></span></p></div></div>';
+                                }else if(i%2==0&&i<data.data.length-1) {
+                                    str3 = '<p><span class="check"><input type="checkbox" value="' +
+                                        data.data[i].id +
+                                        '" id="product' +
+                                        i +
+                                        '" name="' +
+                                        data.data[i].id +
+                                        '" style="zoom:180% " /><label ></label></span></p></div>';
                                 }
-                                j1 = j1 + 2;
-                                j2 = j2 + 2;
-                                i=i+1;
-                                str=str+str1+str2+str3+str4+str5;
-                                 $('#products').html('');
-                                 $("#products").append(str);
+                            }
+                            if((i%2==0&&i==data.data.length-1)||(i%2==0&&i<data.data.length-1)) {
+                                str=str+str1+str2+str3;
+                            }else if(i%2!=0) { //一行的第二个
+                                str=str+str2+str3;
+                            }
+                        }
+                        $('#products').html('');
+                        $("#products").html(str);
+
+                        //     num = Math.round((data.data.length-1)*Math.random())+1; //随机数 改为50
+                        // num = parseInt(num);
+                        // if (num % 2 == 0) num++;
+                        //随机产生
+                        // var i = num;
+                        //
+                        //     var str1= '<div class="row"><div class="product">';
+                        //     var str2='';
+                        //     var str3='';
+                        //     var regItemlist = data.data[i].productInfo.split(";");
+                        //     // i = (i + 1) % proApproved; //随机数
+                        //     for (var j = 0; j < regItemlist.length; j++) {
+                        //         var title = regItemlist[j].split("?")[0];
+                        //         var val = regItemlist[j].split("?")[1];
+                        //         if (val.indexOf('http:') >= 0) {
+                        //             var imgFirst = val.split("&")[0];
+                        //             // console.log(data.data[i].id);
+                        //             str2 += '<p><img class="c-tablepic" src="' +
+                        //                 imgFirst +
+                        //                 '"></p><p class="smalltext">编号:<span class="num">' + data.data[i].id + '</span></p>';
+                        //         }
+                        //         else {
+                        //             str2 += '<p class="smalltext">' + title + ':<span class="text">' + val + '</span></p>';
+                        //         }
+                        //         str3 = '<p><span class="check"><input type="checkbox" value="' +
+                        //             data.data[i].id +
+                        //             '" id="product' +
+                        //             j1 +
+                        //             '" name="' +
+                        //             data.data[i].id +
+                        //             '" style="zoom:180% " /><label ></label></span></p></div><div class="product">';
+                        //     }
+                        //         var regItemlist1 = data.data[++i].productInfo.split(";");
+                        //         for (var j = 0; j < regItemlist.length; j++) {
+                        //             var title1 = regItemlist1[j].split("?")[0];
+                        //             var val1 = regItemlist1[j].split("?")[1];
+                        //             if (val1.indexOf('http:') >= 0) {
+                        //                 // console.log(i);
+                        //                 var imgFirst1 = val1.split("&")[0];
+                        //                 str4 += '<p><img class="c-tablepic" src="' +
+                        //                     imgFirst1 +
+                        //                     '"></p><p class="smalltext">编号:<span class="num">' + data.data[i].id + '</span></p>';
+                        //             }
+                        //             else {
+                        //                 str4 += '<p class="smalltext">' + title1 + ':<span class="text">' + val1 + '</span></p>';
+                        //             }
+                        //             str5 = '<p><span class="check"><input type="checkbox" value="' +
+                        //                 data.data[i].id +
+                        //                 '" id="product' +
+                        //                 j2 +
+                        //                 '" name="' +
+                        //                 data.data[i].id +
+                        //                 '" style="zoom:180% " /><label ></label></span></p></div></div>';
+                        //         }
+                        //         j1 = j1 + 2;
+                        //         j2 = j2 + 2;
+                        //         i=i+1;
+                        //         str=str+str1+str2+str3+str4+str5;
+
                             // var picheight=$('.c-tablepic ').height();
                             // $('.row').height(picheight+5.*$('.smalltext').height());
                             // var rowheight = $('div.row').height();
@@ -164,8 +220,8 @@ $(function() {
                                     product.removeAttr("checked");
                                 }
                             });
-                                if (i == 9) break;
-                            }
+                            //     if (i == 9) break;
+                            // }
                     }
                }
             },
@@ -194,7 +250,7 @@ $(function() {
             console.log(str);
             var voteflag=false;
             if(voteflag==false){
-                voteflag=true;
+
                 $.ajax({
                     url: urlServer + "/vote/post-vote-number-info",
                     type: "POST",
@@ -213,12 +269,15 @@ $(function() {
                                 setCookie_timedetail("countff", countff, '24:00:00');
                                 $('#submit').attr("disabled", true);
                                 $('#submit').html("已投票");
-                                voteflag=false;
-                                location.href = "list.html?actId="+actId;
+                                voteflag=true;
+                                setTimeout(function(){
+                                    location.href = "list.html?actId="+actId;
+                                },1000);
                             } else if (result == false) {
                                 voteflag=false;
                                 var msg=data.data.msg;
                                 weui.alert(msg);
+                                $('#submit').html("投票并查看结果");
                             }
                         }
 

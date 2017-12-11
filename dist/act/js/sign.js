@@ -3,7 +3,7 @@ $(document).ready(function() {
     var urlDetailReg="/act/get-detail-reg";//获取自定义报名项具体内容
     var urlNumber = "/act/judge-signed-num"; //获取是否达到人数上限
     var urlXinXi = "/act/submit/free"; //免费活动信息传给后台信息
-
+    var postflag=true;//是否已投票
     var reg=[];
     var regItem=[];
     var username="binwang158";
@@ -38,6 +38,13 @@ $(document).ready(function() {
     //获取需要的必填报名项
     getRegItem();
     getDetailReg();
+    init();
+    function init() {
+        if(getCookie("post"+getQueryString("id"))!='null'&&getCookie("post"+getQueryString("id"))!=null&&getCookie("post"+getQueryString("id"))==0){
+            $("#formSubmitBtn").html("已报名");
+            $("#formSubmitBtn").attr("disabled", true);
+        }
+    }
     // getWeChatId(options,callbackA);
     function getRegItem() {
         id=getQueryString("id");
@@ -346,8 +353,6 @@ $(document).ready(function() {
         }
      return str;
     }
-
-
     // 判断是否人数到达上限   之后需要发给服务器id limitNumber
     function panDuanNumber() {
         var limitNumber=getQueryString('limitNumber');
@@ -431,7 +436,6 @@ $(document).ready(function() {
         }
         console.log(postReg);
 
-
         var reglen=reg.length;
         if(reglen!=0){
             for(var i=0;i<reglen;i++){
@@ -462,8 +466,8 @@ $(document).ready(function() {
                         // setCookie_29(regItem[i],$("#"+regItem[i]).val());
                     }else if((radioTitle=getCookie(regItem[i]))=='radio'){
                         var radiobox=document.getElementsByName(regItem[i]);
-                        console.log(radiobox);
-                        console.log(radiobox.length);
+                        // console.log(radiobox);
+                        // console.log(radiobox.length);
                         var radioarr=[];
                         for(var j=0;j<radiobox.length;j++){
                             if(radiobox[j].checked==true){
@@ -481,39 +485,48 @@ $(document).ready(function() {
             }
         }
         var str=postReg.join(';');
-        console.log(str);
-        $.ajax({
-            url: urlServer + urlXinXi,
-            type: "POST",
-            data: {
-                "openId": openId,
-                "actId": id,
-                "chargeType":chargeType,
-                "status":status,
-                "postReg":str,
-            },
-            success: function(data) {
-                var code=data.code;
-                if(code==200){
-                    var result = data.result;
-                    loading.hide();
-                    $("#formSubmitBtn").html("已报名");
-                    $("#formSubmitBtn").attr("disabled", true);
-                    window.location.href="../page/signsuccess.html?status="+status+"&id=" + id;
-                    //
-                    // 点击报名后，跳转到活动凭证页，将活动id 用户openid 粘在url中开始 放在校验等流程后
+        // console.log(str);
 
-                    // window.location.href = "../page/proof?id=" + id + "&openId=" + openId;
-                }else{
+        if(postflag==true){
+            $.ajax({
+                url: urlServer + urlXinXi,
+                type: "POST",
+                data: {
+                    "openId": openId,
+                    "actId": id,
+                    "chargeType":chargeType,
+                    "status":status,
+                    "postReg":str,
+                },
+                success: function(data) {
+                    var code=data.code;
+                    if(code==200){
+                        var result = data.data.result;
+                        if(result==true){
+                            loading.hide();
+                            postflag=false;
+                            setCookie_29("post"+id,0);
+                            $("#formSubmitBtn").html("已报名");
+                            $("#formSubmitBtn").attr("disabled", true);
+                            window.location.href="../page/signsuccess.html?status="+status+"&id=" + id;
+                        }
+
+                        //
+                        // 点击报名后，跳转到活动凭证页，将活动id 用户openid 粘在url中开始 放在校验等流程后
+
+                        // window.location.href = "../page/proof?id=" + id + "&openId=" + openId;
+                    }else{
+                        loading.hide();
+                        weui.toast('提交失败', 3000);
+                    }
+                },
+                error:function (error) {
                     loading.hide();
                     weui.toast('提交失败', 3000);
                 }
-            },
-            error:function (error) {
-                loading.hide();
-                weui.toast('提交失败', 3000);
-            }
-        });
+            });
+        }
+
     }
 });
     //提交表单结束
