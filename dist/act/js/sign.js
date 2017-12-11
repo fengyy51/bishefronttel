@@ -3,6 +3,7 @@ $(document).ready(function() {
     var urlDetailReg="/act/get-detail-reg";//获取自定义报名项具体内容
     var urlNumber = "/act/judge-signed-num"; //获取是否达到人数上限
     var urlXinXi = "/act/submit/free"; //免费活动信息传给后台信息
+    var urlIfSign = "/act/is-sign-up";//是否已报名
     var postflag=true;//是否已投票
     var reg=[];
     var regItem=[];
@@ -38,12 +39,34 @@ $(document).ready(function() {
     //获取需要的必填报名项
     getRegItem();
     getDetailReg();
-    init();
-    function init() {
-        if(getCookie("post"+getQueryString("id"))!='null'&&getCookie("post"+getQueryString("id"))!=null&&getCookie("post"+getQueryString("id"))==0){
-            $("#formSubmitBtn").html("已报名");
-            $("#formSubmitBtn").attr("disabled", true);
-        }
+    ifSignContact();
+    // 获取用户openid，走接口判断用户是否已经报名
+    function ifSignContact(){
+        id = getQueryString("id");
+        console.log("ifsign");
+        $.ajax({
+            url: urlServer + urlIfSign,
+            type: "GET",
+            data: {
+                "openId": openId,
+                "actId": id
+            },
+            success: function(data) {
+                var code=data.code;
+                if(code==200){
+                    var result = data.data.result;
+                    if (result == true) {
+                        weui.alert("您已报名，请勿重复报名");
+                        $("#formSubmitBtn").html("已报名");
+                        $("#formSubmitBtn").attr("disabled", true);
+                    }
+                }
+            },
+            error: function(error) {
+                console.log(error);
+                weui.alert("获取用户是否报名出错");
+            }
+        });
     }
     // getWeChatId(options,callbackA);
     function getRegItem() {
@@ -505,7 +528,6 @@ $(document).ready(function() {
                         if(result==true){
                             loading.hide();
                             postflag=false;
-                            setCookie_29("post"+id,0);
                             $("#formSubmitBtn").html("已报名");
                             $("#formSubmitBtn").attr("disabled", true);
                             window.location.href="../page/signsuccess.html?status="+status+"&id=" + id;
