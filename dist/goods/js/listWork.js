@@ -26,23 +26,6 @@
             $searchCancel = $('#searchCancel');
         var actId=getQueryString("id");
 
-        //初始化投票抽奖次数
-        if(shareflagprize=="null"||shareflagprize==null){
-            var shareflagprize=0;
-            setCookie_29("shareflagprize",shareflagprize);
-        }
-        if(shareflagvote=="null"||shareflagvote==null){
-            var shareflagvote=0;
-            setCookie_29("shareflagvote",shareflagvote);
-        }
-        if(countprize=="null"||countprize==null){
-            var countprize=0;
-            setCookie_29("countprize",countprize);
-        }
-        if (countff=="null"||countff==null) {
-            var countff = 0;
-            setCookie_29("countff",countff);
-        }
         //投票规则
         document.querySelector('#fixedlogo').addEventListener('click', function () {
             weui.alert(voteDecoration, function () {
@@ -54,7 +37,6 @@
         // $('#fixedlogo').on("click",function(){
         //     $('#dialog .weui_dialog_bd').html('1.输入序号，点击“搜索”查找作品，点击作品图片可查看作品详细介绍；<br>'+' 2.点击“投票”可进入投票页面；<br>'+
         //     '3.下拉选择5件心仪作品，确认后点击“投票并查看结果”；<br>'+'4.投票完毕，可参与“宾王158幸运大转盘”活动，丰厚奖品等着您。<br>');
-        //
         //     // +'注：转发此页面至朋友圈可增加1次抽奖机会，每人每天限抽3次。','“寻找造物主”优秀作品评选流程');
         //     var $dialog=$('#dialog');
         //     $dialog.show();
@@ -65,9 +47,6 @@
 
         voteParamContact();
         productInfoContact();
-        console.log(proApproved);
-        // init();
-
         function voteParamContact() {
             $.ajax({
                 url:urlServer+urlVoteParam,
@@ -88,6 +67,28 @@
                         voteDecoration=data.data.voteDecoration;
                         proApproved=data.data.proApproved;
                         $('#title').html(actName);
+                        //初始化投票抽奖次数
+                        countff=getCookie("countff");//投票次数
+                        console.log(countff);
+                        countprize=getCookie("countprize");//抽奖次数
+                        shareflagvote=getCookie("shareflagvote");//投票分享次数
+                        shareflagprize=getCookie("shareflagprize");//抽奖分享次数
+                        if(shareflagprize=="null"||shareflagprize==null){
+                            var shareflagprize=0;
+                            setCookie_29("shareflagprize",shareflagprize);
+                        }
+                        if(shareflagvote=="null"||shareflagvote==null){
+                            var shareflagvote=voteNum;
+                            setCookie_29("shareflagvote",shareflagvote);
+                        }
+                        if(countprize=="null"||countprize==null){
+                            var countprize=0;
+                            setCookie_29("countprize",countprize);
+                        }
+                        if (countff=="null"||countff==null) {
+                            console.log(countff);
+                            setCookie_29("countff",voteNum);
+                        }
 
                     }
                 },
@@ -184,32 +185,24 @@
 
         }
         $(".body").delegate(".item","click",function() {
-            var now=Date.now();
-            // console.log(now);
-            // console.log(Date.parse(begin));
-            // console.log(end);
             window.location.href = "../page/dow.html?id=" + $(this).find('.id').text()+"&actId="+actId;
         });
         var now=Date.now();
 
         //点击投票 进行时间、次数判断
         $("#button2").on("click",function() {
-            // window.location.href = "../../vote/list.html";
             var countff;
             countff=getCookie("countff");
             var now=Date.now();
-            // console.log(now);
-            // console.log(Date.parse(begin));
-            // console.log(Date.parse(end));
             if(now<Date.parse(begin)){
                 weui.alert("投票尚未开始");
             }else if(now>Date.parse(begin)&&now>Date.parse(end)){
                 weui.alert("投票已结束");
             }else if(now>Date.parse(begin)&&now<Date.parse(end)){
-                if (countff>=voteNum){
+                if (countff==0){
                     weui.alert("投票次数已达上限");
                     setTimeout(function(){
-                        window.location.href = "../../vote/list.html";
+                        window.location.href = "../../vote/list.html?actId="+actId;
                     },1000);
                 }
                 else{

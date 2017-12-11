@@ -8,6 +8,9 @@ $(document).ready(function() {
     var actName=getCookie("actName");
     var actId=getQueryString("actId");
     $('.title').html(actName);
+    $('#vote').click(function () {
+        window.location.href="../goods/page/listWork.html?id="+actId;
+    });
     $.ajax({
         url: urlServer + "/vote/get-vote-number-info",
         type: "GET",
@@ -66,7 +69,7 @@ $(document).ready(function() {
                 setCookie_timedetail("votestatus",true,'24:00:00');
             }
             $('.skillbar').each(function() {
-                console.log($(this));
+                // console.log($(this));
                 $(this).find('.skillbar-bar').animate({
                     width: $(this).attr('data-percent')
                 }, 1000);

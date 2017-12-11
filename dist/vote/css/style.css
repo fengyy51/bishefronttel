@@ -284,6 +284,24 @@ input[type=checkbox] {
 	/*垂直居中*/
 	font-size: 18px;
 }
+.c-button2{
+	margin: 0 auto;
+	margin-bottom: 0%;
+	/*position: fixed;*/
+	/*bottom: 3%;*/
+	/*right: 5%;*/
+	border-radius: 7px;
+	height: 45px;
+	width: 90%;
+	color: #fff;
+	background: #04BE02;
+	text-align: center;
+	display: block;
+	margin-top: 15px;
+	line-height: 45px;
+	/*垂直居中*/
+	font-size: 18px;
+}
   /*.skillbar {
 	position:relative;
 	display:block;

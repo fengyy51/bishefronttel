@@ -15,7 +15,7 @@ $(function() {
     var proApproved;//抽奖配置 proNum一次投多少个
 
     var actId=getQueryString("actId");
-    var countff;
+    var countff; //初始化为votenum
     /* 变量定义*/
     // 授权
     var options={
@@ -28,12 +28,6 @@ $(function() {
         // console.log(id);
     }
 //        getWeChatId(options,callbackA);
-
-    if (getCookie("countff") == null || getCookie("countff") == "null") {
-        countff = 0;
-        setCookie_timedetail("countff", countff, '24:00:00');
-    }
-    countff = getCookie("countff");
     voteParamContact();
     productInfoContact();
     function voteParamContact() {
@@ -57,8 +51,12 @@ $(function() {
                     proApproved=data.data.proApproved;
                     $('.title').html(actName);
                     setCookie_29("actName",actName);
-                    var votecount=voteNum-countff;
-                    weui.alert("您可投票" + votecount + "次");
+                    if (getCookie("countff") == null || getCookie("countff") == "null") {
+                        countff = voteNum;
+                        setCookie_timedetail("countff", countff, '24:00:00');
+                    }
+                    countff = getCookie("countff");
+                    weui.alert("您可投票" + countff + "次");
                     $('.c-join').html('请投票（选择'+proNum+'个）');
                 }
             },
@@ -150,8 +148,8 @@ $(function() {
                                  $("#products").append(str);
                             // var picheight=$('.c-tablepic ').height();
                             // $('.row').height(picheight+5.*$('.smalltext').height());
-                            var rowheight = $('div.row').height();
-                            $('.row .product').height(rowheight);
+                            // var rowheight = $('div.row').height();
+                            // $('.row .product').height(rowheight);
                             var wwidth=window.screen.width;
                             $('.c-tablepic').width(wwidth*0.45);
                             var picwidth = $('.c-tablepic ').width();
@@ -210,7 +208,8 @@ $(function() {
                         if(code==200){
                             var result = data.data.result;
                             if (result == true) {
-                                // countff++;
+                                --countff;
+                                console.log(countff);
                                 setCookie_timedetail("countff", countff, '24:00:00');
                                 $('#submit').attr("disabled", true);
                                 $('#submit').html("已投票");
@@ -226,8 +225,7 @@ $(function() {
                     },
                     error: function(error) {
                         voteflag=false;
-                        alertNew("投票未成功，再来一次哟！");
-                        alertShow();
+                        weui.alert("投票未成功，再来一次哟！");
                     }
                 });
             }

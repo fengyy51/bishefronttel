@@ -1,26 +1,68 @@
 //微信分享接口
 $(function(){
+    var urlVoteParam="/vote/get-vote-param";
+    var request_url = urlServer+"/common/js-sdk-config?url="+encodeURIComponent(location.href);
+
     var countff=getCookie("countff");//投票次数
     var countprize=getCookie("countprize");//抽奖次数
     var shareflagvote=getCookie("shareflagvote");//投票分享次数
     var shareflagprize=getCookie("shareflagprize");//抽奖分享次数
-    if(shareflagprize==null||shareflagprize=="null"){
-        var shareflagprize=1;
-        setCookie_timedetail("shareflagprize",shareflagprize,'24:00:00');
+
+    //抽奖设置
+    var actName;
+    var begin;
+    var end;
+    var proNum;
+    var voteNum;
+    var shareNum;
+    var voteMaxNum;
+    var voteDecoration;
+    var proApproved;//抽奖配置 proNum一次投多少个
+
+    var actId=getQueryString("id");
+    voteParamContact();
+    function voteParamContact() {
+        $.ajax({
+            url:urlServer+urlVoteParam,
+            async:false,
+            data:{
+                "actId":actId
+            },
+            success:function (data) {
+                var code=data.code;
+                if(code==200){
+                    actName=data.data.actName;
+                    begin=data.data.begin;
+                    end=data.data.end;
+                    proNum=data.data.proNum;
+                    voteNum=data.data.voteNum;
+                    shareNum=data.data.shareNum;
+                    voteMaxNum=data.data.voteMaxNum;
+                    voteDecoration=data.data.voteDecoration;
+                    proApproved=data.data.proApproved;
+                    //初始化投票抽奖次数，初始均为voteNum，，
+                    if(shareflagprize==null||shareflagprize=="null"){
+                        var shareflagprize=0;
+                        setCookie_timedetail("shareflagprize",shareflagprize,'24:00:00');
+                    }
+                    if(shareflagvote==null||shareflagvote=="null"){
+                        setCookie_timedetail("shareflagvote",voteNum,'24:00:00');
+                    }
+                    if(countprize==null||countprize=="null"){
+                        var countprize=0;
+                        setCookie_timedetail("countprize",countprize,'24:00:00');
+                    }
+                    if (countff==null||countff=="null") {
+                        setCookie_timedetail("countff",voteNum,'24:00:00');
+                    }
+                }
+            },
+            error:function (error) {
+                console.log(error);
+                weui.alert("获取投票设置失败");
+            }
+        })
     }
-    if(shareflagvote==null||shareflagvote=="null"){
-        var shareflagvote=1;
-        setCookie_timedetail("shareflagvote",shareflagvote,'24:00:00');
-    }
-    if(countprize==null||countprize=="null"){
-        var countprize=1;
-        setCookie_timedetail("countprize",countprize,'24:00:00');
-    }
-    if (countff==null||countff=="null") {
-        var countff = 1;
-        setCookie_timedetail("countff",countff,'24:00:00');
-    }
-    var request_url = urlServer+"/common/js-sdk-config?url="+encodeURIComponent(location.href.split("#")[0]);
     $.getJSON(
         request_url,
         function(data){
@@ -29,6 +71,7 @@ $(function(){
             var nonceStr = list.nonceStr;
             var timestamp = list.timestamp;
             var signature = list.signature;
+            // console.log(list);
             wx.config({
                 debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
                 appId: AppID, // 必填，公众号的唯一标识,binwang
@@ -42,8 +85,9 @@ $(function(){
             });
             wx.ready(function(){
                 wx.onMenuShareTimeline({//分享到朋友圈
-                    // title: $('.left').text(), // 分享标题
-                    title: '寻找造物主，投票赢大奖', // 分享标题
+                    // title:$('#title').html(),
+                    title: $('.left').text(), // 分享标题
+                    // title: '寻找造物主，投票赢大奖', // 分享标题
                     link: window.location.href, // 分享链接
                     imgUrl: 'http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/1.jpg', // 分享图标
                     success: function () {
@@ -54,14 +98,20 @@ $(function(){
                         var shareflagprize=getCookie("shareflagprize");
                         var countff=getCookie("countff");
                         var countprize=getCookie("countprize");
-                        if(shareflagprize<3&&countprize<3){
-                            countprize++;
-                            shareflagprize++;
+                        if(shareNum==true||shareNum=='true'){
+                            if(shareflagvote<voteMaxNum){
+                                countff++;
+                                shareflagvote++;
+                            }
                         }
-                        if(shareflagvote<3&&countff<voteNum){
-                            countff++;
-                            shareflagvote++;
-                        } 
+                        // if(shareflagprize<3&&countprize<3){
+                        //     countprize++;
+                        //     shareflagprize++;
+                        // }
+                        // if(shareflagvote<3&&countff<voteNum){
+                        //     countff++;
+                        //     shareflagvote++;
+                        // }
                         setCookie_timedetail("countprize",countprize,'24:00:00');
                         setCookie_timedetail("shareflagvote",shareflagvote,'24:00:00'); 
                         setCookie_timedetail("shareflagprize",shareflagprize,'24:00:00');  
@@ -72,7 +122,8 @@ $(function(){
                     }
                 });
                 wx.onMenuShareAppMessage({//分享给朋友
-                    title: '寻找造物主，投票赢大奖', // 分享标题
+                    title: $('.left').text(), // 分享标题
+                    // title: '寻找造物主，投票赢大奖', // 分享标题
                     // desc: '描述测试', // 分享描述
                     link: window.location.href, // 分享链接
                     imgUrl: 'http://binwang.oss-cn-hangzhou.aliyuncs.com/fimg/1.jpg', // 分享图标
@@ -81,6 +132,22 @@ $(function(){
                     success: function () {
                         // 用户确认分享后执行的回调函数
                         alert('分享成功');
+                        var prizeflag=getCookie("prizeflag");
+                        var shareflagvote=getCookie("shareflagvote");
+                        var shareflagprize=getCookie("shareflagprize");
+                        var countff=getCookie("countff");
+                        var countprize=getCookie("countprize");
+                        console.log(shareNum);
+                        if(shareNum==true||shareNum=='true'){
+                            if(shareflagvote<=voteMaxNum){
+                                countff++;
+                                shareflagvote++;
+                            }
+                        }
+                        setCookie_timedetail("countprize",countprize,'24:00:00');
+                        setCookie_timedetail("shareflagvote",shareflagvote,'24:00:00');
+                        setCookie_timedetail("shareflagprize",shareflagprize,'24:00:00');
+                        setCookie_timedetail("countff",countff,'24:00:00');
                         // var voteflag=getCookie("voteflag");
                         // shareflagvote=getCookie("shareflagvote");
                         // countff=getCookie("countff");
@@ -103,4 +170,6 @@ $(function(){
             wx.error(function(){});
         }
     );
+
+
 })
