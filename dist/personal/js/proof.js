@@ -1,6 +1,7 @@
 
 $(document).ready(function(){
-	var urlProof="/act/get/credential"
+	var urlProof="/act/get/credential";
+	var urlCancelReg='/act/cancel-reg';
     // 获取用户openid
     var openId="yy",id;
     // 解析url参数 存入cookie
@@ -10,6 +11,32 @@ $(document).ready(function(){
 	$("#detailActivity").click(function(event) {
 		window.location.href="../../act/page/detail.html?id="+id;
 	});
+	$('#click_Cancel').click(function () {
+		weui.confirm('确定取消报名么？',function () {
+			$.ajax({
+				url:urlServer+urlCancelReg,
+				data:{
+					"openId":openId,
+					"actId":id
+				},
+				success:function (data) {
+					var code=data.code;
+					if(code==200){
+						var result=data.data.result;
+						if(result==true){
+                            weui.toast("操作成功");
+						}else{
+                            weui.toast("操作失败");
+						}
+					}
+                },
+				error:function (error) {
+					console.log(error);
+                    weui.toast("操作失败");
+                }
+			})
+        });
+    });
 
 function ajaxContact(){
 	$.ajax({

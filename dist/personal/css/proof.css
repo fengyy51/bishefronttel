@@ -65,7 +65,7 @@ span#sign,#status{
 	/* color: #ffffff;
 	margin: 5% 3% 3% 5%; */
 }
-#click_Detail{
+#click_Detail,#click_Cancel{
 	width: 86%;
 	margin: 5% 7%;
 	background-color: #04BE02;
