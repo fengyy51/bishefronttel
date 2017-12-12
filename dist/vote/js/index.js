@@ -51,7 +51,7 @@ $(function() {
                 var code=data.code;
                 if(code==200){
                     var num=data.data;
-                    if(num>voteMaxNum){
+                    if(num>=voteMaxNum){
                         $('#submit').html('已达投票上限');
                         $('#submit').attr("disabled",true);
                     }
