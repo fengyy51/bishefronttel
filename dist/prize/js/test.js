@@ -189,17 +189,17 @@ $(document).ready(function(){
 
         var votestatus=getCookie("votestatus");
         // alertNew(votestatus);
-        console.log(votestatus);
-        if(votestatus==null||votestatus=="null"){
-            document.getElementById("btn").style.backgroundColor="#C0C0C0";
-            document.styleSheets[1].insertRule("#btn:before{position:absolute;display:block;content:'';left:24%;top:-45%;border-width:"+0.05*window.screen.width+"px;border-style:solid;border-color:transparent;border-bottom-color:#C0C0C0;}",0);
+        // console.log(votestatus);
+        // if(votestatus==null||votestatus=="null"){
+        //     document.getElementById("btn").style.backgroundColor="#C0C0C0";
+        //     document.styleSheets[1].insertRule("#btn:before{position:absolute;display:block;content:'';left:24%;top:-45%;border-width:"+0.05*window.screen.width+"px;border-style:solid;border-color:transparent;border-bottom-color:#C0C0C0;}",0);
             //灰色按钮
             // btn.onclick = function(){
-                alertNew("您尚未投票!");
-                alertShow();
+            //     alertNew("您尚未投票!");
+            //     alertShow();
             // }
-        }
-        else if(votestatus=="true"||votestatus==true){
+        // }
+        // else if(votestatus=="true"||votestatus==true){
             $.ajax({
                 url:urlServer+"/luck/is-has-draw",
                 data:{
@@ -222,8 +222,7 @@ $(document).ready(function(){
                         //灰色按钮
                         $('#btn').attr("disabled",true);
                         // btn.onclick = function(){
-                            alertNew("今日抽奖次数已用完!");
-                            alertShow();
+                            weui.alert("今日抽奖次数已用完!");
                         // }
                     }else{
                         getRewardsItems(true);
@@ -237,8 +236,7 @@ $(document).ready(function(){
                     $('#btn').attr("disabled",true);
                     var msg=response.data.msg;
                     // btn.onclick = function(){
-                    alertNew(msg);
-                    alertShow();
+                    weui.alert(msg);
                     // }
                 }
                 else if(response.code==500){
@@ -246,11 +244,10 @@ $(document).ready(function(){
                 }
                 },
                 error:function(){
-                    alertNew("抽奖页面出错");
-                    alertShow();
+                    weui.alert("抽奖页面出错");
                 }
             })
-        }
+        // }
      }
     function getRewardsItems(param){
         $.ajax({
@@ -279,8 +276,7 @@ $(document).ready(function(){
                 }
                 
                 if(!canvas.getContext){
-                    alertNew('抱歉！浏览器不支持。');
-                    alertShow();
+                    weui.alert('抱歉！浏览器不支持。');
                     return;
                 }
                 document.styleSheets[1].insertRule("#btn:before{position:absolute;display:block;content:'';left:24%;top:-45%;border-width:"+0.05*window.screen.width+"px;border-style:solid;border-color:transparent;border-bottom-color:red;}",0);
@@ -352,8 +348,7 @@ $(document).ready(function(){
                                     document.styleSheets[1].insertRule("#btn:before{position:absolute;display:block;content:'';left:24%;top:-45%;border-width:"+0.05*window.screen.width+"px;border-style:solid;border-color:transparent;border-bottom-color:#C0C0C0;}",0);
                                     //灰色按钮
                                     $('#btn').attr("disabled",true);
-                                    alertNew(temper.error.msg);
-                                    alertShow();
+                                    weui.alert(temper.error.msg);
                                 }
                             },
                             error:function(){
@@ -370,14 +365,11 @@ $(document).ready(function(){
             }
         }
             else{
-                alertNew(obj.error.msg+"请刷新页面重试！");
-                alertShow();
-                
+                weui.alert(obj.error.msg+"请刷新页面重试！");
             }
             },
             error:function(){
-                alertNew("获取抽奖信息出错");
-                alertShow();
+                weui.alert("获取抽奖信息出错");
             }
         });
     }
