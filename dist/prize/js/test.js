@@ -108,63 +108,68 @@ $(document).ready(function(){
     function callbackA(id) {                
         openId=id; 
         console.log(id);
-        $.ajax({
-            url:urlServer+'/common/is-subscribe',
-            type:'POST',
-            data:{
-                "openId":openId
-            },
-            success:function(data){
-                var code=data.code;
-                if(code==200){
-                    var result=data.data.result;
-                    // alert(result);
-                    if(result==true){
-                        $('#btn').on("click",function(){
-                            isAble(openId);  
-                        });  
-                    }
-                    else if(result==false){
-                        $('#btn').on("click",function(){
-                            $('#Dialog').fadeIn(200);
-                        });
-                    }
-                }
-            },
-            error:function(error){
-                console.log(error);
-                alertNew("获取是否关注失败");
-                alertShow();
-            }
+        $('#btn').on("click",function(){
+            isAble(openId);
         });
+        //是否关注判断，，注释掉
+        // $.ajax({
+        //     url:urlServer+'/common/is-subscribe',
+        //     type:'POST',
+        //     data:{
+        //         "openId":openId
+        //     },
+        //     success:function(data){
+        //         var code=data.code;
+        //         if(code==200){
+        //             var result=data.data.result;
+        //             // alert(result);
+        //             if(result==true){
+        //                 $('#btn').on("click",function(){
+        //                     isAble(openId);
+        //                 });
+        //             }
+        //             else if(result==false){
+        //                 $('#btn').on("click",function(){
+        //                     $('#Dialog').fadeIn(200);
+        //                 });
+        //             }
+        //         }
+        //     },
+        //     error:function(error){
+        //         console.log(error);
+        //         alertNew("获取是否关注失败");
+        //         alertShow();
+        //     }
+        // });
         
     }
     $('#btn').on("click",function(){
-        $.ajax({
-            url:urlServer+'/common/is-subscribe',
-            type:'POST',
-            data:{
-                "openId":openId
-            },
-            success:function(data){
-                var code=data.code;
-                if(code==200){
-                    var result=data.data.result;
-                    // alert(result);
-                    if(result==true){
-                        isAble(openId);    
-                    }
-                    else if(result==false){
-                        $('#Dialog').fadeIn(200);
-                    }
-                }
-            },
-            error:function(error){
-                console.log(error);
-                alertNew("获取权限信息失败");
-                alertShow();
-            }
-        });
+        isAble(openId);
+        // $.ajax({
+        //     url:urlServer+'/common/is-subscribe',
+        //     type:'POST',
+        //     data:{
+        //         "openId":openId
+        //     },
+        //     success:function(data){
+        //         var code=data.code;
+        //         if(code==200){
+        //             var result=data.data.result;
+        //             // alert(result);
+        //             if(result==true){
+        //                 isAble(openId);
+        //             }
+        //             else if(result==false){
+        //                 $('#Dialog').fadeIn(200);
+        //             }
+        //         }
+        //     },
+        //     error:function(error){
+        //         console.log(error);
+        //         alertNew("获取权限信息失败");
+        //         alertShow();
+        //     }
+        // });
     })  
     
     $('#click_queding').on("click",function(){
