@@ -1,6 +1,7 @@
 $(function() {
     /* 变量定义*/
     var openId='yy';
+    var urlGetVoteNum='/vote/get-vote-num';
     var urlProductInfo="/vote/get-vote-product-info";
     var urlVoteParam="/vote/get-vote-param";
     //抽奖设置
@@ -30,12 +31,37 @@ $(function() {
 //        getWeChatId(options,callbackA);
     init();
     voteParamContact();
+    voteNumContact();
     productInfoContact();
     function init() {
         if(getCookie("countff")!='null'&&getCookie("countff")!=null&&getCookie("countff")==0){
             $('#submit').html('已达投票上限');
             $('#submit').attr("disabled",true);
         }
+    }
+    function voteNumContact() {
+        $.ajax({
+            url:urlServer+urlGetVoteNum,
+            async:false,
+            data:{
+                "openId":openId,
+                "actId":actId
+            },
+            success:function (data) {
+                var code=data.code;
+                if(code==200){
+                    var num=data.data;
+                    if(num>voteMaxNum){
+                        $('#submit').html('已达投票上限');
+                        $('#submit').attr("disabled",true);
+                    }
+                }
+            },
+            error:function (error) {
+                console.log(error);
+                weui.alert("获取当天投票数失败");
+            }
+        })
     }
     function voteParamContact() {
         $.ajax({

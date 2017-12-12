@@ -1,6 +1,7 @@
     $(document).ready(function() {
         var urlVoteParam="/vote/get-vote-param";
         var urlProductInfo="/vote/get-vote-product-info";
+        var urlGetVoteNum='/vote/get-vote-num';
         $('html').width(window.screen.width);
         $('html').css("overflow-x","hidden");
         var countff=getCookie("countff");//投票次数
@@ -44,9 +45,29 @@
         //         $dialog.hide();
         //     });
         // })
-
+        // voteNumContact();
         voteParamContact();
         productInfoContact();
+        function voteNumContact() {
+            $.ajax({
+                url:urlServer+urlGetVoteNum,
+                data:{
+                    "openId":openId,
+                    "actId":actId
+                },
+                success:function (data) {
+                    var code=data.code;
+                    if(code==200){
+                        var num=data.data;
+                        console.log(num);
+                    }
+                },
+                error:function (error) {
+                    console.log(error);
+                    weui.alert("获取当天投票数失败");
+                }
+            })
+        }
         function voteParamContact() {
             $.ajax({
                 url:urlServer+urlVoteParam,
