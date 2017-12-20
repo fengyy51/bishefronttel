@@ -7,11 +7,11 @@ $(document).ready(function() {
     var username;//获取活动所属的系统管理员
     // 获取用户openid，用户授权
     var openId='yy';
-    var options={
-        url:urlYuming+"/act/page/detail.html?id="+getCookie("id"),
-        urlServerauth:urlServer+"/user/do-auth",
-        APPID:APPIDall
-    }
+    // var options={
+    //     url:urlYuming+"/act/page/detail.html?id="+getCookie("id"),
+    //     urlServerauth:urlServer+"/user/do-auth",
+    //     APPID:APPIDall
+    // }
     function callbackA(id) {
         openId=id;
         ajaxContact();

@@ -154,8 +154,6 @@
                  var code_re = data.code,
                     doAuth = data.data.doAuth;                 
                     console.log(code_re);
-                 // alertNew("info"+code_re);
-                 // alertNew("doAuth"+doAuth);
                  if (code_re == 200) {
                      // openid验证成功，accesstoken未失效
                      if (doAuth == false) {
@@ -178,7 +176,7 @@
              }
          });
      }
-     updateTopPicture("../resource/img/prize2.jpg", "yy");
+     // updateTopPicture("../resource/img/prize2.jpg", "yy");
      function updateTopPicture(headimgurl, nickname) {
          var topPicture = $('#topPicture');
          // alertNew(nickname);

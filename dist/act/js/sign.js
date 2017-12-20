@@ -14,11 +14,11 @@ $(document).ready(function() {
     var limitNumber;
     // 获取用户openid，用户授权
     var openId='yy';
-    var options={
-        url:urlYuming+"/act/page/detail.html?id="+getCookie("id")+"&price="+getCookie("price")+"&username="+getCookie("username")+"&limitNumber="+limitNumber,
-        urlServerauth:urlServer+"/user/do-auth",
-        APPID:APPIDall
-    }
+    // var options={
+    //     url:urlYuming+"/act/page/detail.html?id="+getCookie("id")+"&price="+getCookie("price")+"&username="+getCookie("username")+"&limitNumber="+limitNumber,
+    //     urlServerauth:urlServer+"/user/do-auth",
+    //     APPID:APPIDall
+    // }
     function callbackA(id) {
         openId=id;
     }
