@@ -5,9 +5,9 @@
         $('html').width(window.screen.width);
         $('html').css("overflow-x","hidden");
         var countff=getCookie("countff");//投票次数
-        var countprize=getCookie("countprize");//抽奖次数
+
         var shareflagvote=getCookie("shareflagvote");//投票分享次数
-        var shareflagprize=getCookie("shareflagprize");//抽奖分享次数
+
         //抽奖设置
         var actName;
         var begin;

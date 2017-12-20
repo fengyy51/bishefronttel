@@ -1,4 +1,16 @@
 $(document).ready(function(){
+    var id=getQueryString("id");
+    var urlPrizeParam="/luck/get-prize-param";
+    var urlPrizeInfo="/luck/get-prize-info";//奖项
+    var countprize=getCookie("countprize");//抽奖次数
+    var shareflagprize=getCookie("shareflagprize");//抽奖分享次数
+    var name;
+    var begin;
+    var end;
+    var prizeNum;
+    var shareNum;
+    var prizeMaxNum;
+    var prizeDecoration;
 	var wheight=window.screen.height;
 	$('#prizelist img').css('height',wheight*0.3);
     var openId;
@@ -6,105 +18,161 @@ $(document).ready(function(){
     var m;
     var flag;
     var res2,res3;
-    var display = ["一等奖","二等奖","三等奖","幸运奖"];
-    var list = [4,3,4,1,4,3,4,2];
+    //一个奖占一个
+    var display =new Array();
+    // var list = [4,3,4,1,4,3,4,2];
     var color=['#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c']
     //var color = ['#c71f16','#e88c30','#3080e8','#86c716','#30c9e8','#e8308c','#e88c30','#3080e8','#a866ee','#c71f16','#e88c30','#3080e8','#86c716','#30c9e8','#e8308c','#e88c30','#3080e8','#a866ee'];
     var countprize=getCookie("countprize");
             
     var openId='yy';
-    var options={
-        url:urlYuming+"/prize/page/test",
-        urlServerauth:urlServer+"/user/do-auth",
-        APPID:APPIDall      
-    };
-    var canvas = document.getElementById('canvas');
-    var con=window.screen.width;
-    canvas.width= con*0.9;
-    canvas.height=con*0.9;
-    var offWidth = con*0.9;
-    var btn = document.getElementById('btn');
-    document.getElementById("turntable").style.height=con*0.92+"px";
-    document.getElementById("turntable").style.display="block";
-    document.getElementById("description").style.fontSize=0.04*con+"px";
-    document.getElementById("description").style.display="block";
-    document.getElementById("btn").style.height=0.2*con+"px";
-    document.getElementById("btn").style.width=0.2*con+"px";
-    document.getElementById("btn").style.top=0.35*con+"px";
-    document.getElementById("btn").style.left=0.4*con+"px";
-    document.getElementById("btn").style.fontSize=0.045*con+"px";
-    document.getElementById("times").style.fontSize=0.04*con+"px";
-    document.getElementById("img").style.height=0.5*window.screen.width+"px";
-    document.getElementById("img").style.width=window.screen.width+"px";
-    document.getElementById("title").style.fontSize=0.05*con+"px";    //上面的代码为不同屏宽移动端动态设计元素尺寸
-    var ctx = canvas.getContext('2d');
-    ctx.save();//绘制转盘
-    ctx.beginPath();
-    ctx.translate(parseInt(offWidth/2), parseInt(offWidth/2));
-    ctx.moveTo(0, 0);
-    ctx.rotate(i/num*Math.PI);
-    ctx.arc(0, 0, parseInt(offWidth/2), 0 , Math.PI*2, false);
-    ctx.fillStyle = '#c71f16';
-    ctx.fill();
-    ctx.restore();
-    ctx.save();
-    ctx.beginPath();
-    ctx.translate(parseInt(offWidth/2), parseInt(offWidth/2));
-    ctx.moveTo(0, 0);
-    ctx.rotate(i/num*Math.PI);
-    ctx.arc(0, 0, parseInt(offWidth/2)*0.965, 0 , Math.PI*2, false);
-    ctx.fillStyle = '#eee966';
-    ctx.fill();
-    ctx.restore();
-
-    var num = list.length;
-    for (var i = 0; i < 2*num; i++) {
-            // 保存当前状态
-        ctx.save();
-            // 开始一条新路径
+    prizeParamContact();
+    prizeInfoContact();
+    function prizeParamContact() {
+        $.ajax({
+            url:urlServer+urlPrizeParam,
+            async:false,
+            data:{
+                "id":id
+            },
+            success:function (data) {
+                var code=data.code;
+                if(code==200){
+                    name=data.data.name;
+                    begin=data.data.begin;
+                    end=data.data.end;
+                    prizeNum=data.data.prizeNum;
+                    shareNum=data.data.shareNum;
+                    prizeMaxNum=data.data.prizeMaxNum;
+                    prizeDecoration=data.data.prizeDecoration;
+                    $('.title').html(name);
+                    $('#description').html(prizeDecoration);
+                    setCookie_29("name",name);
+                    if (getCookie("countprize") == null || getCookie("countprize") == "null") {
+                        setCookie_timedetail("countprize", prizeNum, '24:00:00');
+                    }
+                    countprize = getCookie("countprize");
+                    weui.alert("您可抽奖" + countprize + "次");
+                }
+            },
+            error:function (error) {
+                console.log(error);
+                weui.alert("获取投票设置失败");
+            }
+        })
+    }
+    function prizeInfoContact() {
+        $.ajax({
+            url:urlServer+urlPrizeInfo,
+            data:{
+                actName:name
+            },
+            async:false,
+            success:function (data) {
+                var code=data.code;
+                if(code==200){
+                    display=data.data;
+                    drawCanvas(display);
+                }
+            }
+        })
+    }
+    // var options={
+    //     url:urlYuming+"/prize/page/test",
+    //     urlServerauth:urlServer+"/user/do-auth",
+    //     APPID:APPIDall
+    // };
+    function drawCanvas(display) {
+        var canvas = document.getElementById('canvas');
+        var con=window.screen.width;
+        canvas.width= con*0.9;
+        canvas.height=con*0.9;
+        var offWidth = con*0.9;
+        var btn = document.getElementById('btn');
+        document.getElementById("turntable").style.height=con*0.92+"px";
+        document.getElementById("turntable").style.display="block";
+        document.getElementById("description").style.fontSize=0.04*con+"px";
+        document.getElementById("description").style.display="block";
+        document.getElementById("btn").style.height=0.2*con+"px";
+        document.getElementById("btn").style.width=0.2*con+"px";
+        document.getElementById("btn").style.top=0.35*con+"px";
+        document.getElementById("btn").style.left=0.4*con+"px";
+        document.getElementById("btn").style.fontSize=0.045*con+"px";
+        document.getElementById("times").style.fontSize=0.04*con+"px";
+        document.getElementById("img").style.height=0.5*window.screen.width+"px";
+        document.getElementById("img").style.width=window.screen.width+"px";
+        document.getElementById("title").style.fontSize=0.05*con+"px";    //上面的代码为不同屏宽移动端动态设计元素尺寸
+        var ctx = canvas.getContext('2d');
+        ctx.save();//绘制转盘
         ctx.beginPath();
-            // 位移到圆心，下面需要围绕圆心旋转,初始扇形是3点钟方向
         ctx.translate(parseInt(offWidth/2), parseInt(offWidth/2));
-            // 从(0, 0)坐标开始定义一条新的子路径
         ctx.moveTo(0, 0);
         ctx.rotate(i/num*Math.PI);
-        ctx.arc(0, 0, parseInt(offWidth/2)*0.94, -2/180*Math.PI , Math.PI / num, false);//false顺时针
-        ctx.fillStyle = color[parseInt(i/2)];
+        ctx.arc(0, 0, parseInt(offWidth/2), 0 , Math.PI*2, false);
+        ctx.fillStyle = '#c71f16';
         ctx.fill();
-        if(i%2==1){
-            ctx.fillStyle = '#5A0000';
-            ctx.font=""+parseInt(offWidth/20)+"px sans-serif";
-            ctx.fillText(display[list[parseInt(i/2)]-1], parseInt(offWidth/4), parseInt(con/70));     
-        }
-        ctx.lineWidth = 0.01;
-        ctx.strokeStyle = '#f48d24';
-        ctx.stroke();
-         // img.src="C:/bw/demo10.jpg"
-         // ctx.drawImage(img,200,20,100,100);
         ctx.restore();
-        // if(i%2==0){
-        //     ctx.rotate(i/num*Math.PI);
-        //     ctx.arc(0, 0, parseInt(offWidth/2)*0.94, -2/180*Math.PI , Math.PI / num, false);//false顺时针
-        //     ctx.fillStyle = color[parseInt(i/2)];
-        //     ctx.fill();
-        //     ctx.lineWidth = 0.01;
-        //     ctx.strokeStyle = '#f48d24';
-        //     ctx.stroke();
-        //      // img.src="C:/bw/demo10.jpg"
-        //      // ctx.drawImage(img,200,20,100,100);
-        //     ctx.restore();
-        // }
-        // else{
-        //     ctx.rotate(i/num*Math.PI);
-        //     ctx.arc(0, 0, parseInt(offWidth/2)*0.94, 0 , Math.PI / num, false);
-        //     ctx.fillStyle = color[parseInt(i/2)];
-        //     ctx.fill();
-        //     ctx.fillStyle = '#fff';
-        //     ctx.font=""+parseInt(offWidth/20)+"px sans-serif";
-        //     ctx.fillText(display[list[parseInt(i/2)]-1], parseInt(offWidth/4), parseInt(con/70));
-        //     ctx.restore();         
-        // }
-    }   //绘制盘面
+        ctx.save();
+        ctx.beginPath();
+        ctx.translate(parseInt(offWidth/2), parseInt(offWidth/2));
+        ctx.moveTo(0, 0);
+        ctx.rotate(i/num*Math.PI);
+        ctx.arc(0, 0, parseInt(offWidth/2)*0.965, 0 , Math.PI*2, false);
+        ctx.fillStyle = '#eee966';
+        ctx.fill();
+        ctx.restore();
+
+        var num = display.length;
+        for ( var i = 0; i < 2*num; i++) {
+            // 保存当前状态
+            ctx.save();
+            // 开始一条新路径
+            ctx.beginPath();
+            // 位移到圆心，下面需要围绕圆心旋转,初始扇形是3点钟方向
+            ctx.translate(parseInt(offWidth/2), parseInt(offWidth/2));
+            // 从(0, 0)坐标开始定义一条新的子路径
+            ctx.moveTo(0, 0);
+            ctx.rotate(i/num*Math.PI);
+            ctx.arc(0, 0, parseInt(offWidth/2)*0.94, -2/180*Math.PI , Math.PI / num, false);//false顺时针
+            ctx.fillStyle = color[parseInt(i/2)];
+            ctx.fill();
+            if(i%2==1){
+                ctx.fillStyle = '#5A0000';
+                ctx.font=""+parseInt(offWidth/20)+"px sans-serif";
+                console.log(display[parseInt(i/2)]);
+                ctx.fillText(display[parseInt(i/2)], parseInt(offWidth/4), parseInt(con/70));
+            }
+            ctx.lineWidth = 0.01;
+            ctx.strokeStyle = '#f48d24';
+            ctx.stroke();
+            // img.src="C:/bw/demo10.jpg"
+            // ctx.drawImage(img,200,20,100,100);
+            ctx.restore();
+            // if(i%2==0){
+            //     ctx.rotate(i/num*Math.PI);
+            //     ctx.arc(0, 0, parseInt(offWidth/2)*0.94, -2/180*Math.PI , Math.PI / num, false);//false顺时针
+            //     ctx.fillStyle = color[parseInt(i/2)];
+            //     ctx.fill();
+            //     ctx.lineWidth = 0.01;
+            //     ctx.strokeStyle = '#f48d24';
+            //     ctx.stroke();
+            //      // img.src="C:/bw/demo10.jpg"
+            //      // ctx.drawImage(img,200,20,100,100);
+            //     ctx.restore();
+            // }
+            // else{
+            //     ctx.rotate(i/num*Math.PI);
+            //     ctx.arc(0, 0, parseInt(offWidth/2)*0.94, 0 , Math.PI / num, false);
+            //     ctx.fillStyle = color[parseInt(i/2)];
+            //     ctx.fill();
+            //     ctx.fillStyle = '#fff';
+            //     ctx.font=""+parseInt(offWidth/20)+"px sans-serif";
+            //     ctx.fillText(display[list[parseInt(i/2)]-1], parseInt(offWidth/4), parseInt(con/70));
+            //     ctx.restore();
+            // }
+        }   //绘制盘面
+    }
+
     function callbackA(id) {                
         openId=id; 
         console.log(id);
@@ -144,7 +212,20 @@ $(document).ready(function(){
         
     }
     $('#btn').on("click",function(){
-        isAble(openId);
+        var now=Date.now();
+        if(now<Date.parse(begin)){
+            weui.alert("抽奖尚未开始");
+        }else if(now>Date.parse(begin)&&now>Date.parse(end)){
+            weui.alert("抽奖已结束");
+        }else if(now>Date.parse(begin)&&now<Date.parse(end)){
+            if (countprize==0){
+                weui.alert("抽奖次数已达上限");
+            }
+            else{
+                isAble(openId);
+            }
+        }
+
         // $.ajax({
         //     url:urlServer+'/common/is-subscribe',
         //     type:'POST',
@@ -172,22 +253,12 @@ $(document).ready(function(){
         // });
     })  
     
-    $('#click_queding').on("click",function(){
-        var imghtml='<div><img src="../resource/jpg/logo.jpg" style="width:82%"></div><div>长按二维码，了解更多相关信息</div>';
-        $('#alert .weui_dialog_ft a').html('关闭');
-        alertNew(imghtml);
-        alertShow();
-        $('.js_dialog').fadeOut(200);
-    });
 
-    $('#click_quxiao').on("click",function(){
-        $(this).parents('.js_dialog').fadeOut(200);
-    });
 //   isAble(openId);     
-    getWeChatId(options,callbackA);    
+//     getWeChatId(options,callbackA);
     function isAble(openId){
 
-        var votestatus=getCookie("votestatus");
+        // var votestatus=getCookie("votestatus");
         // alertNew(votestatus);
         // console.log(votestatus);
         // if(votestatus==null||votestatus=="null"){
@@ -253,7 +324,7 @@ $(document).ready(function(){
         $.ajax({
             url:urlServer+"/luck/get-win-info",
             data:{
-                "collectId":"1"
+                "collectId":id
             },
             type:"get",
             // dataType :"jsonp",  // 本地mock数据测试添加的两个字段
@@ -322,7 +393,7 @@ $(document).ready(function(){
                             data:{
                                 "openId":openId,
                                 "prizeId":obj.data.prizeId,
-                                "collectId":"1"
+                                "collectId":id
                             },
                             type:"post",
                             success:function(result){
@@ -354,8 +425,7 @@ $(document).ready(function(){
                             error:function(){
                                 postflag=false;
                                 console.log("发送抽奖信息出错");
-                                // alertNew("发送抽奖信息出错");
-                                // alertShow();
+                                weui.alert("发送抽奖信息出错");
                             }
                         })
                         }
@@ -374,7 +444,17 @@ $(document).ready(function(){
         });
     }
 })
-
+// $('#click_queding').on("click",function(){
+//     var imghtml='<div><img src="../resource/jpg/logo.jpg" style="width:82%"></div><div>长按二维码，了解更多相关信息</div>';
+//     $('#alert .weui_dialog_ft a').html('关闭');
+//     alertNew(imghtml);
+//     alertShow();
+//     $('.js_dialog').fadeOut(200);
+// });
+//
+// $('#click_quxiao').on("click",function(){
+//     $(this).parents('.js_dialog').fadeOut(200);
+// });
 
 
 

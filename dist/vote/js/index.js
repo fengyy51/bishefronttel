@@ -4,7 +4,7 @@ $(function() {
     var urlGetVoteNum='/vote/get-vote-num';
     var urlProductInfo="/vote/get-vote-product-info";
     var urlVoteParam="/vote/get-vote-param";
-    //抽奖设置
+    //投票设置
     var actName;
     var begin;
     var end;
@@ -13,7 +13,7 @@ $(function() {
     var shareNum;
     var voteMaxNum;
     var voteDecoration;
-    var proApproved;//抽奖配置 proNum一次投多少个
+    var proApproved;//投票配置 proNum一次投多少个
 
     var actId=getQueryString("actId");
     var countff; //初始化为votenum
