@@ -77,31 +77,35 @@
     // 获取用户openid，用户授权
         
     var cookieIndex=document.cookie.indexOf("openId");  
-    var a = $('#click_denglu');           
+    var a = $('#click_denglu');
+    a.click(function () {
+        updateTopPicture("../resource/img/prize2.jpg", "yy");
+    })
+     updateTopPicture("../resource/img/prize2.jpg", "yy");
      // cookie中没有值初次登录
-    if (cookieIndex == -1) {
-         a.on("click", function(){
-            var urlRe=urlYuming+"/personal/page/personal";
-            getCode(urlRe);
-         });
-        if(getQueryString("code")!=null){
-            code=getQueryString("code");
-            console.log(code);
-            getopenId(code); 
-        }          
-    }
+    // if (cookieIndex == -1) {
+    //      a.on("click", function(){
+    //         var urlRe=urlYuming+"/personal/page/personal";
+    //         getCode(urlRe);
+    //      });
+    //     if(getQueryString("code")!=null){
+    //         code=getQueryString("code");
+    //         console.log(code);
+    //         getopenId(code);
+    //     }
+    // }
      // // 不是初次登录，通过openId获取用户信息
-    else {
-        if(getQueryString("code")!=null){
-            code=getQueryString("code");
-            console.log(code);
-            getopenId(code); 
-        }else{
-            openId=getCookie("openId",openId);
-            getUserInfo(openId);  
-        }
-
-    }
+    // else {
+    //     if(getQueryString("code")!=null){
+    //         code=getQueryString("code");
+    //         console.log(code);
+    //         getopenId(code);
+    //     }else{
+    //         openId=getCookie("openId",openId);
+    //         getUserInfo(openId);
+    //     }
+    //
+    // }
     // 获取code
         function getCode(urlRe) {
             console.log(urlRe);
@@ -176,7 +180,7 @@
              }
          });
      }
-     // updateTopPicture("../resource/img/prize2.jpg", "yy");
+
      function updateTopPicture(headimgurl, nickname) {
          var topPicture = $('#topPicture');
          // alertNew(nickname);

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>奖券凭证</title>
-    <link rel="stylesheet" type="text/css" href="../../util/css/pure.css?v=3051256d60">
+    <!--<link rel="stylesheet" type="text/css" href="../../util/css/pure.css?v=3051256d60">-->
     <link rel="stylesheet" type="text/css" href="../../util/css/weui.min.css?v=4035192f39">
     <link rel="stylesheet" type="text/css" href="../../util/css/quanju.css?v=49d67bd3a0">
     <link rel="stylesheet" type="text/css" href="../../util/css/alert.css?v=f173e8cecd">
@@ -41,8 +41,8 @@
         <div class="body composing" id="content">
         </div>
     </div>
-    <div class="pure-controls" id="ShopIn">
-        <input class="pure-button pure-button-primary" id="click_ShopIn" type="button" value="商家录入">
+    <div class="weui-btn-area" id="ShopIn">
+        <button id="click_ShopIn" href="javascript:" class="weui-btn weui-btn_primary">商家录入</button>
     </div>
     <div id="dialogs">
         <!--BEGIN dialog1-->
@@ -62,26 +62,12 @@
 
         <!--END dialog1-->
     </div>
-     <div class="weui_dialog_alert" style="display: none;" id="alert">
-        <div class="weui_mask"></div>
-        <div class="weui_dialog">
-            <div class="weui_dialog_hd"><strong class="weui_dialog_title"></strong></div>
-            <div class="weui_dialog_bd">
-                
-            </div>  
-            <div class="weui_dialog_ft">
-                <a href="javascript:;" class="weui_btn_dialog primary">确定</a>
-            </div>
-        </div>
-    </div>
     <script type="text/javascript" src="../../util/js/jquery-3.2.1.js?v=a5a8ab0a7c"></script>
     <!-- <script type="text/javascript" src="../../util/js/zepto.js?v=7645315506"></script>   -->
-    <script type="text/javascript" src="../../util/js/publicAttr.js?v=f2befc5d82"></script>
+    <script type="text/javascript" src="../../util/js/publicAttr.js?v=f4f84b1bb5"></script>
     <script type="text/javascript" src="../../util/js/global.js?v=5ca3d38347"></script>
     <script type="text/javascript" src="../../util/js/weui.js?v=022aec7711"></script>
-    <script src="../js/jweixin-1.0.0.js"></script>
     <script type="text/javascript" src="../js/prize.js?v=70a45e5c87"></script>
-    <script src="../js/share.js"></script>
 </body>
 
 </html>

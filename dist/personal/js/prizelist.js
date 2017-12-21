@@ -1,18 +1,19 @@
 $(document).ready(function() {
     var urlList = "/luck/list/win-detail";
     // 获取用户openid，用户授权
-    var openId;
-    var options={
-        url:urlYuming+"/personal/page/prizelist",
-        urlServerauth:urlServer+"/user/do-auth",
-        APPID:APPIDall   
-    }
+    var openId="yy";
+    // var options={
+    //     url:urlYuming+"/personal/page/prizelist",
+    //     urlServerauth:urlServer+"/user/do-auth",
+    //     APPID:APPIDall
+    // }
     function callbackA(id) {                
         openId=id;
         // alert("ss");
         ajaxContact();
     }
-    getWeChatId(options,callbackA);
+    ajaxContact();
+    // getWeChatId(options,callbackA);
      // 苹果手机只可用此委托
     $(".body").delegate(".item","click",function(){
         window.location.href = "../page/prize.html?id=" + $(this).find("#id").text();// + "&priceType=" +$(this).find(".price").text();
@@ -21,8 +22,6 @@ $(document).ready(function() {
     function ajaxContact() {
         $.ajax({
             url: urlServer + urlList,
-            type: "GET",
-            // dataType: "json",
             data: {
                 "openId": openId
             },
@@ -44,13 +43,13 @@ $(document).ready(function() {
     }    
     function makeList(list) {
         var strHtml = '';
-        var prize=["一等奖","二等奖","三等奖","幸运奖"];
+        // var prize=["一等奖","二等奖","三等奖","幸运奖"];
         var ifUse=["未使用","已使用"];
         for (var i = 0; i < list.length; i++) {
             var optionHtml = '<div class="item" style="cursor:pointer">'+
             '<div class="tupian"><img src="../resource/img/prize2.jpg"></div>'+
             '<div class="content">'+
-            '<div class="type">奖项类别:'+prize[list[i].type-1]+'</div>'+
+            '<div class="type">奖项类别:'+list[i].type+'</div>'+
             '<div class="name">奖项名称:<span class="PrizeName">'+list[i].name+'</span></div>'+
             // '<div class="info">奖项说明:'+list[i].info+'</div>' + 
             // '<div class="duiTime">兑奖时间:'+list[i].duijiangTime+'</div>'+
