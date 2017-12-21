@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e7ca2437-d0cb-4495-8f55-a6f06fd6a19f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/prize/js/test.js" afterPath="$PROJECT_DIR$/dist/prize/js/test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/personal/js/prize.js" afterPath="$PROJECT_DIR$/dist/personal/js/prize.js" />
     </list>
     <ignored path="fe-frontOfBinwang.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -22,18 +22,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/prize/js/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-171">
-              <caret line="358" column="37" lean-forward="false" selection-start-line="358" selection-start-column="37" selection-end-line="358" selection-end-column="37" />
+            <state relative-caret-position="3189">
+              <caret line="280" column="51" lean-forward="false" selection-start-line="280" selection-start-column="51" selection-end-line="280" selection-end-column="51" />
               <folding>
                 <element signature="e#1134#2366#0" expanded="false" />
                 <element signature="e#2398#3527#0" expanded="false" />
                 <element signature="e#3560#4086#0" expanded="false" />
                 <element signature="e#6225#8308#0" expanded="false" />
                 <element signature="e#8352#9558#0" expanded="false" />
-                <element signature="e#10047#11984#0" expanded="false" />
                 <marker date="1513843709086" expanded="true" signature="19077:19086" ph="..." />
               </folding>
             </state>
@@ -113,14 +112,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="prize.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="prize.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/personal/js/prize.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="95" column="34" lean-forward="true" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
+            <state relative-caret-position="-746">
+              <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
               <folding>
-                <marker date="1513842709575" expanded="true" signature="914:941" ph="..." />
-                <marker date="1513842709575" expanded="true" signature="3847:3861" ph="..." />
+                <element signature="e#3779#5089#0" expanded="false" />
+                <marker date="1513847483543" expanded="true" signature="868:895" ph="..." />
+                <marker date="1513847483543" expanded="true" signature="3937:3951" ph="..." />
               </folding>
             </state>
           </provider>
@@ -152,8 +152,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>product</find>
-      <find>deleg</find>
       <find>voteNum</find>
       <find>submit</find>
       <find>det</find>
@@ -182,6 +180,8 @@
       <find>confirm</find>
       <find>click_ShopIn</find>
       <find>begin</find>
+      <find>countprize</find>
+      <find>urlWinDetail</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Biye\fe-frontOfBinwang\dist\collect</dir>
@@ -245,8 +245,8 @@
         <option value="$PROJECT_DIR$/dist/personal/js/personal.js" />
         <option value="$PROJECT_DIR$/dist/personal/js/prizelist.js" />
         <option value="$PROJECT_DIR$/dist/personal/page/prize.html" />
-        <option value="$PROJECT_DIR$/dist/personal/js/prize.js" />
         <option value="$PROJECT_DIR$/dist/prize/js/test.js" />
+        <option value="$PROJECT_DIR$/dist/personal/js/prize.js" />
       </list>
     </option>
   </component>
@@ -266,9 +266,9 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-63" />
-    <option name="y" value="66" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="81" />
+    <option name="y" value="136" />
     <option name="width" value="1700" />
     <option name="height" value="989" />
   </component>
@@ -443,7 +443,7 @@
       <workItem from="1511963639231" duration="6995000" />
       <workItem from="1512023235071" duration="28197000" />
       <workItem from="1512522647472" duration="70435000" />
-      <workItem from="1513647223702" duration="31649000" />
+      <workItem from="1513647223702" duration="34707000" />
     </task>
     <task id="LOCAL-00001" summary="修改多选表单提交逻辑">
       <created>1512007311150</created>
@@ -613,11 +613,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513843448059</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="修改prize prizelist">
+      <created>1513843745067</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1513843745067</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="289123000" />
+    <option name="totallyTimeSpent" value="292181000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -629,14 +636,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
+    <frame x="81" y="136" width="1700" height="989" extended-state="0" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18757538" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18712395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10030864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4351145" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14450867" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15096618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1169,29 +1176,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/personal/js/prize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="95" column="34" lean-forward="true" selection-start-line="95" selection-start-column="34" selection-end-line="95" selection-end-column="34" />
-          <folding>
-            <marker date="1513842709575" expanded="true" signature="914:941" ph="..." />
-            <marker date="1513842709575" expanded="true" signature="3847:3861" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/dist/prize/js/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-171">
-          <caret line="358" column="37" lean-forward="false" selection-start-line="358" selection-start-column="37" selection-end-line="358" selection-end-column="37" />
+        <state relative-caret-position="3189">
+          <caret line="280" column="51" lean-forward="false" selection-start-line="280" selection-start-column="51" selection-end-line="280" selection-end-column="51" />
           <folding>
             <element signature="e#1134#2366#0" expanded="false" />
             <element signature="e#2398#3527#0" expanded="false" />
             <element signature="e#3560#4086#0" expanded="false" />
             <element signature="e#6225#8308#0" expanded="false" />
             <element signature="e#8352#9558#0" expanded="false" />
-            <element signature="e#10047#11984#0" expanded="false" />
             <marker date="1513843709086" expanded="true" signature="19077:19086" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/personal/js/prize.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-746">
+          <caret line="32" column="34" lean-forward="false" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding>
+            <element signature="e#3779#5089#0" expanded="false" />
+            <marker date="1513847483543" expanded="true" signature="868:895" ph="..." />
+            <marker date="1513847483543" expanded="true" signature="3937:3951" ph="..." />
           </folding>
         </state>
       </provider>

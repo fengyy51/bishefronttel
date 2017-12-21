@@ -1,10 +1,13 @@
 
 $(document).ready(function(){
+	var urlVeriCode="/luck/veri-code";//兑奖码
 	var urlWinDetail="/luck/win-detail";
 	var urlWinHandleUse='/luck/win-handle-use';
     // 获取用户openid
     var id;
+    var actId;
     var openId="yy";
+    var vericode="";
     // var openId=getCookie("openId",openId);
     // 解析url参数 存入cookie
     if ((id_yuanshi = getQueryString("id")) != null){        
@@ -20,22 +23,15 @@ $(document).ready(function(){
 	//     });
 	// }
 	ajaxContact();
-	$('#click_queding').on("click",function(){
+    codeContact();
 
-	}) 
-	$('#click_quxiao').on("click",function(){
-		$(this).parents('.js_dialog').fadeOut(200);
-	})
  
 	$('#click_ShopIn').on("click",function(){
 		weui.confirm(' <input type="text" class="weui-input" style="border: 1px solid gainsboro" name="" id="code" value="" />',
 			function () {
                 var code=$('#code').val();
                 console.log(code);
-                if(code!=''&&code!=52158){
-                	alert("兑奖码输入有误");
-				}
-                if(code!=''&&code==52158){
+                if(code!=''&&code==vericode){
                     var inputflag=false;
                     if(inputflag==false){
                         inputflag=true;
@@ -71,8 +67,8 @@ $(document).ready(function(){
                         });
                     }
 
-                }else if(code!=''&&code!=52158||code==''){
-                    weui.alert("兑奖码输入有误");
+                }else if(code!=''&&code!=vericode||code==''){
+                    alert("兑奖码输入有误");
                 }
         }, function () {
                 console.log('no');
@@ -82,18 +78,32 @@ $(document).ready(function(){
 		// $('#Dialog').fadeIn(200);
 	});
 
+	function codeContact() {
+		$.ajax({
+			url:urlServer+urlVeriCode,
+			data:{
+				id:actId
+			},
+			success:function (data) {
+				var code=data.code;
+				if(code==200){
+					vericode=data.data;
+					console.log(vericode);
+				}
+            }
+		})
+    }
 	function ajaxContact() {
 	    $.ajax({
 	        url: urlServer + urlWinDetail,
-	        // url:"../json/prizelist.json",
-	        type: "GET",
-	        dataType: "json",
 	        data: {
 	            "id":id
 	        },
+			async:false,
 	        success: function(data) {
 	            var code = data.code;
 	            if (code == 200) {
+	            	actId=data.data.relationId;
 	                makeItem(data);
 	            }
 	        },
@@ -127,7 +137,12 @@ $(document).ready(function(){
 
     }
 })
-      
+// $('#click_queding').on("click",function(){
+//
+// })
+// $('#click_quxiao').on("click",function(){
+//     $(this).parents('.js_dialog').fadeOut(200);
+// })
 // function ajaxContact(){
 // 	$.ajax({
 // 		// url:urlServer+urlProof,	
