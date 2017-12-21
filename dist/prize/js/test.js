@@ -1,6 +1,6 @@
 $(document).ready(function(){
     var id=getQueryString("id");
-    var urlGetPrizeNum='/vote/get-prize-num';
+    var urlGetPrizeNum='/luck/get-prize-num';
     var urlPrizeParam="/luck/get-prize-param";
     var urlPrizeInfo="/luck/get-prize-info";//奖项
     var countprize=getCookie("countprize");//抽奖次数
@@ -18,16 +18,14 @@ $(document).ready(function(){
     var ratio = [];
     var m;
     var flag;
-    var res3;
     //一个奖占一个
     var display =new Array();
     // var list = [4,3,4,1,4,3,4,2];
     var color=['#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c']
     //var color = ['#c71f16','#e88c30','#3080e8','#86c716','#30c9e8','#e8308c','#e88c30','#3080e8','#a866ee','#c71f16','#e88c30','#3080e8','#86c716','#30c9e8','#e8308c','#e88c30','#3080e8','#a866ee'];
     var countprize=getCookie("countprize");
-
-    prizeNumContact();
     prizeParamContact();
+    prizeNumContact();
     prizeInfoContact();
     function prizeParamContact() {
         $.ajax({
@@ -62,18 +60,27 @@ $(document).ready(function(){
             }
         })
     }
-    function voteNumContact() {
+    function prizeNumContact() {
         $.ajax({
-            url:urlServer+urlGetVoteNum,
+            url:urlServer+urlGetPrizeNum,
             data:{
                 "openId":openId,
-                "actId":actId
+                "actId":id
             },
+            async:false,
             success:function (data) {
                 var code=data.code;
                 if(code==200){
                     var num=data.data;
                     console.log(num);
+                    console.log(prizeMaxNum);
+                    if(num>=prizeMaxNum){
+                        weui.alert("已达抽奖次数上限");
+                        document.getElementById("btn").style.backgroundColor="#C0C0C0";
+                        document.styleSheets[1].insertRule("#btn:before{position:absolute;display:block;content:'';left:24%;top:-45%;border-width:"+0.05*window.screen.width+"px;border-style:solid;border-color:transparent;border-bottom-color:#C0C0C0;}",0);
+                        //灰色按钮
+                        $('#btn').attr("disabled",true);
+                    }
                 }
             },
             error:function (error) {
@@ -247,66 +254,21 @@ $(document).ready(function(){
                 weui.alert("抽奖次数已达上限");
             }
             else{
-                isAble(openId);
+                isHasDraw(openId);
             }
         }
-
-        // $.ajax({
-        //     url:urlServer+'/common/is-subscribe',
-        //     type:'POST',
-        //     data:{
-        //         "openId":openId
-        //     },
-        //     success:function(data){
-        //         var code=data.code;
-        //         if(code==200){
-        //             var result=data.data.result;
-        //             // alert(result);
-        //             if(result==true){
-        //                 isAble(openId);
-        //             }
-        //             else if(result==false){
-        //                 $('#Dialog').fadeIn(200);
-        //             }
-        //         }
-        //     },
-        //     error:function(error){
-        //         console.log(error);
-        //         alertNew("获取权限信息失败");
-        //         alertShow();
-        //     }
-        // });
     })  
-    
-
-//   isAble(openId);     
-//     getWeChatId(options,callbackA);
-    function isAble(openId){
-
-        // var votestatus=getCookie("votestatus");
-        // alertNew(votestatus);
-        // console.log(votestatus);
-        // if(votestatus==null||votestatus=="null"){
-        //     document.getElementById("btn").style.backgroundColor="#C0C0C0";
-        //     document.styleSheets[1].insertRule("#btn:before{position:absolute;display:block;content:'';left:24%;top:-45%;border-width:"+0.05*window.screen.width+"px;border-style:solid;border-color:transparent;border-bottom-color:#C0C0C0;}",0);
-            //灰色按钮
-            // btn.onclick = function(){
-            //     alertNew("您尚未投票!");
-            //     alertShow();
-            // }
-        // }
-        // else if(votestatus=="true"||votestatus==true){
-            $.ajax({
-                url:urlServer+"/luck/is-has-draw",
-                data:{
-                    "openId":openId
-                },
-                type:"get",
-                // dataType :"jsonp",
-                // jsonpCallback:"fun",
-                success:function(response){
-                    console.log(response);
-                    res1 = response;
+    function isHasDraw() {
+        $.ajax({
+            url:urlServer+"/luck/is-has-draw",
+            data:{
+                "openId":openId
+            },
+            type:"get",
+            // dataType :"jsonp",
+            // jsonpCallback:"fun",
+            success:function(response){
+                console.log(response);
                 if(response.code==200&&response.data.result==true){
                     if(countprize==null){
                         countprize=1;
@@ -317,13 +279,10 @@ $(document).ready(function(){
                         document.styleSheets[1].insertRule("#btn:before{position:absolute;display:block;content:'';left:24%;top:-45%;border-width:"+0.05*window.screen.width+"px;border-style:solid;border-color:transparent;border-bottom-color:#C0C0C0;}",0);
                         //灰色按钮
                         $('#btn').attr("disabled",true);
-                        // btn.onclick = function(){
-                            weui.alert("今日抽奖次数已用完!");
-                        // }
+                        weui.alert("今日抽奖次数已用完!");
                     }else{
                         getRewardsItems(true);
                     }
-                    
                 }
                 else if(response.code==200&&response.data.result==false){
                     document.getElementById("btn").style.backgroundColor="#C0C0C0";
@@ -331,20 +290,18 @@ $(document).ready(function(){
                     //灰色按钮
                     $('#btn').attr("disabled",true);
                     var msg=response.data.msg;
-                    // btn.onclick = function(){
                     weui.alert(msg);
-                    // }
                 }
-                else if(response.code==500){
-                    console.log(response.error.msg);
-                }
-                },
-                error:function(){
-                    weui.alert("抽奖页面出错");
-                }
-            })
-        // }
-     }
+            },
+            error:function(error){
+                console.log(error)
+                weui.alert("抽奖页面出错");
+            }
+        })
+    }
+//   isAble(openId);     
+//     getWeChatId(options,callbackA);
+
     function getRewardsItems(param){
         $.ajax({
             url:urlServer+"/luck/get-win-info",
@@ -403,12 +360,8 @@ $(document).ready(function(){
                 // btn.onclick = function(){          //点击按钮转动并调用接口
                 if(flag==true){
                     flag=false;
-                    // flag2++;
                     canvas.style.transform = 'rotate('+ degr +'deg)';//转动语句
-                    // alert("ss");
-                    // console.log("!");
                     function hello(){
-                        console.log("!"+m);
                         // alertNew("恭喜获得"+display[list[m]-1]+"!");
                         var postflag=false;
                         if(postflag==false){
@@ -418,11 +371,11 @@ $(document).ready(function(){
                             data:{
                                 "openId":openId,
                                 "prizeId":obj.data.prizeId,
-                                "collectId":id
+                                "collectId":id,
+                                "actName":name,
                             },
                             type:"post",
                             success:function(result){
-                                res3 = result;
                                 console.log(result);
                                 var temper = result;
                                 if(temper.code==200){
@@ -469,6 +422,51 @@ $(document).ready(function(){
         });
     }
 })
+// function isAble(openId){
+//
+//     // var votestatus=getCookie("votestatus");
+//     // alertNew(votestatus);
+//     // console.log(votestatus);
+//     // if(votestatus==null||votestatus=="null"){
+//     //     document.getElementById("btn").style.backgroundColor="#C0C0C0";
+//     //     document.styleSheets[1].insertRule("#btn:before{position:absolute;display:block;content:'';left:24%;top:-45%;border-width:"+0.05*window.screen.width+"px;border-style:solid;border-color:transparent;border-bottom-color:#C0C0C0;}",0);
+//     //灰色按钮
+//     // btn.onclick = function(){
+//     //     alertNew("您尚未投票!");
+//     //     alertShow();
+//     // }
+//     // }
+//     // else if(votestatus=="true"||votestatus==true){
+//
+//     // }
+// }
+// function isSubscribe() {
+//     $.ajax({
+//         url:urlServer+'/common/is-subscribe',
+//         type:'POST',
+//         data:{
+//             "openId":openId
+//         },
+//         success:function(data){
+//             var code=data.code;
+//             if(code==200){
+//                 var result=data.data.result;
+//                 // alert(result);
+//                 if(result==true){
+//                     isAble(openId);
+//                 }
+//                 else if(result==false){
+//                     $('#Dialog').fadeIn(200);
+//                 }
+//             }
+//         },
+//         error:function(error){
+//             console.log(error);
+//             alertNew("获取权限信息失败");
+//             alertShow();
+//         }
+//     });
+// }
 // $('#click_queding').on("click",function(){
 //     var imghtml='<div><img src="../resource/jpg/logo.jpg" style="width:82%"></div><div>长按二维码，了解更多相关信息</div>';
 //     $('#alert .weui_dialog_ft a').html('关闭');

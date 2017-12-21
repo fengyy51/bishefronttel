@@ -224,8 +224,8 @@
             }else if(now>Date.parse(begin)&&now>Date.parse(end)){
                 weui.alert("投票已结束");
             }else if(now>Date.parse(begin)&&now<Date.parse(end)){
-                alert(num);
-                alert(voteMaxNum);
+                // alert(num);
+                // alert(voteMaxNum);
                 if(num>=voteMaxNum){
                     weui.alert("投票次数已达上限");
                     setTimeout(function(){
