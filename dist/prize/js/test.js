@@ -299,9 +299,7 @@ $(document).ready(function(){
             }
         })
     }
-//   isAble(openId);     
 //     getWeChatId(options,callbackA);
-
     function getRewardsItems(param){
         $.ajax({
             url:urlServer+"/luck/get-win-info",
@@ -309,8 +307,6 @@ $(document).ready(function(){
                 "actName":name
             },
             type:"get",
-            // dataType :"jsonp",  // 本地mock数据测试添加的两个字段
-            // jsonpCallback:"fun2",// 本地mock数据测试添加的两个字段
             success:function(res){
                 console.log(res);
             var obj = res;
@@ -327,7 +323,6 @@ $(document).ready(function(){
                         ratio[cou]=1;
                         //ratio[cou]=1/count;       //修改ratio数组概率
                 }
-                
                 if(!canvas.getContext){
                     weui.alert('抱歉！浏览器不支持。');
                     return;
@@ -362,7 +357,6 @@ $(document).ready(function(){
                     flag=false;
                     canvas.style.transform = 'rotate('+ degr +'deg)';//转动语句
                     function hello(){
-                        // alertNew("恭喜获得"+display[list[m]-1]+"!");
                         var postflag=false;
                         if(postflag==false){
                             postflag=true;
