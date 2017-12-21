@@ -2,14 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e7ca2437-d0cb-4495-8f55-a6f06fd6a19f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/prize/js/jweixin-1.0.0.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/dist/prize/js/share.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/goods/js/listWork.js" afterPath="$PROJECT_DIR$/dist/goods/js/listWork.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/personal/page/prize.html" afterPath="$PROJECT_DIR$/dist/personal/page/prize.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/prize/css/test.css" afterPath="$PROJECT_DIR$/dist/prize/css/test.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/prize/js/test.js" afterPath="$PROJECT_DIR$/dist/prize/js/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/prize/page/test.html" afterPath="$PROJECT_DIR$/dist/prize/page/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/vote/js/index.js" afterPath="$PROJECT_DIR$/dist/vote/js/index.js" />
     </list>
     <ignored path="fe-frontOfBinwang.iws" />
@@ -29,46 +24,43 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/dist/vote/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="191">
-              <caret line="76" column="25" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="25" />
+            <state relative-caret-position="780">
+              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
               <folding>
-                <element signature="e#495#611#0" expanded="false" />
-                <element signature="e#640#694#0" expanded="false" />
-                <element signature="e#3189#12258#0" expanded="false" />
-                <marker date="1513753862800" expanded="true" signature="5845:5855" ph="..." />
-                <marker date="1513753862800" expanded="true" signature="6396:6406" ph="..." />
-                <marker date="1513753862800" expanded="true" signature="8916:8926" ph="..." />
-                <marker date="1513753862800" expanded="true" signature="10558:10568" ph="..." />
+                <element signature="e#655#709#0" expanded="false" />
+                <element signature="e#3204#12273#0" expanded="false" />
+                <marker date="1513824385461" expanded="true" signature="5860:5870" ph="..." />
+                <marker date="1513824385461" expanded="true" signature="6411:6421" ph="..." />
+                <marker date="1513824385461" expanded="true" signature="8931:8941" ph="..." />
+                <marker date="1513824385461" expanded="true" signature="10573:10583" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personal.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/dist/personal/page/personal.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="38" column="3" lean-forward="false" selection-start-line="38" selection-start-column="3" selection-end-line="40" selection-end-column="14" />
-              <folding>
-                <marker date="1513676865294" expanded="false" signature="1149:1163" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/prize/js/test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="785">
-              <caret line="238" column="40" lean-forward="true" selection-start-line="238" selection-start-column="40" selection-end-line="238" selection-end-column="40" />
+            <state relative-caret-position="515">
+              <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
               <folding>
-                <element signature="e#1128#2360#0" expanded="false" />
-                <element signature="e#7039#8245#0" expanded="false" />
-                <marker date="1513761140629" expanded="true" signature="18486:18495" ph="..." />
+                <element signature="e#1149#2381#0" expanded="false" />
+                <element signature="e#7753#8959#0" expanded="false" />
+                <marker date="1513823845478" expanded="true" signature="19277:19286" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="deploy_test.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/deploy_test.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -86,19 +78,19 @@
       <file leaf-file-name="listWork.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dist/goods/js/listWork.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="431">
-              <caret line="231" column="13" lean-forward="true" selection-start-line="216" selection-start-column="12" selection-end-line="231" selection-end-column="13" />
+            <state relative-caret-position="210">
+              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
               <folding>
-                <element signature="e#4773#5226#0" expanded="false" />
-                <element signature="e#5264#9396#0" expanded="false" />
-                <element signature="e#10440#10702#0" expanded="false" />
-                <element signature="e#12615#12694#0" expanded="false" />
-                <element signature="e#12727#12866#0" expanded="false" />
-                <element signature="e#12910#13016#0" expanded="false" />
-                <element signature="e#13075#13145#0" expanded="false" />
-                <element signature="e#13183#13365#0" expanded="false" />
-                <element signature="e#13412#13489#0" expanded="false" />
-                <element signature="e#13537#13609#0" expanded="false" />
+                <element signature="e#4808#5261#0" expanded="false" />
+                <element signature="e#5299#9431#0" expanded="false" />
+                <element signature="e#10781#11043#0" expanded="false" />
+                <element signature="e#12956#13035#0" expanded="false" />
+                <element signature="e#13068#13207#0" expanded="false" />
+                <element signature="e#13251#13357#0" expanded="false" />
+                <element signature="e#13416#13486#0" expanded="false" />
+                <element signature="e#13524#13706#0" expanded="false" />
+                <element signature="e#13753#13830#0" expanded="false" />
+                <element signature="e#13878#13950#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -164,13 +156,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>id</find>
-      <find>actId</find>
-      <find>j</find>
-      <find>shareflagvote</find>
-      <find>href</find>
-      <find>weui</find>
-      <find>voteDecoration</find>
       <find>++</find>
       <find>+</find>
       <find>c-button1</find>
@@ -193,7 +178,14 @@
       <find>collectId</find>
       <find>display</find>
       <find>list</find>
+      <find>res2</find>
+      <find>degr</find>
+      <find>count</find>
+      <find>urlGetVoteNum</find>
+      <find>ratio</find>
+      <find>投票次数</find>
       <find>begin</find>
+      <find>num</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Biye\fe-frontOfBinwang\dist\collect</dir>
@@ -252,13 +244,13 @@
         <option value="$PROJECT_DIR$/dist/act/js/sign.js" />
         <option value="$PROJECT_DIR$/dist/personal/page/personal.html" />
         <option value="$PROJECT_DIR$/dist/util/js/publicAttr.js" />
-        <option value="$PROJECT_DIR$/dist/vote/js/index.js" />
-        <option value="$PROJECT_DIR$/dist/goods/js/listWork.js" />
         <option value="$PROJECT_DIR$/dist/personal/page/prize.html" />
         <option value="$PROJECT_DIR$/dist/prize/js/share.js" />
         <option value="$PROJECT_DIR$/dist/prize/page/test.html" />
         <option value="$PROJECT_DIR$/dist/prize/css/test.css" />
         <option value="$PROJECT_DIR$/dist/prize/js/test.js" />
+        <option value="$PROJECT_DIR$/dist/goods/js/listWork.js" />
+        <option value="$PROJECT_DIR$/dist/vote/js/index.js" />
       </list>
     </option>
   </component>
@@ -279,8 +271,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="145" />
-    <option name="y" value="118" />
+    <option name="x" value="103" />
+    <option name="y" value="58" />
     <option name="width" value="1700" />
     <option name="height" value="982" />
   </component>
@@ -325,6 +317,13 @@
               <item name="dist" type="462c0819:PsiDirectoryNode" />
               <item name="goods" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fe-frontOfBinwang" type="b2602c69:ProjectViewProjectNode" />
+              <item name="fe-frontOfBinwang" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+              <item name="goods" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="fe-frontOfBinwang" type="b2602c69:ProjectViewProjectNode" />
@@ -425,7 +424,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.test.html">
+  <component name="RunManager" selected="JavaScript Debug.listWork.html">
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -477,11 +476,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html (1)" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html (2)" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html (1)" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html (1)" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.listActivity.html (2)" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.listWork.html (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -503,7 +502,7 @@
       <workItem from="1511963639231" duration="6995000" />
       <workItem from="1512023235071" duration="28197000" />
       <workItem from="1512522647472" duration="70435000" />
-      <workItem from="1513647223702" duration="19905000" />
+      <workItem from="1513647223702" duration="23759000" />
     </task>
     <task id="LOCAL-00001" summary="修改多选表单提交逻辑">
       <created>1512007311150</created>
@@ -645,11 +644,18 @@
       <option name="project" value="LOCAL" />
       <updated>1513731749324</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="抽奖页面动态生成">
+      <created>1513762948282</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1513762948282</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="277379000" />
+    <option name="totallyTimeSpent" value="281233000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -661,14 +667,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="145" y="118" width="1700" height="982" extended-state="0" />
-    <editor active="true" />
+    <frame x="103" y="58" width="1700" height="982" extended-state="0" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18712395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18712395" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10030864" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20097442" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15225334" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -746,7 +751,8 @@
     <MESSAGE value="去掉关注公众号" />
     <MESSAGE value="抽奖alert用weui替换" />
     <MESSAGE value="改为使用测试号，本地测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="改为使用测试号，本地测试" />
+    <MESSAGE value="抽奖页面动态生成" />
+    <option name="LAST_COMMIT_MESSAGE" value="抽奖页面动态生成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1034,14 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/deploy_test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="99" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/deploy.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -1171,49 +1169,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/vote/js/index.js">
+    <entry file="file://$PROJECT_DIR$/deploy_test.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="76" column="25" lean-forward="false" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="25" />
+        <state relative-caret-position="420">
+          <caret line="14" column="28" lean-forward="true" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/prize/js/test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="515">
+          <caret line="83" column="5" lean-forward="false" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
           <folding>
-            <element signature="e#495#611#0" expanded="false" />
-            <element signature="e#640#694#0" expanded="false" />
-            <element signature="e#3189#12258#0" expanded="false" />
-            <marker date="1513753862800" expanded="true" signature="5845:5855" ph="..." />
-            <marker date="1513753862800" expanded="true" signature="6396:6406" ph="..." />
-            <marker date="1513753862800" expanded="true" signature="8916:8926" ph="..." />
-            <marker date="1513753862800" expanded="true" signature="10558:10568" ph="..." />
+            <element signature="e#1149#2381#0" expanded="false" />
+            <element signature="e#7753#8959#0" expanded="false" />
+            <marker date="1513823845478" expanded="true" signature="19277:19286" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/goods/js/listWork.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="231" column="13" lean-forward="true" selection-start-line="216" selection-start-column="12" selection-end-line="231" selection-end-column="13" />
+        <state relative-caret-position="210">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
           <folding>
-            <element signature="e#4773#5226#0" expanded="false" />
-            <element signature="e#5264#9396#0" expanded="false" />
-            <element signature="e#10440#10702#0" expanded="false" />
-            <element signature="e#12615#12694#0" expanded="false" />
-            <element signature="e#12727#12866#0" expanded="false" />
-            <element signature="e#12910#13016#0" expanded="false" />
-            <element signature="e#13075#13145#0" expanded="false" />
-            <element signature="e#13183#13365#0" expanded="false" />
-            <element signature="e#13412#13489#0" expanded="false" />
-            <element signature="e#13537#13609#0" expanded="false" />
+            <element signature="e#4808#5261#0" expanded="false" />
+            <element signature="e#5299#9431#0" expanded="false" />
+            <element signature="e#10781#11043#0" expanded="false" />
+            <element signature="e#12956#13035#0" expanded="false" />
+            <element signature="e#13068#13207#0" expanded="false" />
+            <element signature="e#13251#13357#0" expanded="false" />
+            <element signature="e#13416#13486#0" expanded="false" />
+            <element signature="e#13524#13706#0" expanded="false" />
+            <element signature="e#13753#13830#0" expanded="false" />
+            <element signature="e#13878#13950#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dist/prize/js/test.js">
+    <entry file="file://$PROJECT_DIR$/dist/vote/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="238" column="40" lean-forward="true" selection-start-line="238" selection-start-column="40" selection-end-line="238" selection-end-column="40" />
+        <state relative-caret-position="780">
+          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
           <folding>
-            <element signature="e#1128#2360#0" expanded="false" />
-            <element signature="e#7039#8245#0" expanded="false" />
-            <marker date="1513761140629" expanded="true" signature="18486:18495" ph="..." />
+            <element signature="e#655#709#0" expanded="false" />
+            <element signature="e#3204#12273#0" expanded="false" />
+            <marker date="1513824385461" expanded="true" signature="5860:5870" ph="..." />
+            <marker date="1513824385461" expanded="true" signature="6411:6421" ph="..." />
+            <marker date="1513824385461" expanded="true" signature="8931:8941" ph="..." />
+            <marker date="1513824385461" expanded="true" signature="10573:10583" ph="..." />
           </folding>
         </state>
       </provider>

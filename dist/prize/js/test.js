@@ -1,5 +1,6 @@
 $(document).ready(function(){
     var id=getQueryString("id");
+    var urlGetPrizeNum='/vote/get-prize-num';
     var urlPrizeParam="/luck/get-prize-param";
     var urlPrizeInfo="/luck/get-prize-info";//奖项
     var countprize=getCookie("countprize");//抽奖次数
@@ -13,19 +14,19 @@ $(document).ready(function(){
     var prizeDecoration;
 	var wheight=window.screen.height;
 	$('#prizelist img').css('height',wheight*0.3);
-    var openId;
-    var ratio = [0,0,0,0,0,0,0,0];
+    var openId='yy';
+    var ratio = [];
     var m;
     var flag;
-    var res2,res3;
+    var res3;
     //一个奖占一个
     var display =new Array();
     // var list = [4,3,4,1,4,3,4,2];
     var color=['#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c','#f5d5ab','#ff587c']
     //var color = ['#c71f16','#e88c30','#3080e8','#86c716','#30c9e8','#e8308c','#e88c30','#3080e8','#a866ee','#c71f16','#e88c30','#3080e8','#86c716','#30c9e8','#e8308c','#e88c30','#3080e8','#a866ee'];
     var countprize=getCookie("countprize");
-            
-    var openId='yy';
+
+    prizeNumContact();
     prizeParamContact();
     prizeInfoContact();
     function prizeParamContact() {
@@ -61,6 +62,26 @@ $(document).ready(function(){
             }
         })
     }
+    function voteNumContact() {
+        $.ajax({
+            url:urlServer+urlGetVoteNum,
+            data:{
+                "openId":openId,
+                "actId":actId
+            },
+            success:function (data) {
+                var code=data.code;
+                if(code==200){
+                    var num=data.data;
+                    console.log(num);
+                }
+            },
+            error:function (error) {
+                console.log(error);
+                weui.alert("获取当天投票数失败");
+            }
+        })
+    }
     function prizeInfoContact() {
         $.ajax({
             url:urlServer+urlPrizeInfo,
@@ -72,6 +93,10 @@ $(document).ready(function(){
                 var code=data.code;
                 if(code==200){
                     display=data.data;
+                    var len=display.length;
+                    for(var i=0;i<len;i++){
+                        ratio[i]=0;
+                    }
                     drawCanvas(display);
                 }
             }
@@ -324,26 +349,26 @@ $(document).ready(function(){
         $.ajax({
             url:urlServer+"/luck/get-win-info",
             data:{
-                "collectId":id
+                "actName":name
             },
             type:"get",
             // dataType :"jsonp",  // 本地mock数据测试添加的两个字段
             // jsonpCallback:"fun2",// 本地mock数据测试添加的两个字段
             success:function(res){
                 console.log(res);
-                res2 = res;
             var obj = res;
-            var num = list.length;
+            var num = display.length;
             if(obj.code==200){
                 flag=param;
-                var count = 0;
+                // var count = 0;
+                // for(var cou=0;cou<ratio.length;cou++){
+                    // if(display[cou]==obj.data.type)
+                        // count++;     //计算有几个盘面是该类奖项
+                // }
                 for(var cou=0;cou<ratio.length;cou++){
-                    if(list[cou]==obj.data.type)
-                        count++;     //计算有几个盘面是该类奖项
-                }
-                for(var cou=0;cou<ratio.length;cou++){
-                    if(list[cou]==obj.data.type)
-                        ratio[cou]=1/count;       //修改ratio数组概率
+                    if(display[cou]==obj.data.type)
+                        ratio[cou]=1;
+                        //ratio[cou]=1/count;       //修改ratio数组概率
                 }
                 
                 if(!canvas.getContext){
@@ -375,12 +400,12 @@ $(document).ready(function(){
                 }    //控制转盘转动停止位置
                 var flag2=0;
                 console.log("!");
-                btn.onclick = function(){          //点击按钮转动并调用接口
+                // btn.onclick = function(){          //点击按钮转动并调用接口
                 if(flag==true){
                     flag=false;
                     // flag2++;
                     canvas.style.transform = 'rotate('+ degr +'deg)';//转动语句
-
+                    // alert("ss");
                     // console.log("!");
                     function hello(){
                         console.log("!"+m);
@@ -432,7 +457,7 @@ $(document).ready(function(){
                         
                     } window.setTimeout(hello,6000);
                 }
-            }
+            // }
         }
             else{
                 weui.alert(obj.error.msg+"请刷新页面重试！");

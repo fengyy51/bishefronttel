@@ -5,9 +5,10 @@
         $('html').width(window.screen.width);
         $('html').css("overflow-x","hidden");
         var countff=getCookie("countff");//投票次数
-
+        var openId="yy";
         var shareflagvote=getCookie("shareflagvote");//投票分享次数
 
+        var num;//已抽奖次数后台返回
         //抽奖设置
         var actName;
         var begin;
@@ -45,12 +46,14 @@
         //         $dialog.hide();
         //     });
         // })
-        // voteNumContact();
+
         voteParamContact();
+        voteNumContact();
         productInfoContact();
         function voteNumContact() {
             $.ajax({
                 url:urlServer+urlGetVoteNum,
+                async:false,
                 data:{
                     "openId":openId,
                     "actId":actId
@@ -58,8 +61,8 @@
                 success:function (data) {
                     var code=data.code;
                     if(code==200){
-                        var num=data.data;
-                        console.log(num);
+                        num=data.data;
+
                     }
                 },
                 error:function (error) {
@@ -68,6 +71,7 @@
                 }
             })
         }
+
         function voteParamContact() {
             $.ajax({
                 url:urlServer+urlVoteParam,
@@ -220,7 +224,14 @@
             }else if(now>Date.parse(begin)&&now>Date.parse(end)){
                 weui.alert("投票已结束");
             }else if(now>Date.parse(begin)&&now<Date.parse(end)){
-                if (countff==0){
+                alert(num);
+                alert(voteMaxNum);
+                if(num>=voteMaxNum){
+                    weui.alert("投票次数已达上限");
+                    setTimeout(function(){
+                        window.location.href = "../../vote/list.html?actId="+actId;
+                    },1000);
+                }else if (countff==0){
                     weui.alert("投票次数已达上限");
                     setTimeout(function(){
                         window.location.href = "../../vote/list.html?actId="+actId;

@@ -19,11 +19,11 @@ $(function() {
     var countff; //初始化为votenum
     /* 变量定义*/
     // 授权
-    var options={
-        url:urlYuming+"/vote/index",
-        urlServerauth:urlServer+"/user/do-auth",
-        APPID:APPIDall
-    };
+    // var options={
+    //     url:urlYuming+"/vote/index",
+    //     urlServerauth:urlServer+"/user/do-auth",
+    //     APPID:APPIDall
+    // };
     function callbackA(id) {
         openId=id;
         // console.log(id);
