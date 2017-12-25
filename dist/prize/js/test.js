@@ -44,6 +44,16 @@ $(document).ready(function(){
                     shareNum=data.data.shareNum;
                     prizeMaxNum=data.data.prizeMaxNum;
                     prizeDecoration=data.data.prizeDecoration;
+                    if(data.data.topImg!=null){
+                        $('#tulip').attr("src",data.data.topImg);
+                    }
+                    if(data.data.prizelistImg!=null){
+                        var str='<img src="'+data.data.prizelistImg+'" style="width:100%;height:100%;display: block;">';
+                        $('#prizelist').html(str)
+                    }
+                    if(data.data.color!=null){
+                        $('body').css('background-color',data.data.color);
+                    }
                     $('.title').html(name);
                     $('#description').html(prizeDecoration);
                     setCookie_29("name",name);
